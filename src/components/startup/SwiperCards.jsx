@@ -15,7 +15,7 @@ import { Autoplay, FreeMode, Pagination } from "swiper";
 
 const Swiperpartners = () => {
   return (
-    <div className='bg-black text-white h-auto '>
+    <div className='bg-black text-white h-auto w-full '>
         <div className="text-white font-bold text-4xl p-5 text-center"><h1>Our Partners</h1></div>
      <Swiper
         slidesPerView={1}

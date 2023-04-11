@@ -8,9 +8,9 @@ import Field from '../components/startup/Field'
 import SwiperCards from '../components/startup/SwiperCards'
 
 const Startup = () => {
-
+  
   const isMobile=()=> {
-    const match=window.matchMedia('(pointer:coarse)');
+    const match=window.matchMedia("(max-width:1280px)");
     return(match && match.matches); 
   }
 

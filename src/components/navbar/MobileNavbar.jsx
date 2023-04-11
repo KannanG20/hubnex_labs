@@ -17,8 +17,8 @@ const MobileNavbar = ({ open }) => {
     
     <div className=' absolute top-0 -right-full overflow-hidden  h-screen w-full z-40 xl:hidden inline-block'>
         <div className={`xl:hidden ${!open ? 'translate-x-0 ease-out' : '-translate-x-full fixed'} h-full w-full gap-10 transition-all text-xl duration-500 ease text-white font-semibold bg-gradient-to-br z-50 from-gray-600 to-gray-800 flex flex-col items-center justify-center`}>
-          <NavLink to='/about' className={({ isActive }) => isActive ? 'bg-white px-5 py-2 text-black rounded-full' : ''}>About Us</NavLink>
-          <NavLink to='/service' className={({ isActive }) => isActive ? ` bg-white px-5 py-2 text-black rounded-full` : ''}>Services</NavLink>
+          <NavLink to='/about' className={({ isActive }) => isActive ? 'decoration-white underline decoration-2 underline-offset-4' : ''}>About Us</NavLink>
+          <NavLink to='/service' className={({ isActive }) => isActive ? ` decoration-white underline decoration-2 underline-offset-4` : ''}>Services</NavLink>
           <div className=' flex items-center'>
           <NavLink to='/industries' className={({ isActive }) => isActive ? ` underline decoration-red-600 decoration-2 underline-offset-8  text-white` : ' flex items-center gap-2'}>Industries</NavLink>
           <span onClick={handleIndustries}>{dropIndustries ?<KeyboardArrowUpIcon/>:<KeyboardArrowDown/>}</span>
@@ -29,8 +29,8 @@ const MobileNavbar = ({ open }) => {
              <Link to='/Healthcare'><div className='text-white p-4 text-center'>Healthcare</div></Link> 
             </div>
           }
-          <NavLink to='/contact' className={({ isActive }) => isActive ? 'bg-white px-5 py-2 text-black rounded-full' : ''}>Contact</NavLink>
-          <Link to='/startup-program'><button className={` bg-black text-white border-none py-2 px-3 rounded-full text-sm font-semibold`}>Startup Program</button></Link>
+          <NavLink to='/contact' className={({ isActive }) => isActive ? 'decoration-white underline decoration-2 underline-offset-4' : ''}>Contact</NavLink>
+          <Link to='/startup-program'><button className={` bg-black text-white border-none py-[10px] px-5 rounded-full text-[20px] font-semibold`}>Startup Program</button></Link>
         </div>
     </div>
   )

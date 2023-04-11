@@ -11,7 +11,7 @@ import Swiperpartners from '../components/aboutpage/Swiperpartners'
 const Services = () => {
 
   const isMobile=()=> {
-    const match=window.matchMedia('(pointer:coarse)');
+    const match=window.matchMedia("(max-width:912px)");
     return(match && match.matches); 
   }
 

@@ -1,17 +1,18 @@
 import React from 'react'
 import Hero from '../components/industrypage/Hero'
-import Testimonial from '../components/industrypage/Testimonial'
 import Work from '../components/industrypage/Work'
 import Footer from '../components/footer/Footer'
-import Cards from '../components/industrypage/Cards'
+import About from '../components/Aboutus'
+import Innovation from '../components/industrypage/Innovation'
+import Swiperpartners from '../components/aboutpage/Swiperpartners'
+import Partners from '../components/aboutpage/Partners'
 
 
 const Industries = ()=>{
+
   const isMobile=()=> {
-    const match=window.matchMedia('(pointer:coarse)');
-    return(match && match.matches);
-    
-    
+    const match=window.matchMedia("(max-width:912px)");
+    return(match && match.matches); 
   }
   
   return (
@@ -19,7 +20,8 @@ const Industries = ()=>{
         <Hero/>
         <Innovation/>
         <Work/>
-        <Testimonial/>
+        <About/>
+        {isMobile() ? <Swiperpartners/> : <Partners/>}
         <Footer />
     </div>
   )

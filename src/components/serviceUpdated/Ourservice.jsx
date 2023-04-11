@@ -14,117 +14,125 @@ import './Ourservice.css'
 
 const Ourservice = () => {
   return (
-    <div className=' py-10 md:py-10 w-full bg-black flex justify-center items-center h-auto'>
+    <div className=' py-10 w-full bg-black flex justify-center items-center h-auto'>
         <div className=' h-full w-full flex justify-center items-center'>
-            <div className=' md:w-[70%] xl:w-[80%] lg:w-[98%] flex flex-col justify-evenly gap-5 md:gap-10 md:justify-around h-full items-center text-black'>
+            <div className='w-[90%] flex flex-col gap-10 md:justify-around h-full items-center text-black'>
                 <div className='w-full gap-5 flex flex-col items-center justify-center'>
-                    <h1 className=' text-white text-5xl font-bold'>Our Services</h1>
+                    <h1 className=' text-white text-[50px] xl:text-[70px] font-gilroy-bold'>Our Services</h1>
                     <div className=' md:w-[700px] flex items-center justify-center'>
-                        <span className='  text-white text-center'>Our goal is to provide a comprehensive platform that empowers individuals <br /> and businesses to achieve their full potential. Whether you're looking to <br /> advance your career, improve your health and wellness, or grow your...  </span>
+                        <span className='  text-white text-center text-[20px] font-gilroy-regular'>Our goal is to provide a comprehensive platform that empowers individuals and businesses to achieve their full potential. Whether you're looking to advance your career, improve your health and wellness, or grow your...  </span>
                     </div>
                 </div>
                 
-                <div className='  flex flex-wrap w-full md:justify-between justify-center gap-5 '>
+                <div className='  flex flex-wrap w-full justify-center gap-[35px] '>
 
-                <div className=' card h-52 w-80 px-5 relative rounded-md bg-100 bg-opacity-20  border-500 border-2  flex flex-col justify-evenly '>
-                  <span className=' absolute right-5 top-2 text-5xl text-gray-400 font-gilroy-bold'>01</span>
-                  <div className='  w-10 h-10 rounded-full flex justify-center items-center bg-500'>
-                  <img src={testImg1} alt="" className=' w-full h-full '/>
+                <div className=' card h-auto py-5 lg:py-[35px] lg:h-[345px] w-[414px] px-5 relative rounded-md bg-100 bg-opacity-20   flex flex-col justify-evenly '>
+                  <div className='  flex justify-between items-center bg-500'>
+                    <img src={testImg1} alt="" className=' w-[70px] h-[70px] '/>
+                    <span className=' text-[70px] text-gray-400 font-gilroy-bold'>01</span>
                   </div>
-                  <div className=' w-full flex flex-col'>
-                    <p className='   font-inter-bold text-white'>Custom Web Development</p>
-                    <p className=' size font-gilroy  text-white '><br /> We build customized, intuitive web app  solutions that optimize operations, <br /> accelerate workflows, boost revenue, and <br /> deliver an exceptional product experience.</p>
+                  <div className=' w-full flex flex-col gap-5 '>
+                    <p className='   font-semibold text-[24px] text-white'>Custom Web Development</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white '> We build customized, intuitive web app  solutions that optimize operations,  accelerate workflows, boost revenue, and  deliver an exceptional product experience.</p>
                   </div>
                 </div>
 
-                <div className=' card h-52 relative w-80 px-5 rounded-md bg-black-100 bg-opacity-20  border -500 border-2  flex flex-col justify-evenly '>
-                  <span className=' absolute right-5 top-2 text-5xl text-gray-400 font-gilroy-bold'>02</span>
-                  <div className=' w-10 h-10 rounded-full flex justify-center items-center bg-500'>
-                  <img src={testImg2} alt="" className=' w-full h-full '/>
+                <div className=' card h-auto py-5 lg:py-[35px] lg:h-[345px] relative w-[414px] px-5 rounded-md bg-black-100 bg-opacity-20    flex flex-col justify-evenly '>
+                  
+                  <div className=' flex justify-between items-center bg-500'>
+                  <img src={testImg2} alt="" className=' w-[70px] h-[70px] '/>
+                  <span className=' text-[70px] text-gray-400 font-gilroy-bold'>02</span>
                   </div>
-                  <div className=' w-full flex flex-col'>
-                    <p className='  font-inter-bold text-white'>Software Consulting</p>
-                    <p className=' size font-gilroy text-white  '><br /> We analyze businesses needs and create a <br /> roadmap for building a software solution <br /> optimized to specific requirements and <br /> delivering the best value.</p>
-                  </div>
-                </div>
-                
-
-                <div className='card h-52 relative w-80 px-5 rounded-md bg-black-100 bg-opacity-20  border -500 border-2  flex flex-col justify-evenly '>
-                  <span className=' absolute right-5 top-2 text-5xl text-gray-400 font-gilroy-bold'>03</span>
-                  <div className=' w-10 h-10 rounded-full flex justify-center items-center bg--500'>
-                  <img src={testImg3} alt="" className=' w-full h-full rounded-full'/>
-                  </div>
-                  <div className=' w-full flex flex-col'>
-                    <span className='  font-inter-bold text-white'>Implementation & Deployment</span>
-                    <p className=' size font-gilroy text-white  '><br /> We device comprehensive and agile <br /> deployment & implementation plans using proven methodologies to deliver enhanced and cost-effective solutions to end-users.</p>
-                  </div>
-                </div>
-
-                <div className='card h-52 relative w-80 px-5 rounded-md bg-black-100 bg-opacity-20  border -500 border-2  flex flex-col justify-evenly '>
-                  <span className=' absolute right-5 top-2 text-5xl text-gray-400 font-gilroy-bold'>04</span>
-                  <div className=' w-10 h-10 rounded-full flex justify-center items-center bg--500'>
-                  <img src={testImg4} alt="" className=' w-full h-full rounded-full'/>
-                  </div>
-                  <div className=' w-full flex flex-col'>
-                    <pre className='  font-inter-bold text-white'>Maintenance & Management</pre>
-                    <p className=' size font-gilroy text-white  '><br /> Our app maintenance and management <br /> services ensure that your software <br /> infrastructure stays relevant, scalable, <br /> sustainable, and high-performing. </p>
-                  </div>
-                </div>
-
-                <div className='card h-52 relative w-80 px-5 rounded-md bg-black-100 bg-opacity-20  border -500 border-2  flex flex-col justify-evenly '>
-                  <span className=' absolute right-5 top-2 text-5xl text-gray-400 font-gilroy-bold'>05</span>
-                  <div className=' w-10 h-10 rounded-full flex justify-center items-center bg--500'>
-                  <img src={testImg5} alt="" className=' w-full h-full rounded-full'/>
-                  </div>
-                  <div className=' w-full flex flex-col'>
-                    <p className='  font-inter-bold text-white'>Mobile Web Development</p>
-                    <p className=' size font-gilroy text-white  '><br /> Our robust & customizable frameworks help<br /> develop smart ,mobile apps that analyze <br />user data and incorporate AI ML to deliver <br />personalized user experiences. </p>
+                  <div className=' w-full flex flex-col gap-5'>
+                    <p className='  font-semibold text-[24px] text-white'>Software Consulting</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> We analyze businesses needs and create a  roadmap for building a software solution  optimized to specific requirements and  delivering the best value.</p>
                   </div>
                 </div>
                 
 
-                <div className='card h-52 relative w-80 px-5 rounded-md bg-black-100 bg-opacity-20  border -500 border-2  flex flex-col justify-evenly '>
-                  <span className=' absolute right-5 top-2 text-5xl text-gray-400 font-gilroy-bold'>06</span>
-                  <div className=' w-10 h-10 rounded-full flex justify-center items-center bg--500'>
-                  <img src={testImg6} alt="" className=' w-full h-full rounded-full'/>
+                <div className='card h-auto py-5 lg:py-[35px] lg:h-[345px] relative w-[414px] px-5 rounded-md bg-black-100 bg-opacity-20    flex flex-col justify-evenly '>
+                  <div className=' flex justify-between items-center bg--500'>
+                  <img src={testImg3} alt="" className=' w-[70px] h-[70px] rounded-full'/>
+                  <span className=' text-[70px] text-gray-400 font-gilroy-bold'>03</span>
+
                   </div>
-                  <div className=' w-full flex flex-col'>
-                    <p className='  font-inter-bold text-white'>Custom Application Development</p>
-                    <p className=' size font-gilroy text-white  '><br /> Leverage our deep domain expertise to<br /> develop robust,scalable & interoperable <br /> mobile, web, desktop & hybrid applications <br /> that deliver optimal business outcomes. </p>
+                  <div className=' w-full flex flex-col gap-5'>
+                    <span className='  font-semibold text-[24px] text-white'>Implementation & Deployment</span>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> We device comprehensive and agile  deployment & implementation plans using proven methodologies to deliver enhanced and cost-effective solutions to end-users.</p>
                   </div>
                 </div>
 
-                <div className='card h-52 relative w-80 px-5 rounded-md bg-black-100 bg-opacity-20  border -500 border-2  flex flex-col justify-evenly '>
-                  <span className=' absolute right-5 top-2 text-5xl text-gray-400 font-gilroy-bold'>07</span>
-                  <div className=' w-10 h-10 rounded-full flex justify-center items-center bg--500'>
-                  <img src={testImg7} alt="" className=' w-full h-full rounded-full'/>
+                <div className='card h-auto py-5 lg:py-[35px] lg:h-[345px] relative w-[414px] px-5 rounded-md bg-black-100 bg-opacity-20    flex flex-col justify-evenly '>
+                  <div className=' flex justify-between items-center bg--500'>
+                  <img src={testImg4} alt="" className=' w-[70px] h-[70px] rounded-full'/>
+                  <span className=' text-[70px] text-gray-400 font-gilroy-bold'>04</span>
+
                   </div>
-                  <div className=' w-full flex flex-col'>
-                    <p className='  font-inter-bold text-white'>API Development & Integration</p>
-                    <p className=' size font-gilroy text-white  '><br /> Develop reliable and easy to consume<br /> custom APIs that seamlessly integrate <br />custom software with enterprise and third-<br /> party systems & services to maximize uptime <br /> & scalability</p>
+                  <div className=' w-full flex flex-col gap-5'>
+                    <pre className='  font-semibold text-[24px] text-white'>Maintenance & Management</pre>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> Our app maintenance and management  services ensure that your software  infrastructure stays relevant, scalable,  sustainable, and high-performing. </p>
                   </div>
                 </div>
 
-                <div className='card h-52 relative w-80 px-5 rounded-md bg-black-100 bg-opacity-20  border -500 border-2  flex flex-col justify-evenly '>
-                  <span className=' absolute right-5 top-2 text-5xl text-gray-400 font-gilroy-bold'>08</span>
-                  <div className=' w-10 h-10 rounded-full flex justify-center items-center bg--500'>
-                  <img src={testImg8} alt="" className=' w-full h-full rounded-full'/>
+                <div className='card h-auto py-5 lg:py-[35px] lg:h-[345px] relative w-[414px] px-5 rounded-md bg-black-100 bg-opacity-20    flex flex-col justify-evenly '>
+                  <div className=' flex justify-between items-center bg--500'>
+                  <img src={testImg5} alt="" className=' w-[70px] h-[70px] rounded-full'/>
+                  <span className=' text-[70px] text-gray-400 font-gilroy-bold'>05</span>
+
                   </div>
-                  <div className=' w-full flex flex-col'>
-                    <p className='  font-inter-bold text-white'>Custom UX/UI Design</p>
-                    <p className=' size font-gilroy text-white  '><br />Leverage the latest UX/UI technologies, <br />architectures, and trends to design <br />responsive & scalable user-centric apps <br />that transform user experiences across <br />channels.</p>
+                  <div className=' w-full flex flex-col gap-5'>
+                    <p className='  font-semibold text-[24px] text-white'>Mobile Web Development</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> Our robust & customizable frameworks help develop smart ,mobile apps that analyze user data and incorporate AI ML to deliver personalized user experiences. </p>
                   </div>
                 </div>
                 
 
-                <div className=' h-52 w-80 relative px-5 rounded-md bg-black-100 bg-opacity-20  border-blue-500 border-2  flex flex-col justify-evenly '>
-                  <span className=' absolute right-5 top-2 text-5xl text-gray-400 font-gilroy-bold'>09</span>
-                  <div className=' w-10 h-10 rounded-full flex justify-center items-center bg--500'>
-                  <img src={testImg9} alt="" className=' w-full h-full rounded-full'/>
+                <div className='card h-auto py-5 lg:py-[35px] lg:h-[345px] relative w-[414px] px-5 rounded-md bg-black-100 bg-opacity-20    flex flex-col justify-evenly '>
+                  <div className=' flex justify-between items-center bg--500'>
+                  <img src={testImg6} alt="" className=' w-[70px] h-[70px] rounded-full'/>
+                  <span className=' text-[70px] text-gray-400 font-gilroy-bold'>06</span>
+
                   </div>
-                  <div className=' w-full flex flex-col'>
-                    <p className='  font-semibold text-white'>System Integration</p>
-                    <p className=' text-xs text-white  '><br /> Our Software integration engineers adopt <br />next-gen technologies and process to <br /> streamline and integrate everything from <br /> design, development, and testing to execution.</p>
+                  <div className=' w-full flex flex-col gap-5'>
+                    <p className='  font-semibold text-[24px] text-white'>Custom Application Development</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> Leverage our deep domain expertise to develop robust,scalable & interoperable  mobile, web, desktop & hybrid applications  that deliver optimal business outcomes. </p>
+                  </div>
+                </div>
+
+                <div className='card h-auto py-5 lg:py-[35px] lg:h-[345px] relative w-[414px] px-5 rounded-md bg-black-100 bg-opacity-20    flex flex-col justify-evenly '>
+                  <div className=' flex justify-between items-center bg--500'>
+                  <img src={testImg7} alt="" className=' w-[70px] h-[70px] rounded-full'/>
+                  <span className=' text-[70px] text-gray-400 font-gilroy-bold'>07</span>
+
+                  </div>
+                  <div className=' w-full flex flex-col gap-5'>
+                    <p className='  font-semibold text-[24px] text-white'>API Development & Integration</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> Develop reliable and easy to consume custom APIs that seamlessly integrate custom software with enterprise and third- party systems & services to maximize uptime  & scalability</p>
+                  </div>
+                </div>
+
+                <div className='card h-auto py-5 lg:py-[35px] lg:h-[345px] relative w-[414px] px-5 rounded-md bg-black-100 bg-opacity-20    flex flex-col justify-evenly '>
+                  <div className=' flex justify-between items-center bg--500'>
+                  <img src={testImg8} alt="" className=' w-[70px] h-[70px] rounded-full'/>
+                  <span className=' text-[70px] text-gray-400 font-gilroy-bold'>08</span>
+
+                  </div>
+                  <div className=' w-full flex flex-col gap-5'>
+                    <p className='  font-semibold text-[24px] text-white'>Custom UX/UI Design</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '>Leverage the latest UX/UI technologies, architectures, and trends to design responsive & scalable user-centric apps that transform user experiences across channels.</p>
+                  </div>
+                </div>
+                
+
+                <div className=' h-auto py-5 lg:py-[35px] lg:h-[345px] w-[414px] relative px-5 rounded-md bg-black-100 bg-opacity-20 card flex flex-col justify-evenly '>
+                  <div className=' flex justify-between items-center bg--500'>
+                  <img src={testImg9} alt="" className=' w-[70px] h-[70px] rounded-full'/>
+                  <span className=' text-[70px] text-gray-400 font-gilroy-bold'>09</span>
+
+                  </div>
+                  <div className=' w-full flex flex-col gap-5'>
+                    <p className='  font-semibold text-[24px] text-white'>System Integration</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> Our Software integration engineers adopt next-gen technologies and process to  streamline and integrate everything from  design, development, and testing to execution.</p>
                   </div>
                 </div>
               </div>

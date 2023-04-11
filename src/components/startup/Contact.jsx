@@ -19,7 +19,7 @@ const Contact = () => {
           <div className=' flex w-full justify-between h-full items-center flex-col lg:flex-row'>
 
             <div className=' flex flex-col gap-20 w-full md:w-[50%] items-center lg:items-start'>
-                <span className=' text-2xl lg:text-[70px] font-gilroy-semi-bold'>Connect with us</span>
+                <span className=' text-2xl md:text-[50px] xl:text-[70px] font-gilroy-semi-bold'>Connect with us</span>
                 <p className=' lg:text-[28px] text-center lg:text-start font-gilroy-medium'>Revolutionize Your Startup's IT Strategy with Our Consultancy Services</p>
             </div>
 
@@ -54,7 +54,7 @@ const Contact = () => {
             </div>
            </div>
           <div className=' w-full flex flex-col items-center py-10 gap-5 justify-center'>
-               <span className=' text-[24px] font-gilroy-semi-bold'>Connect with us</span>
+               <span className=' text-[18px] xl:text-[24px] font-gilroy-semi-bold'>Connect with us</span>
                <div className=' flex gap-5'>
                 <TwitterIcon fontSize='large'/>
                 <LinkedInIcon fontSize='large'/>
@@ -65,13 +65,13 @@ const Contact = () => {
            </div>
        </div>
        <div className=' w-full border-t-2 h-14 border-t-white flex items-center justify-center'>
-               <div className=' w-[90%]  flex justify-center md:justify-between items-center h-full'>
+               <div className=' w-[90%]  flex justify-center xl:justify-between items-center h-full'>
 
-                    <div className=' flex md:justify-start justify-center w-full font-gilroy-light text-[15px]'>
+                    <div className=' flex font-gilroy-light text-[15px]'>
                       <span>Copyright <CopyrightIcon/> 2023 Hubnex, All Rights Reserved</span>
                     </div>
 
-                    <div className='hidden md:flex gap-2 text-[15px] font-gilroy-light w-full justify-end'>
+                    <div className='hidden xl:flex gap-2 text-[15px] font-gilroy-light '>
                        <Link to='/about'>About Us</Link>
                        <hr className=' border-[1px] h-5'/>
                         <Link to='service'>Data Protection</Link>

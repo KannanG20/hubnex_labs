@@ -28,16 +28,16 @@ const Home = () => {
 
           <div className=' h-full w-full '>
 
-              <section id='section-1' className='h-full xl:h-[982px] w-full bg-landerImg md:bg-cover bg-no-repeat bg-[80%] md:bg-center'>
+              <section id='section-1' className='lg:h-[982px] md:h-[750px] h-full w-full bg-landerImg md:bg-cover bg-no-repeat bg-[80%] md:bg-center'>
                   <Navbar/>
                   <Hero />
               </section>
               
-              <section id='section-2' className='h-full xl:h-[982px] w-full '>
+              <section id='section-2' className='h-full lg:h-[982px] w-full '>
                 <Brand/>
               </section>
               
-              <section  id='section-3' className='h-full xl:h-[982px] w-full bg-vector relative bg-cover bg-no-repeat bg-center'>
+              <section  id='section-3' className='h-full lg:h-[982px] w-full bg-vector relative bg-cover bg-no-repeat bg-center'>
                 <Services/>
               </section>
               

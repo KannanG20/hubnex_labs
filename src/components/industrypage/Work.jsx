@@ -1,66 +1,44 @@
-import React from 'react'
-import thanos from '@assets/thano.png'
-import plus from '@assets/Plus.png'
+import React from 'react';
 import vector2 from '@assets/vector2.png'
+import '../serviceUpdated/Ourservice.css'
 
-const Work = () => {
+const OueWork = () => {
   return (
-    <div className=' h-screen w-full relative bg-black flex justify-center items-center'>
-    <img src={thanos} className=' md:hidden absolute bottom-0 left-0 brightness-[50%] w-full h-[500px] object-cover'/>
-    <img src={vector2} className=' absolute h-full w-full brightness-[20%]'/>
-        <div className=' w-[80%] h-full flex flex-col justify-evenly md:justify-center md:items-center md:gap-10 md:gap-0 text-white'>
-            <div className=' flex flex-col gap-3 justify-center items-center z-30'>
-                <span className=' text-4xl md:text-5xl font-bold'>What We Do</span>
-                <p className=' text-lg text-center'>Delivering exponential value throughout the care ecosystem</p>
-            </div>
-            <div className=' flex justify-center items-center'>
-                <div className=' justify-between hidden md:flex  items-center w-full'>
-                    <img src={thanos} className=' w-full '/>
+    <div>
+       <div className='bg-black 2xl:h-[982px] py-3 md:py-0 min-h-screen  flex justify-center items-center flex-col '>
+       
+            <div className='text-white text-5xl lg:text-[60px] font-gilroy-bold '><h1>What We Do</h1></div>
+            <div className='text-white text-[24px] font-gilroy-regular p-6' ><p>Delivering exponential value throughout the care ecosystem</p></div>
+            <div className='flex flex-wrap justify-center'>
+
+                <div className='card text-white bg-white/5 backdrop-blur-lg rounded-md border p-8 xl:w-[640px] xl:h-[302px] m-4'>
+                    <h1 className='font-inter-semibold text-[32px] mb-10 '>Healthcare Provider</h1>
+                    <p className="font-inter-semibold text-[16px]">Technology led value-driven solutions for patient care. We offer innovative and end-to-end integrated solutions for healthcare providers. Our solutions enhance the efficiency of physicians, 
+                        hospitals, ancillary facilities, clinics, governmental health bodies and public health organizations.</p>
+
                 </div>
-            
-                <div className=' w-full flex items-center justify-center h-full z-30'>
-                            <div className=' flex w-full md:w-[80%] flex-col gap-5 text-lg font-bold'>
-                                <div className=' flex w-full gap-8'>
-                                    <img src={plus} className= ' bg-white' />
-                                    <span>Web Design</span>
-                                </div>
-                                <hr/>
+                <div className='card text-white bg-white/5 backdrop-blur-lg rounded-md border p-8 xl:w-[640px] xl:h-[302px] m-4'>
+                    <h1 className='font-inter-semibold text-[32px] mb-10 '>MedTech</h1>
+                    <p className="font-inter-semibold text-[16px]">Enabling device manufacturers to design and build nexgen healthcare technologies. Our MedTech practice is a partner of choice for global industry majors. We develop next generation products and 
+                        technologies through strong domain capabilities in end to end medical product development solutions.</p>
 
-                                <div className=' flex w-full gap-8'>
-                                    <img src={plus} className= ' bg-white'/>
-                                    <span>Digital Marketing</span>
-                                </div>
-                                <hr/>
-                                
-                                <div className=' flex w-full gap-8'>
-                                    <img src={plus} className= ' bg-white'/>
-                                    <span>UI/UX Design</span>
-                                </div>
-                                <hr/>
+                </div>
+                <div className='card text-white bg-white/5 backdrop-blur-lg rounded-md border p-8 xl:w-[640px] xl:h-[302px] m-4'>
+                    <h1 className='font-inter-semibold text-[32px] mb-10'>Pharmaceuticals</h1>
+                    <p className="font-inter-semibold text-[16px]">Committed to enhance continuum of care for our clients by innovative and disruptive technologies. Our deep pharmaceutical domain expertise, historical R&D experience, outcome-based partnerships with global giants 
+                        and diverse geographical outreach have enabled our clients to achieve seamless digital transformation</p>
 
-                                <div className=' flex w-full gap-8'>
-                                    <img src={plus} className= ' bg-white'/>
-                                    <span>App Development</span>
-                                </div>
-                                <hr/>
-
-                                <div className=' flex w-full gap-8'>
-                                    <img src={plus} className= ' bg-white'/>
-                                    <span>Cloud Computing</span>
-                                </div>
-                                <hr/>
-
-                                <div className=' flex w-full gap-8'>
-                                    <img src={plus} className= ' bg-white'/>
-                                    <span>Custom Software Development</span>
-                                </div>
-                                <hr/>
-                            </div>
-                    </div>
+                </div>
+                <div className='card text-white bg-white/5 backdrop-blur-lg rounded-md border p-8 xl:w-[640px] xl:h-[302px] m-4'>
+                    <h1 className='font-inter-semibold text-[32px] mb-10'>Healthcare Payors</h1>
+                    <p className="font-inter-semibold text-[16px]">Next-generation solutions empowering Payors to improve care quality and increase member satisfaction. Our Healthcare Payer Practice has been consistently ranked as one of the
+                         most matured practices in the industry, with over 15 years’ experience in serving several US Health Insurers.</p>
+                </div>
             </div>
+
         </div>
     </div>
   )
 }
 
-export default Work
+export default OueWork

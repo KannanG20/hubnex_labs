@@ -13,13 +13,13 @@ import Navbar from '../components/navbar/Navbar'
 const About = () => {
 
   const isMobile=()=> {
-    const match=window.matchMedia('(pointer:coarse)');
+    const match=window.matchMedia("(max-width:912px)");
     return(match && match.matches); 
   }
   
   return (
     <div className='overflow-hidden'>
-      <section className=' h-screen w-full bg-black overflow-hidden'>
+      <section className=' h-screen lg:h-[982px] w-full bg-black overflow-hidden'>
         <Navbar/>
         <Hero/>
       </section>

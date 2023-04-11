@@ -48,14 +48,14 @@ const Footer = () => {
   }
 
   return (
-    <div className=' flex flex-col justify-center items-center h-auto lg:h-full w-full bg-black'>
-      <div className=' md:w-[70%] h-full lg:flex sm:justify-between items-center text-white py-5 lg:py-0 md:mt-28'>
+    <div className=' flex flex-col justify-center items-center h-auto xl:min-h-full w-full bg-black'>
+      <div className=' lg:w-[90%] xl:w-[70%] h-full lg:flex sm:justify-between items-center text-white py-5 lg:py-0 md:mt-28'>
         <div className=' flex flex-col gap-[36px] md:gap-8'>
           <div className=' text-4xl lg:text-[70px] font-gilroy-extrabold text-white'>
             <h1 className=' text-center lg:text-start'>let's talk</h1>
           </div>
           <div className=' w-full md:w-[368px] lg:h-[330px] text-1xl lg:text-[48px] font-gilroy-light'>
-            <p className=' text-center leading-tight lg:text-start'>have some great idea or brand to develop? let's build it together</p>
+            <p className=' text-center leading-tight lg:text-start'>have some great idea or brand to develop? Let's build it together</p>
           </div>
           <div className=' text-xs font-gilroy-light md:text-[16px]'>
             <p className=' text-center md:text-start leading-6'>our team will reach out to you as soon as <br/>possible</p>
@@ -74,14 +74,14 @@ const Footer = () => {
             <input className=' pt-5 outline-none bg-transparent border-b-[1px] border-b-gray-300 w-80 md:w-96' type='text' id='message' required onChange={(e)=>setMessage(e.target.value)}/>
             <button className=' h-[41px] mt-10 w-[121px] py-1 px-5 border-violet-700 border-[2px] border-t-0 border-l-0 relative bg-transparent rounded-full'>
               <label htmlFor='submit' className='flex cursor-pointer gap-3 w-full h-full rounded-full font-gilroy-light items-center justify-center text-[18px] absolute -left-[2px] bottom-[2px] border-white border-2'>
-                    <input type='submit' placeholder='Submit' className=' cursor-pointer'/>
+                    <input type='submit' placeholder='SUBMIT' className=' cursor-pointer'/>
                     <img src={arrow} alt="arrow" width={15} height={15} className='object-contain'/>   
               </label>
             </button>
           </form>
       </div>
       <div className=' flex flex-col w-full h-40 justify-center xl:mt-8 items-center gap-8 text-white sm:h-80 text-lg'>
-        <span className=' font-gilroy-semi-bold text-[24px]'>connect with us</span>
+        <span className=' font-gilroy-semi-bold text-[24px]'>Connect with us</span>
         <div className=' flex flex-wrap gap-5 items-center'>
           <Link to='/about'><TwitterIcon fontSize='large'/></Link>
           <Link to='/about'><LinkedInIcon fontSize='large'/></Link>
@@ -90,11 +90,11 @@ const Footer = () => {
         </div>
       </div>
       <hr className=' w-full border-t-white border-t-[1px]'/>
-      <div className=' h-10 w-[90%] xl:w-[80%] m-auto flex justify-center md:justify-between text-white items-center'>
+      <div className=' h-10 w-[90%] xl:w-[80%] m-auto flex justify-center xl:justify-between text-white items-center'>
         <div>
           <span className=' text-[15px] font-gilroy-light'>Copyright <CopyrightIcon fontSize='small'/> 2023 Hubnex. All Rights Reserved</span>
         </div>
-        <div className='hidden lg:flex gap-2 text-[15px] font-gilroy-light '>
+        <div className='hidden xl:flex gap-2 text-[15px] font-gilroy-light '>
           <Link to='/about'>About Us</Link>
           <hr className=' border-r-[1px] h-5'/>
           <Link to='service'>Data Protection</Link>
@@ -106,7 +106,6 @@ const Footer = () => {
           <Link to='/contact'>Contact Us</Link>
           <hr className=' border-r-[1px] h-5'/>
           <Link to='/'>Invest in Us</Link>
-          <hr className=' border-r-[1px] h-5'/>
         </div>
       </div>
     </div>

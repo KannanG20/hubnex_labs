@@ -9,7 +9,7 @@ const Hero = () => {
         <Navbar />
         <div className='w-full h-full flex items-center justify-center'>
             <div className=' text-white w-[85%] flex justify-start h-full  items-center'>
-                <div className=' w-90 flex flex-col gap-14 xl:mb-48'>
+                <div className=' w-90 flex flex-col gap-8 xl:gap-14 lg:mb-[180px] xl:mb-48'>
                     <span className=' text-[50px] lg:text-[70px] font-gilroy-bold leading-tight'>Services to <br/> help you grow</span>
                     <p className=' text-[24px] font-gilroy-semi-bold'>"Expert IT Consulting Services to Boost Your Business Growth"</p>
                     <button className=' h-[44px] w-[140px] bg-violet-700 lg:py-[10px] px-5 border-t-0 border-l-0 relative bg-transparent rounded-full'>
