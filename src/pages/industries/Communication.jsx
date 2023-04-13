@@ -4,7 +4,9 @@ import Partners from '../../components/aboutpage/Partners';
 import Swiperpartners from '../../components/aboutpage/Swiperpartners';
 import Aboutus from '../../components/Aboutus';
 import Footer from '../../components/footer/Footer';
-import Innovation from '../../components/industrypage/Innovation'
+import Innovation from '../../components/industrypage/Innovation';
+import Herocomm from '../../components/industrypage/Herocomm';
+
 
 const Communication = () => {
 
@@ -15,6 +17,7 @@ const Communication = () => {
 
   return (
     <div className=' h-screen relative overflow-hidden'>
+      <Herocomm/>
         <Innovation/>
         <Work/>
         <Aboutus/>
