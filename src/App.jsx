@@ -126,7 +126,7 @@ function App() {
             {
               path: '/service',
               element: <Suspense fallback={<Loader/>}><Services/></Suspense>,
-              children: [
+             },
                 {
                   path: '/service/ai-ml',
                   element: <Suspense fallback={<Loader/>}><AIML/></Suspense>
@@ -147,12 +147,10 @@ function App() {
                   path: '/service/software-testing',
                   element: <Suspense fallback={<Loader/>}><SoftwareTesting/></Suspense>
                 },
-              ]
-            },
             {
               path: '/industries',
               element: <Suspense fallback={<Loader/>}><Industries/></Suspense>,
-              children: [
+            },
                 {
                   path: '/industries/communication',
                   element: <Suspense fallback={<Loader/>}><Communication/></Suspense>
@@ -177,8 +175,7 @@ function App() {
                   path: '/industries/travel',
                   element: <Suspense fallback={<Loader/>}><Travel/></Suspense>
                 },
-              ]
-            },
+              
             {
               path: '/contact',
               element: <Suspense fallback={<Loader/>}><Contact/></Suspense>
