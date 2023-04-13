@@ -4,7 +4,8 @@ import Partners from '../../components/aboutpage/Partners';
 import Swiperpartners from '../../components/aboutpage/Swiperpartners';
 import Aboutus from '../../components/Aboutus';
 import Footer from '../../components/footer/Footer';
-import Innovation from '../../components/industrypage/Innovation'
+import Innovation from '../../components/industrypage/Innovation';
+import Herologi from '../../components/industrypage/Herologi';
 
 const Logistic = () => {
 
@@ -15,6 +16,7 @@ const Logistic = () => {
 
   return (
     <div className='overflow-hidden'>
+      <Herologi/>
         <Innovation/>
         <Work/>
         <Aboutus/>

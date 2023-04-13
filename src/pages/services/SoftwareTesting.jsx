@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Hero from '../../components/serviceUpdated/Hero'
+import Hero from '../../components/serviceUpdated/childrens/SoftwareHero'
 import Ourservice from '../../components/serviceUpdated/Ourservice'
 import Choose from '../../components/serviceUpdated/Choose'
 import Partners from '../../components/aboutpage/Partners'
