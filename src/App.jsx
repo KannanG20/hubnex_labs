@@ -6,6 +6,18 @@ import Loader from './components/loader/Loader'
 import './App.css'
 
 
+const IOT = React.lazy(()=> import('./pages/services/IOT'))
+const AIML = React.lazy(()=> import('./pages/services/AIML'))
+const CloudServices = React.lazy(()=> import('./pages/services/CloudServices'))
+const SoftwareTesting = React.lazy(()=> import('./pages/services/SoftwareTesting'))
+const DigitalMarketing = React.lazy(()=> import('./pages/services/DigitalMarketing'))
+
+const Communication = React.lazy(()=> import( './pages/industries/Communication'))
+const Hospitality = React.lazy(()=> import('./pages/industries/Hospitality')) 
+const Logistics = React.lazy(()=> import('./pages/industries/Logistics')) 
+const PublicSector = React.lazy(()=> import('./pages/industries/PublicSector')) 
+const Retail = React.lazy(()=> import('./pages/industries/Retail')) 
+const Travel = React.lazy(()=> import('./pages/industries/Travel')) 
 // Hubnex pages (public)
 const Home = React.lazy(()=> import ('./pages/Home'))
 const About = React.lazy(()=> import ('./pages/About'))
@@ -113,11 +125,59 @@ function App() {
             },
             {
               path: '/service',
-              element: <Suspense fallback={<Loader/>}><Services/></Suspense>
+              element: <Suspense fallback={<Loader/>}><Services/></Suspense>,
+              children: [
+                {
+                  path: '/service/ai-ml',
+                  element: <Suspense fallback={<Loader/>}><AIML/></Suspense>
+                },
+                {
+                  path: '/service/cloud-services',
+                  element: <Suspense fallback={<Loader/>}><CloudServices/></Suspense>
+                },
+                {
+                  path: '/service/digital-marketing',
+                  element: <Suspense fallback={<Loader/>}><DigitalMarketing/></Suspense>
+                },
+                {
+                  path: '/service/iot',
+                  element: <Suspense fallback={<Loader/>}><IOT/></Suspense>
+                },
+                {
+                  path: '/service/software-testing',
+                  element: <Suspense fallback={<Loader/>}><SoftwareTesting/></Suspense>
+                },
+              ]
             },
             {
               path: '/industries',
-              element: <Suspense fallback={<Loader/>}><Industries/></Suspense>
+              element: <Suspense fallback={<Loader/>}><Industries/></Suspense>,
+              children: [
+                {
+                  path: '/industries/communication',
+                  element: <Suspense fallback={<Loader/>}><Communication/></Suspense>
+                },
+                {
+                  path: '/industries/Hospitality',
+                  element: <Suspense fallback={<Loader/>}><Hospitality/></Suspense>
+                },
+                {
+                  path: '/industries/Logistic',
+                  element: <Suspense fallback={<Loader/>}><Logistics/></Suspense>
+                },
+                {
+                  path: '/industries/PublicSector',
+                  element: <Suspense fallback={<Loader/>}><PublicSector/></Suspense>
+                },
+                {
+                  path: '/industries/Retail',
+                  element: <Suspense fallback={<Loader/>}><Retail/></Suspense>
+                },
+                {
+                  path: '/industries/Travel',
+                  element: <Suspense fallback={<Loader/>}><Travel/></Suspense>
+                },
+              ]
             },
             {
               path: '/contact',
