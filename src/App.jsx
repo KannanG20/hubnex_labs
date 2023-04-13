@@ -158,23 +158,23 @@ function App() {
                   element: <Suspense fallback={<Loader/>}><Communication/></Suspense>
                 },
                 {
-                  path: '/industries/Hospitality',
+                  path: '/industries/hospitality',
                   element: <Suspense fallback={<Loader/>}><Hospitality/></Suspense>
                 },
                 {
-                  path: '/industries/Logistic',
+                  path: '/industries/logistics',
                   element: <Suspense fallback={<Loader/>}><Logistics/></Suspense>
                 },
                 {
-                  path: '/industries/PublicSector',
+                  path: '/industries/public-Sector',
                   element: <Suspense fallback={<Loader/>}><PublicSector/></Suspense>
                 },
                 {
-                  path: '/industries/Retail',
+                  path: '/industries/retail',
                   element: <Suspense fallback={<Loader/>}><Retail/></Suspense>
                 },
                 {
-                  path: '/industries/Travel',
+                  path: '/industries/travel',
                   element: <Suspense fallback={<Loader/>}><Travel/></Suspense>
                 },
               ]

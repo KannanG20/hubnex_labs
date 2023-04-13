@@ -56,21 +56,35 @@ const Navbar = () => {
         </div>
         <div className=' text-[18px] hidden xl:flex xl:gap-16 items-center font-gilroy-semi-bold text-white z-10'>
           <NavLink to='/about' className={({ isActive }) => isActive ? 'decoration-white underline decoration-2 underline-offset-4' : ''}>About Us</NavLink>
-          <div className=' flex items-center'>
+          <div className=' flex items-center relative'>
             <NavLink to='/service' className={({ isActive }) => isActive ? ` ${setActive(true)} decoration-white underline decoration-2 underline-offset-4 `: ''}>Services</NavLink>
             <span className=' cursor-pointer' onClick={handleServices}>{dropServices ?<KeyboardArrowUpIcon/>:<KeyboardArrowDown/>}</span>
-          </div>
-          <div className=' flex items-center justify-center'>
-            <NavLink to='/industries' className={({ isActive }) => isActive ? 'decoration-white underline decoration-2 underline-offset-8  ' : ''}>Industries</NavLink>
-            <span className=' cursor-pointer' onClick={handleIndustries}>{dropIndustries ?<KeyboardArrowUpIcon/>:<KeyboardArrowDown/>}</span>
-          </div>
-          {
-            dropIndustries && 
-            <div className="flex flex-col  bg-white/40 backdrop-blur-2xl w-[150px] absolute top-20 right-[34rem] rounded-lg">
-             <Link to='/industries'><div className='text-white p-4 text-center'>Healthcare</div></Link> 
-
+            {
+            dropServices && 
+            <div className="flex flex-col  bg-white/40 backdrop-blur-2xl w-[150px] absolute top-10 right-0 rounded-lg">
+             <Link to='/service/ai-ml'><div className='text-white p-4 text-center'>service 1</div></Link> 
+             <Link to='/service/cloud-services'><div className='text-white p-4 text-center'>service 2</div></Link> 
+             <Link to='/service/digital-marketingr'><div className='text-white p-4 text-center'>service 4</div></Link> 
+             <Link to='/service/iot'><div className='text-white p-4 text-center'>service 5</div></Link> 
+             <Link to='/service/software-testing'><div className='text-white p-4 text-center'>service 6</div></Link> 
             </div>
           }
+          </div>
+          <div className=' flex items-center relative justify-center'>
+            <NavLink to='/industries' className={({ isActive }) => isActive ? 'decoration-white underline decoration-2 underline-offset-8  ' : ''}>Industries</NavLink>
+            <span className=' cursor-pointer' onClick={handleIndustries}>{dropIndustries ?<KeyboardArrowUpIcon/>:<KeyboardArrowDown/>}</span>
+            {
+            dropIndustries && 
+            <div className="flex flex-col  bg-white/40 backdrop-blur-2xl w-[150px] absolute top-10 left-0 rounded-lg">
+             <Link to='/industries/communication'><div className='text-white p-4 text-center'>industries 1</div></Link> 
+             <Link to='/industries/hospitality'><div className='text-white p-4 text-center'>industries 2</div></Link> 
+             <Link to='/industries/logistics'><div className='text-white p-4 text-center'>industries 3</div></Link> 
+             <Link to='/industries/public-sector'><div className='text-white p-4 text-center'>industries 4</div></Link> 
+             <Link to='/industries/retail'><div className='text-white p-4 text-center'>industries 5</div></Link> 
+             <Link to='/industries/travel'><div className='text-white p-4 text-center'>industries 6</div></Link> 
+            </div>
+          }
+          </div>
           <NavLink to='/contact' className={({ isActive }) => isActive ? 'decoration-white underline decoration-2 underline-offset-4' : ''}>Contact</NavLink>
           <img onClick={handleSearch} src={searchIcon} alt="search icon" width={25} height={25} className='cursor-pointer z-50'/>
           <Link to='/startup-program' className= {` border-white ${active ? 'bg-white text-black' : 'bg-transparent text-white'}  border-2 py-[8px] px-[20px] rounded-full text-[20px] font-gilroy-semi-bold`}>Startup Program</Link>
