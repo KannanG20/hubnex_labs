@@ -32,6 +32,7 @@ const Help = React.lazy(()=> import('./components/adminpage/Help'))
 const Invest=React.lazy(()=>import('./components/adminpage/Invest'))
 const Terms =React.lazy(()=>import('./components/adminpage/Terms'))
 
+
 function App() {
 
   const [ loading, setLoading] = useState(true);
