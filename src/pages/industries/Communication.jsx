@@ -16,7 +16,7 @@ const Communication = () => {
       }
 
   return (
-    <div className=' h-screen relative overflow-hidden'>
+    <div className=' overflow-hidden'>
       <Herocomm/>
         <Innovation/>
         <Work/>
