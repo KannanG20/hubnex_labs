@@ -76,7 +76,7 @@ const Navbar = () => {
             {
             dropIndustries && 
             <div className="flex flex-col  bg-white/40 backdrop-blur-2xl w-[150px] absolute top-10 left-0 rounded-lg">
-             <Link to='/industries/communication'><div className='text-white p-4 text-center'>industries 1</div></Link> 
+             <Link to='/industries/Communication'><div className='text-white p-4 text-center'>industries 1</div></Link> 
              <Link to='/industries/hospitality'><div className='text-white p-4 text-center'>industries 2</div></Link> 
              <Link to='/industries/logistics'><div className='text-white p-4 text-center'>industries 3</div></Link> 
              <Link to='/industries/public-sector'><div className='text-white p-4 text-center'>industries 4</div></Link> 

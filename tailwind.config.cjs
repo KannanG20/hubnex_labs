@@ -48,7 +48,20 @@ module.exports = {
         'abouts': "url('@assets/abouts.png')",
         'earth': "url('@assets/earth.png')",
         'hands': "url('@assets/hands.png')",
-        'healthindus': "url(@assets/healthindus.png)"
+        'healthindus': "url(@assets/healthindus.png)",
+        'ind1':"url(@assets/ind1.png)",
+        'ind2':"url(@assets/ind2.png)",
+        'ind3':"url(@assets/ind3.png)",
+        'ind4':"url(@assets/ind4.png)",
+        'ind5':"url(@assets/ind5.png)",
+        'ind6':"url(@assets/ind6.png)",
+        'serv1':"url(@assets/serv1.png)",
+        'serv2':"url(@assets/serv2.png)",
+        'serv3':"url(@assets/serv3.png)",
+        'serv4':"url(@assets/serv4.png)",
+        'serv5':"url(@assets/serv5.png)",
+        'serv6':"url(@assets/serv6.png)",
+
       }
     },
   },
