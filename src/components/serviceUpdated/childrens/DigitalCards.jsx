@@ -1,14 +1,14 @@
 import React from 'react'
-import testImg1 from '../../assets/costom devp.png';
-import testImg2 from '../../assets/Communication.png';
-import testImg3 from '../../assets/gg.png';
-import testImg4 from '../../assets/Management.png';
-import testImg5 from '../../assets/Mobile Development.png';
-import testImg6 from '../../assets/Group.png';
-import testImg7 from '../../assets/API Programming.png';
-import testImg8 from '../../assets/Ux Design.png';
-import testImg9 from '../../assets/Address marker.png';
-import './Ourservice.css'
+import testImg1 from '@assets/costom devp.png';
+import testImg2 from '@assets/Communication.png';
+import testImg3 from '@assets/gg.png';
+import testImg4 from '@assets/Management.png';
+import testImg5 from '@assets/Mobile Development.png';
+import testImg6 from '@assets/Group.png';
+import testImg7 from '@assets/API Programming.png';
+import testImg8 from '@assets/Ux Design.png';
+import testImg9 from '@assets/Address marker.png';
+import '../Ourservice.css'
 
 
 

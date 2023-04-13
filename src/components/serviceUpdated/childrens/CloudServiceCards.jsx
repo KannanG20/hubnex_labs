@@ -5,14 +5,11 @@ import testImg3 from '@assets/gg.png';
 import testImg4 from '@assets/Management.png';
 import testImg5 from '@assets/Mobile Development.png';
 import testImg6 from '@assets/Group.png';
-import testImg7 from '@assets/API Programming.png';
-import testImg8 from '@assets/Ux Design.png';
-import testImg9 from '@assets/Address marker.png';
 import '../Ourservice.css'
 
 
 
-const Ourservice = () => {
+const CloudServiceCard = () => {
   return (
     <div className=' py-10 w-full bg-black flex justify-center items-center h-auto'>
         <div className=' h-full w-full flex justify-center items-center'>
@@ -32,8 +29,8 @@ const Ourservice = () => {
                     <span className=' text-[70px] text-gray-400 font-gilroy-bold'>01</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5 '>
-                    <p className='   font-semibold text-[24px] text-white'>Custom Web Development</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white '> We build customized, intuitive web app  solutions that optimize operations,  accelerate workflows, boost revenue, and  deliver an exceptional product experience.</p>
+                    <p className='   font-semibold text-[24px] text-white'>Cloud Discovery & Roadmap</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white '>Streamline cloud adoption and transformation based on an in-depth analysis of the current environment, possible opportunities, risks, and limitations using tried and tested technologies.</p>
                   </div>
                 </div>
 
@@ -44,8 +41,8 @@ const Ourservice = () => {
                   <span className=' text-[70px] text-gray-400 font-gilroy-bold'>02</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Software Consulting</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '> We analyze businesses needs and create a  roadmap for building a software solution  optimized to specific requirements and  delivering the best value.</p>
+                    <p className='  font-semibold text-[24px] text-white'>Cloud Migration & Deployment</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> We combine exhaustive practical experience with technological expertise to determine the best migration strategy based on business objectives and a future-proof roadmap.</p>
                   </div>
                 </div>
                 
@@ -57,8 +54,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <span className='  font-semibold text-[24px] text-white'>Implementation & Deployment</span>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '> We device comprehensive and agile  deployment & implementation plans using proven methodologies to deliver enhanced and cost-effective solutions to end-users.</p>
+                    <span className='  font-semibold text-[24px] text-white'>Cloud Applications & Platforms</span>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> We help you leverage Software as a Service (SaaS) platforms like Office, SharePoint and CRM for process automation, business productivity and maximizing ROI.</p>
                   </div>
                 </div>
 
@@ -69,8 +66,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <pre className='  font-semibold text-[24px] text-white'>Maintenance & Management</pre>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '> Our app maintenance and management  services ensure that your software  infrastructure stays relevant, scalable,  sustainable, and high-performing. </p>
+                    <p className='  font-semibold text-[24px] text-white'>Cloud Integration & Orchestration</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> We help you manage the core infrastructure & workflows across cloud environments and unite several independent automation processes into a cohesive system for effective infrastructure management.</p>
                   </div>
                 </div>
 
@@ -81,8 +78,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Mobile Web Development</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '> Our robust & customizable frameworks help develop smart ,mobile apps that analyze user data and incorporate AI ML to deliver personalized user experiences. </p>
+                    <p className='  font-semibold text-[24px] text-white'>Cloud Management & Maintenance</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> OOur DevOps methodology increases speed and agility, helping our clients scale and flex rapidly to stay relevant in the evolving marketplace.</p>
                   </div>
                 </div>
                 
@@ -93,8 +90,8 @@ const Ourservice = () => {
                   <span className=' text-[70px] text-gray-400 font-gilroy-bold'>06</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Custom Application Development</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '> Leverage our deep domain expertise to develop robust,scalable & interoperable  mobile, web, desktop & hybrid applications  that deliver optimal business outcomes. </p>
+                    <p className='  font-semibold text-[24px] text-white'>Cloud Governance & Security</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> Our data management services comprise continuous monitoring, performance optimization, risk assessment, and data protection, and enabling secure & smooth data transfer. </p>
                   </div>
                 </div>
               </div>
@@ -104,4 +101,4 @@ const Ourservice = () => {
   )
 }
 
-export default Ourservice
+export default CloudServiceCard

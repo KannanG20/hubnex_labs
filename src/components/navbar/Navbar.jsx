@@ -62,11 +62,11 @@ const Navbar = () => {
             {
             dropServices && 
             <div className="flex flex-col  bg-white/40 backdrop-blur-2xl w-[150px] absolute top-10 right-0 rounded-lg">
-             <Link to='/service/ai-ml'><div className='text-white p-4 text-center'>service 1</div></Link> 
-             <Link to='/service/cloud-services'><div className='text-white p-4 text-center'>service 2</div></Link> 
-             <Link to='/service/digital-marketing'><div className='text-white p-4 text-center'>service 3</div></Link> 
-             <Link to='/service/iot'><div className='text-white p-4 text-center'>service 4</div></Link> 
-             <Link to='/service/software-testing'><div className='text-white p-4 text-center'>service 5</div></Link> 
+             <Link to='/service/ai-ml'><div className='text-white p-4 text-center'>AI-ML</div></Link> 
+             <Link to='/service/cloud-services'><div className='text-white p-4 text-center'>Cloud Services</div></Link> 
+             <Link to='/service/digital-marketing'><div className='text-white p-4 text-center'>Digital Marketing</div></Link> 
+             <Link to='/service/iot'><div className='text-white p-4 text-center'>IOT</div></Link> 
+             <Link to='/service/software-testing'><div className='text-white p-4 text-center'>Software Testing</div></Link> 
             </div>
           }
           </div>

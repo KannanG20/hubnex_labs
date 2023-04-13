@@ -8,11 +8,11 @@ import testImg6 from '@assets/Group.png';
 import testImg7 from '@assets/API Programming.png';
 import testImg8 from '@assets/Ux Design.png';
 import testImg9 from '@assets/Address marker.png';
-import '../Ourservice.css'
+import '../Ourservice.css';
 
 
 
-const Ourservice = () => {
+const CardSoftware   = () => {
   return (
     <div className=' py-10 w-full bg-black flex justify-center items-center h-auto'>
         <div className=' h-full w-full flex justify-center items-center'>
@@ -32,8 +32,8 @@ const Ourservice = () => {
                     <span className=' text-[70px] text-gray-400 font-gilroy-bold'>01</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5 '>
-                    <p className='   font-semibold text-[24px] text-white'>Machine Learning</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white '> Build and deploy an E2E machine learning lifecycle in your system. Take accurate business decisions by interpreting complex data, detecting trends & patterns, and integrating advanced ML algorithms.</p>
+                    <p className='   font-semibold text-[24px] text-white'>Functional Testing</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white '> We use the latest automation tools and frameworks to implement comprehensive functional testing, focusing on the user interface, security, APIs, client or server functionalities, and other similar applications.</p>
                   </div>
                 </div>
 
@@ -44,8 +44,8 @@ const Ourservice = () => {
                   <span className=' text-[70px] text-gray-400 font-gilroy-bold'>02</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Chatbot Development</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '> Build intelligent AI-powered apps trained to interact with humans using touch sensing, voice, language recognition, and programmed decision making to offer highly evolved chatbot solutions.</p>
+                    <p className='  font-semibold text-[24px] text-white'>Usability Testing</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> Leverage our extensive industry knowledge, advanced technology stack, UX trends, and cross-industry experience to assess the usability and convenience of your application for end-users.</p>
                   </div>
                 </div>
                 
@@ -57,8 +57,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <span className='  font-semibold text-[24px] text-white'>Natural Language Processing</span>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '> Set algorithms that will work across large data sets to extract meaningful insights for an unsupervised machine learning experience. Analyze existing text data for trends, threats, and new business prospects.</p>
+                    <span className='  font-semibold text-[24px] text-white'>Performance Testing</span>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> We help you predict app behavior and performance in real-life environments by identifying and addressing bottlenecks. We ensure that your software is stable, agile, and performs optimally under peak loads.</p>
                   </div>
                 </div>
 
@@ -69,8 +69,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <pre className='  font-semibold text-[24px] text-white'>IoT Analytics</pre>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '>Leverage ML to transform IoT data into actionable business insights. Capture, process & analyze data to reduce equipment downtime, minimize accidents, and identify trends & anomalies in sensor data.</p>
+                    <pre className='  font-semibold text-[24px] text-white'>Security Testing</pre>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> Our in-depth security assessment & validation services and best practices proactively protect your system and information from possible intruders, increasing business continuity. </p>
                   </div>
                 </div>
 
@@ -81,8 +81,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Data Mining</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '>Explore data in-depth and structure it into appropriate models to make critical business decisions. Extract information and transform it into a relevant model for real-time use</p>
+                    <p className='  font-semibold text-[24px] text-white'>Compatibility Testing</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> Test your software for compatibility across different browsers, operating systems, networks, databases, hardware, server, devices, etc., to ensure it meets diverse users’ requirements.</p>
                   </div>
                 </div>
                 
@@ -94,8 +94,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Image Processing</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '> Build custom applications for automated analysis, recognize & process images, and integrate neural networks for text translation. Optimize production environments, scale-up operations to the cloud or edge.</p>
+                    <p className='  font-semibold text-[24px] text-white'>Web & Mobile App Testing</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> We provide end-to-end cross-platform/ functional/ non-functional testing with both manual & automated testing approaches to ensure your mobile & web applications are scalable, secure, and compatible. </p>
                   </div>
                 </div>
 
@@ -106,8 +106,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Voice-Based AI</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '> Deploy powerful customized voice-enabled applications that facilitate streamlined and faster app operations. Leverage language-based localization, custom skill development & mobile app integration.</p>
+                    <p className='  font-semibold text-[24px] text-white'>Automated Testing</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> Leverage our full-cycle test automation services, to achieve lower testing costs and faster time-to-market while ensuring zero flaws in production. Deliver error-free and quality web, mobile, and enterprise apps.</p>
                   </div>
                 </div>
 
@@ -118,8 +118,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>AI Consulting & Integration</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '>Modernize existing systems and sharpen the functionality of cross-platform interface applications. Automate internal processes and provide solutions that redefine how your customers interact with your products.</p>
+                    <p className='  font-semibold text-[24px] text-white'>Manual Testing</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '>Supplement automated testing with a manual component that tests user interface, installation, error handling, security, and much more to verify that all features work as expected.</p>
                   </div>
                 </div>
                 
@@ -131,8 +131,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Robotic Process Automation</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '>Use RBA to create solutions that help reduce overall manual efforts, minimize risks of human error, increase the productivity of daily processes, and leverage exclusive data validation & data search.</p>
+                    <p className='  font-semibold text-[24px] text-white'>API Testing</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> We undertake API specification review, test case development & execution to infuse your software with greater functionality, reliability, and security.</p>
                   </div>
                 </div>
               </div>
@@ -142,4 +142,4 @@ const Ourservice = () => {
   )
 }
 
-export default Ourservice
+export default CardSoftware
