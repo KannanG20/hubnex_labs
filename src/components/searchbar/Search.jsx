@@ -37,7 +37,7 @@ const Search = ({toggler}) => {
   return (
     <>
     {!checkOpen &&
-      <div className=' absolute bg-[#66666633] lg:h-[73px] w-[90%] md:w-[50%] lg:w-[430px] justify-center items-center flex z-[100] top-24 right-5 lg:right-20'>
+      <div className='shadow-sm shadow-white absolute bg-[#66666633] lg:h-[73px] w-[90%] md:w-[50%] lg:w-[430px] justify-center items-center flex z-[100] top-24 right-5 lg:right-20'>
         <input type='text' placeholder='Search' className=' px-2 h-[40px] outline-none placeholder:text-white w-full text-white lg:w-[400px] bg-transparent rounded-md border-[2px] border-white'/>
       </div>
     }
