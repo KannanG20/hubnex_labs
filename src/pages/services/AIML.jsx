@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Hero from '../../components/serviceUpdated/Hero'
-import Ourservice from '../../components/serviceUpdated/Ourservice'
+import Ourservice from '../../components/serviceUpdated/childrens/AIMLCards'
 import Choose from '../../components/serviceUpdated/Choose'
 import Partners from '../../components/aboutpage/Partners'
 import Footer from '../../components/footer/Footer'
