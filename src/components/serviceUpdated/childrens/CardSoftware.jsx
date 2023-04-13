@@ -12,7 +12,7 @@ import './Ourservice.css';
 
 
 
-const CardSoftware = () => {
+const Ourservice = () => {
   return (
     <div className=' py-10 w-full bg-black flex justify-center items-center h-auto'>
         <div className=' h-full w-full flex justify-center items-center'>
@@ -142,4 +142,4 @@ const CardSoftware = () => {
   )
 }
 
-export default CardSoftware
+export default Ourservice
