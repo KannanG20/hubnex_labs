@@ -12,7 +12,7 @@ const Brand = () => {
             </div>
         </div>
         <div className=' text-white'>
-            <div className=' flex flex-col items-center font-semibold gap-5 text-xl sm:text-2xl mb-28 md:mb-14'>
+            <div className=' flex flex-col items-center font-semibold gap-5 text-xl sm:text-2xl mb-28 lg:mb-36'>
                 <div className=' flex flex-col items-center font-gilroy-semi-bold lg:text-[28px]'>
                     <span>your have an idea?</span>
                     <span>we have a team</span>
