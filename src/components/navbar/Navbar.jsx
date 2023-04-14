@@ -34,6 +34,10 @@ const Navbar = () => {
   const changeBg = ()=>{
 
   }
+  const isMobile=()=> {
+    const match=window.matchMedia("(max-width:315px)");
+    return(match && match.matches); 
+  }
 
   const handleIndustries = ()=>{
     setDropIndustries((prev)=> !prev);
@@ -51,7 +55,7 @@ const Navbar = () => {
         <div className='cursor-pointer z-50'>
           <Link to='/' className=' flex gap-2 items-center'>
             <img src={logo} alt='Logo' width={25} height={30}/>
-            <span className=' text-white font-gilroy-bold text-[30px] lg:text-[36px]'>hubnex labs</span>
+            <span className=' text-white font-gilroy-bold text-[20px] md:text-[30px] lg:text-[36px]'>hubnex labs</span>
           </Link>
         </div>
         <div className=' text-[18px] hidden xl:flex xl:gap-16 items-center font-gilroy-semi-bold text-white z-10'>
@@ -90,11 +94,11 @@ const Navbar = () => {
           <Link to='/startup-program' className= {` border-white ${active ? 'bg-white text-black' : 'bg-transparent text-white'}  border-2 py-[8px] px-[20px] rounded-full text-[20px] font-gilroy-semi-bold`}>Startup Program</Link>
         </div>
         <div className=' flex xl:hidden z-50'>
-          <img onClick={handleSearch} src={search} className=' z-50 absolute top-[30px] right-24 w-6' />
+          <img onClick={handleSearch} src={search} className={` z-50 absolute top-[30px] ${isMobile() ? 'hidden' : 'flex'} right-24 w-6`} />
           {!open ?
-              <img onClick={handleOpen} src={menu} width={30} className=" cursor-pointer right-8 top-6 absolute"/>
+              <img onClick={handleOpen} src={menu}  className=" w-[30px] cursor-pointer right-8 top-6 absolute"/>
               :
-              <img onClick={handleOpen} src={close} width={25} className=" z-[100] cursor-pointer right-8 top-6 absolute"/>
+              <img onClick={handleOpen} src={close}  className=" w-[25px] z-[100] cursor-pointer right-8 top-6 absolute"/>
           }
         </div>
         <MobileNavbar open={open}/>

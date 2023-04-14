@@ -36,7 +36,6 @@
     mask-composite: exclude;
 }
 
-
 .formDesign{
     background: linear-gradient(180deg, #4A4970 0%, rgba(255, 255, 255, 0) 100%),
     linear-gradient(180deg, rgba(160, 221, 255, 0.1) 0%, rgba(133, 90, 255, 0.1) 100%, rgba(255, 160, 246, 0.1) 100%),
@@ -46,5 +45,10 @@
     border: 1px solid #FFFFFF;
     filter: drop-shadow(4px 4px 0px #9772FF);
     background: transparent;
-
 }
+
+@media only screen and (max-width: 350px){
+    #circle{
+        width: 120px;
+    }
+} 

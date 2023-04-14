@@ -53,7 +53,8 @@ const MobileNavbar = ({ open }) => {
              <Link to='/industries/logistics'><div className='text-white p-4 text-center'>industries 3</div></Link> 
              <Link to='/industries/public-sector'><div className='text-white p-4 text-center'>industries 4</div></Link> 
              <Link to='/industries/retail'><div className='text-white p-4 text-center'>industries 5</div></Link> 
-             <Link to='/industries/travel'><div className='text-white p-4 text-center'>industries 6</div></Link>             </div>
+             <Link to='/industries/travel'><div className='text-white p-4 text-center'>industries 6</div></Link>             
+             </div>
           }
           </div>
           

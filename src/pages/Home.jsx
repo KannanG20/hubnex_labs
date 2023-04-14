@@ -37,7 +37,7 @@ const Home = () => {
                 <Brand/>
               </section>
               
-              <section  id='section-3' className='h-full lg:h-[982px] w-full bg-vector relative bg-cover bg-no-repeat bg-center'>
+              <section  id='section-3' className='h-auto lg:h-[982px] w-full bg-vector relative bg-cover bg-no-repeat bg-center'>
                 <Services/>
               </section>
               
@@ -45,7 +45,7 @@ const Home = () => {
                 <Testimonial/>
               </section>
               
-              <section id='section-5' className='h-full w-full '>
+              <section id='section-5' className='h-auto lg:h-full w-full '>
                 <About/>
               </section>
               

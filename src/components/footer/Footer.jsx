@@ -6,9 +6,14 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import CopyrightIcon from '@mui/icons-material/Copyright';
-import axios from 'axios';
 
 const Footer = () => {
+
+  
+  const isMobile=()=> {
+    const match=window.matchMedia("(max-width:912px)");
+    return(match && match.matches); 
+  }
 
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
@@ -58,20 +63,20 @@ const Footer = () => {
             <p className=' text-center leading-tight lg:text-start'>have some great idea or brand to develop? Let's build it together</p>
           </div>
           <div className=' text-xs font-gilroy-light md:text-[16px]'>
-            <p className=' text-center md:text-start leading-6'>our team will reach out to you as soon as <br/>possible</p>
+            <p className=' text-center md:text-start leading-6'>our team will reach out to you as soon as possible</p>
           </div>
         </div>
-          <form className='flex flex-col gap-4 m-auto text-[16px] w-80 md:w-auto md:m-0 mt-10  md:mt-0' onSubmit={handleSubmit}>
+          <form className='flex flex-col gap-4 m-auto text-[16px] w-[80%] md:w-auto md:m-0 mt-10  md:mt-0' onSubmit={handleSubmit}>
             <label className=' text-gray-200' htmlFor='first_name'>FIRST NAME</label>
-            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-80 md:w-96' type='text' id='first_name' required maxLength={25} onChange={(e)=>setFirstName(e.target.value)}/>
+            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='first_name' required maxLength={25} onChange={(e)=>setFirstName(e.target.value)}/>
             <label className=' text-gray-200' htmlFor='last_name'>LAST NAME</label>
-            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-80 md:w-96' type='text' id='last_name' required maxLength={25} onChange={(e)=>setLastName(e.target.value)}/>
+            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='last_name' required maxLength={25} onChange={(e)=>setLastName(e.target.value)}/>
             <label className=' text-gray-200' htmlFor='email'>EMAIL</label>
-            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-80 md:w-96' type='email' id='email' required onChange={(e)=>setEmail(e.target.value)}/>
+            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='email' id='email' required onChange={(e)=>setEmail(e.target.value)}/>
             <label className=' text-gray-200' htmlFor='mobile_no'>PHONE NUMBER</label>
-            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-80 md:w-96' type='tel' id='mobile_no' required maxLength={12} onChange={(e)=>setPhoneNo(e.target.value)}/>
+            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='tel' id='mobile_no' required maxLength={12} onChange={(e)=>setPhoneNo(e.target.value)}/>
             <label className=' text-gray-200' htmlFor='message'>MESSAGE</label>
-            <input className=' pt-5 outline-none bg-transparent border-b-[1px] border-b-gray-300 w-80 md:w-96' type='text' id='message' required onChange={(e)=>setMessage(e.target.value)}/>
+            <input className=' pt-5 outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='message' required onChange={(e)=>setMessage(e.target.value)}/>
             <button className=' h-[41px] mt-10 w-[121px] py-1 px-5 border-violet-700 border-[2px] border-t-0 border-l-0 relative bg-transparent rounded-full'>
               <label htmlFor='submit' className='flex cursor-pointer gap-3 w-full h-full rounded-full font-gilroy-light items-center justify-center text-[18px] absolute -left-[2px] bottom-[2px] border-white border-2'>
                     <input type='submit' placeholder='SUBMIT' className=' cursor-pointer'/>
@@ -81,18 +86,18 @@ const Footer = () => {
           </form>
       </div>
       <div className=' flex flex-col w-full h-40 justify-center xl:mt-8 items-center gap-8 text-white sm:h-80 text-lg'>
-        <span className=' font-gilroy-semi-bold text-[24px]'>Connect with us</span>
+        <span className=' font-gilroy-semi-bold text-[28px] md:text-[24px]'>Connect with us</span>
         <div className=' flex flex-wrap gap-5 items-center'>
-          <Link to='/about'><TwitterIcon fontSize='large'/></Link>
-          <Link to='/about'><LinkedInIcon fontSize='large'/></Link>
-          <Link to='/about'><InstagramIcon fontSize='large'/></Link>
-          <Link to='/about'><FacebookIcon fontSize='large'/></Link>
+          <Link to='/about'>{isMobile() ? <TwitterIcon fontSize='medium'/> : <TwitterIcon fontSize='large'/>}</Link>
+          <Link to='/about'>{isMobile() ? <LinkedInIcon fontSize='medium'/> : <LinkedInIcon fontSize='large'/>}</Link>
+          <Link to='/about'>{isMobile() ? <InstagramIcon fontSize='medium'/> : <InstagramIcon fontSize='large'/>}</Link>
+          <Link to='/about'>{isMobile() ? <FacebookIcon fontSize='medium'/> : <FacebookIcon fontSize='large'/> }</Link>
         </div>
       </div>
       <hr className=' w-full border-t-white border-t-[1px]'/>
       <div className=' h-10 w-[90%] xl:w-[80%] m-auto flex justify-center xl:justify-between text-white items-center'>
         <div>
-          <span className=' text-[15px] font-gilroy-light'>Copyright <CopyrightIcon fontSize='small'/> 2023 Hubnex. All Rights Reserved</span>
+          <span className=' text-[9.3px] md:text-[15px] font-gilroy-light'>Copyright <CopyrightIcon fontSize='small'/> 2023 Hubnex. All Rights Reserved</span>
         </div>
         <div className='hidden xl:flex gap-2 text-[15px] font-gilroy-light '>
           <Link to='/about'>About Us</Link>
