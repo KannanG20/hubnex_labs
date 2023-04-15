@@ -8,6 +8,10 @@ import i1 from '../../assets/i1.png'
 import i2 from '../../assets/i2.png'
 import i3 from '../../assets/i3.png'
 import i4 from '../../assets/i4.png'
+import t1 from '@assets/team1.png'
+import t2 from '@assets/team2.png'
+import t3 from '@assets/team3.png'
+import t4 from '@assets/team4.png'
 
 
 // import required modules
@@ -19,7 +23,7 @@ const Swiperpartners = () => {
         <div className="text-white font-bold text-4xl p-5 text-center"><h1>Our Partners</h1></div>
      <Swiper
         slidesPerView={1}
-        spaceBetween={30}
+        spaceBetween={50}
         freeMode={true}
         pagination={{
           clickable: true,
@@ -29,34 +33,38 @@ const Swiperpartners = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className='  m-auto gap-3 border w-60 flex flex-col justify-center items-center bg-contain bg-no-repeat p-3' id="box" >   
-                <img src={i1} alt="icon1" />
-                <span className=' text-center '>Design Team</span>
-                <p className='text-center '>Our design team turns imagination into reality. What you think, you will have!</p>    
+            <div className='  bg-transparent w-full h-[409px]  relative flex flex-col justify-start pt-24  items-center '>
+                <img src={t1} alt="" className=' absolute bottom-5 w-[250px] h-[365px]'/>               
+                <img src={i1} alt="icon1" className=' z-10'/>
+                <span className=' text-center z-10 text-[20px] font-gilroy-medium'>Design Team</span>
+                <p className='text-center z-10 w-[195px] text-[16px] font-gilroy-medium pt-2 '>Our design team turns imagination into reality. What you think, you will have!</p>    
             </div>
           </SwiperSlide>
 
         <SwiperSlide >
-            <div className=' m-auto w-60 p-3 gap-3 bg-contain bg-no-repeat flex flex-col justify-center items-center border ' id="box2">
-                    <img src={i2} alt="icon2" />
-                    <span className=''>Cloud Team</span>
-                    <p className='text-center'>ready to take your offline business online and use the cloud skills to connect to your business from anywhere.</p>
+        <div className='  bg-transparent w-full h-[409px]  relative flex flex-col justify-start pt-20  items-center '>
+                    <img src={t2} alt="" className=' absolute bottom-5 w-[250px] h-[365px]'/>                  
+                      <img src={i2} alt="icon2" className=' z-10'/>
+                    <span className='text-center z-10 w-[195px] text-[20px] font-gilroy-medium'>Cloud Team</span>
+                    <p className='text-center z-10 w-[195px] text-[16px] font-gilroy-medium pt-2'>ready to take your offline business online and use the cloud skills to connect to your business from anywhere.</p>
                 </div>
           </SwiperSlide>
 
         <SwiperSlide className='mb-6' >
-        <div className=' m-auto w-60 bg-card3 p-3 bg-contain bg-no-repeat gap-3 flex flex-col justify-center items-center border ' id="box3">
-                    <img src={i3} alt="icon3" className='m-4' />
-                    <span className=''>AI ML Team</span>
-                    <p className=' text-center'>Want to use the power of AI? With the help of our ML experts, we can build your product with the latest capabilities.</p>
+        <div className='  bg-transparent w-full h-[409px]  relative flex flex-col justify-start pt-20  items-center '>
+                    <img src={t3} alt="" className=' absolute bottom-5 w-[250px] h-[365px]'/>
+                    <img src={i3} alt="icon3" className='m-4 z-10' />
+                    <span className='text-center z-10 w-[195px] text-[20px] font-gilroy-medium'>AI ML Team</span>
+                    <p className=' text-center z-10 w-[195px] text-[16px] font-gilroy-medium pt-2'>Want to use the power of AI? With the help of our ML experts, we can build your product with the latest capabilities.</p>
                 </div>
         </SwiperSlide>
 
         <SwiperSlide>
-        <div className='  m-auto w-60 p-3 gap-3 bg-contain bg-no-repeat flex flex-col justify-center items-center border'id="box4">
-                    <img src={i4} alt="icon4" className='' />
-                    <span className=' '>Developer Team</span>
-                    <p className=' text-center'> Get your things done with the help of the best developers on our team. Bring your ideas into reality.</p>
+        <div className=' bg-transparent w-full h-[409px]  relative flex flex-col justify-start pt-20 items-center '>
+                    <img src={t4} alt="" className=' absolute bottom-5 w-[250px] h-[365px]'/>
+                    <img src={i4} alt="icon4" className='z-10 pr-8' />
+                    <span className=' text-center z-10 w-[195px] text-[20px] font-gilroy-medium pr-8'>Developer Team</span>
+                    <p className=' text-center z-10 w-[195px] text-[16px] font-gilroy-medium pt-2 pr-8'> Get your things done with the help of the best developers on our team. Bring your ideas into reality.</p>
                 </div>
         </SwiperSlide>
        
