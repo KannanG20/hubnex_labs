@@ -17,7 +17,7 @@ const Hero = () => {
       <div className=' w-[80%] m-auto h-full flex flex-col items-center justify-evenly'>
           <div className=' text-white  relative  py-10 flex flex-col items-center gap-16 lg:w-[680px] max-[820px]:text-center'>
               <img src={styleArrow} alt="styledArrow" className=' absolute -bottom-10 md:-bottom-5 w-32 left-2 md:left-20' />
-              <div className=' flex flex-col w-full items-center gap-4 md:gap-8'>
+              <div className=' flex flex-col w-full items-center gap-4'>
                 <span className=' md:text-[50px] text-[28px]  font-gilroy-bold lg:text-[70px] text-center'>Helping business</span>
                 <p className=' text-[28px] md:text-[50px] font-gilroy-bold lg:text-[70px]  text-center'>through technology</p>
               </div>
