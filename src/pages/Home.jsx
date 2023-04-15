@@ -20,15 +20,15 @@ const Home = () => {
   return (
 
     <>
-    <div className=' h-screen w-full relative'>
+    <div className=' h-screen w-full '>
 
-        <div className=' hidden lg:inline-block absolute left-10 z-50'>
+        <div className=' hidden xl:inline-block absolute left-10 z-50'>
               <LeftNavbar/>
           </div>
 
           <div className=' h-full w-full '>
 
-              <section id='section-1' className='lg:h-[982px] md:h-[750px] h-full w-full bg-landerImg md:bg-cover bg-no-repeat bg-[80%] md:bg-center'>
+              <section id='section-1' className='xl:h-[982px] md:h-[750px] overflow-hidden h-full w-full bg-landerImg md:bg-cover bg-no-repeat bg-[80%] md:bg-center'>
                   <Navbar/>
                   <Hero />
               </section>
