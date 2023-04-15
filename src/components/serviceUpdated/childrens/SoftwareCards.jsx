@@ -1,18 +1,18 @@
 import React from 'react'
-import testImg1 from '../../assets/costom devp.png';
-import testImg2 from '../../assets/Communication.png';
-import testImg3 from '../../assets/gg.png';
-import testImg4 from '../../assets/Management.png';
-import testImg5 from '../../assets/Mobile Development.png';
-import testImg6 from '../../assets/Group.png';
-import testImg7 from '../../assets/API Programming.png';
-import testImg8 from '../../assets/Ux Design.png';
-import testImg9 from '../../assets/Address marker.png';
-import './Ourservice.css';
+import testImg1 from '@assets/costom devp.png';
+import testImg2 from '@assets/Communication.png';
+import testImg3 from '@assets/gg.png';
+import testImg4 from '@assets/Management.png';
+import testImg5 from '@assets/Mobile Development.png';
+import testImg6 from '@assets/Group.png';
+import testImg7 from '@assets/API Programming.png';
+import testImg8 from '@assets/Ux Design.png';
+import testImg9 from '@assets/Address marker.png';
+import '../Ourservice.css';
 
 
 
-const Ourservice = () => {
+const CardSoftware   = () => {
   return (
     <div className=' py-10 w-full bg-black flex justify-center items-center h-auto'>
         <div className=' h-full w-full flex justify-center items-center'>
@@ -32,7 +32,7 @@ const Ourservice = () => {
                     <span className=' text-[70px] text-gray-400 font-gilroy-bold'>01</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5 '>
-                    <p className='   font-semibold text-[24px] text-white'>Functional Testing</p>
+                    <p className='   interFont text-[24px] text-white'>Functional Testing</p>
                     <p className=' font-gilroy-regular text-[18px] text-white '> We use the latest automation tools and frameworks to implement comprehensive functional testing, focusing on the user interface, security, APIs, client or server functionalities, and other similar applications.</p>
                   </div>
                 </div>
@@ -44,7 +44,7 @@ const Ourservice = () => {
                   <span className=' text-[70px] text-gray-400 font-gilroy-bold'>02</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Usability Testing</p>
+                    <p className='  interFont text-[24px] text-white'>Usability Testing</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> Leverage our extensive industry knowledge, advanced technology stack, UX trends, and cross-industry experience to assess the usability and convenience of your application for end-users.</p>
                   </div>
                 </div>
@@ -57,7 +57,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <span className='  font-semibold text-[24px] text-white'>Performance Testing</span>
+                    <span className='  interFont text-[24px] text-white'>Performance Testing</span>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> We help you predict app behavior and performance in real-life environments by identifying and addressing bottlenecks. We ensure that your software is stable, agile, and performs optimally under peak loads.</p>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <pre className='  font-semibold text-[24px] text-white'>Security Testing</pre>
+                    <p className='  interFont text-[24px] text-white'>Security Testing</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> Our in-depth security assessment & validation services and best practices proactively protect your system and information from possible intruders, increasing business continuity. </p>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Compatibility Testing</p>
+                    <p className='  interFont text-[24px] text-white'>Compatibility Testing</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> Test your software for compatibility across different browsers, operating systems, networks, databases, hardware, server, devices, etc., to ensure it meets diverse users’ requirements.</p>
                   </div>
                 </div>
@@ -94,7 +94,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Web & Mobile App Testing</p>
+                    <p className='  interFont text-[24px] text-white'>Web & Mobile App Testing</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> We provide end-to-end cross-platform/ functional/ non-functional testing with both manual & automated testing approaches to ensure your mobile & web applications are scalable, secure, and compatible. </p>
                   </div>
                 </div>
@@ -106,7 +106,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Automated Testing</p>
+                    <p className='  interFont text-[24px] text-white'>Automated Testing</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> Leverage our full-cycle test automation services, to achieve lower testing costs and faster time-to-market while ensuring zero flaws in production. Deliver error-free and quality web, mobile, and enterprise apps.</p>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Manual Testing</p>
+                    <p className='  interFont text-[24px] text-white'>Manual Testing</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '>Supplement automated testing with a manual component that tests user interface, installation, error handling, security, and much more to verify that all features work as expected.</p>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>API Testing</p>
+                    <p className='  interFont text-[24px] text-white'>API Testing</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> We undertake API specification review, test case development & execution to infuse your software with greater functionality, reliability, and security.</p>
                   </div>
                 </div>
@@ -142,4 +142,4 @@ const Ourservice = () => {
   )
 }
 
-export default Ourservice
+export default CardSoftware

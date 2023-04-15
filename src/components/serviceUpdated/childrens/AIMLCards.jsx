@@ -1,14 +1,14 @@
 import React from 'react'
-import testImg1 from '../../assets/costom devp.png';
-import testImg2 from '../../assets/Communication.png';
-import testImg3 from '../../assets/gg.png';
-import testImg4 from '../../assets/Management.png';
-import testImg5 from '../../assets/Mobile Development.png';
-import testImg6 from '../../assets/Group.png';
-import testImg7 from '../../assets/API Programming.png';
-import testImg8 from '../../assets/Ux Design.png';
-import testImg9 from '../../assets/Address marker.png';
-import './Ourservice.css'
+import testImg1 from '@assets/costom devp.png';
+import testImg2 from '@assets/Communication.png';
+import testImg3 from '@assets/gg.png';
+import testImg4 from '@assets/Management.png';
+import testImg5 from '@assets/Mobile Development.png';
+import testImg6 from '@assets/Group.png';
+import testImg7 from '@assets/API Programming.png';
+import testImg8 from '@assets/Ux Design.png';
+import testImg9 from '@assets/Address marker.png';
+import '../Ourservice.css'
 
 
 
@@ -32,7 +32,7 @@ const Ourservice = () => {
                     <span className=' text-[70px] text-gray-400 font-gilroy-bold'>01</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5 '>
-                    <p className='   font-semibold text-[24px] text-white'>Machine Learning</p>
+                    <p className='   interFont text-[24px] text-white'>Machine Learning</p>
                     <p className=' font-gilroy-regular text-[18px] text-white '> Build and deploy an E2E machine learning lifecycle in your system. Take accurate business decisions by interpreting complex data, detecting trends & patterns, and integrating advanced ML algorithms.</p>
                   </div>
                 </div>
@@ -44,7 +44,7 @@ const Ourservice = () => {
                   <span className=' text-[70px] text-gray-400 font-gilroy-bold'>02</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Chatbot Development</p>
+                    <p className='  interFont text-[24px] text-white'>Chatbot Development</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> Build intelligent AI-powered apps trained to interact with humans using touch sensing, voice, language recognition, and programmed decision making to offer highly evolved chatbot solutions.</p>
                   </div>
                 </div>
@@ -57,7 +57,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <span className='  font-semibold text-[24px] text-white'>Natural Language Processing</span>
+                    <span className='  interFont text-[24px] text-white'>Natural Language Processing</span>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> Set algorithms that will work across large data sets to extract meaningful insights for an unsupervised machine learning experience. Analyze existing text data for trends, threats, and new business prospects.</p>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <pre className='  font-semibold text-[24px] text-white'>IoT Analytics</pre>
+                    <p className='  interFont text-[24px] text-white'>IoT Analytics</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '>Leverage ML to transform IoT data into actionable business insights. Capture, process & analyze data to reduce equipment downtime, minimize accidents, and identify trends & anomalies in sensor data.</p>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Data Mining</p>
+                    <p className='  interFont text-[24px] text-white'>Data Mining</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '>Explore data in-depth and structure it into appropriate models to make critical business decisions. Extract information and transform it into a relevant model for real-time use</p>
                   </div>
                 </div>
@@ -94,7 +94,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Image Processing</p>
+                    <p className='  interFont text-[24px] text-white'>Image Processing</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> Build custom applications for automated analysis, recognize & process images, and integrate neural networks for text translation. Optimize production environments, scale-up operations to the cloud or edge.</p>
                   </div>
                 </div>
@@ -106,7 +106,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Voice-Based AI</p>
+                    <p className='  interFont text-[24px] text-white'>Voice-Based AI</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> Deploy powerful customized voice-enabled applications that facilitate streamlined and faster app operations. Leverage language-based localization, custom skill development & mobile app integration.</p>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>AI Consulting & Integration</p>
+                    <p className='  interFont text-[24px] text-white'>AI Consulting & Integration</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '>Modernize existing systems and sharpen the functionality of cross-platform interface applications. Automate internal processes and provide solutions that redefine how your customers interact with your products.</p>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Robotic Process Automation</p>
+                    <p className='  interFont text-[24px] text-white'>Robotic Process Automation</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '>Use RBA to create solutions that help reduce overall manual efforts, minimize risks of human error, increase the productivity of daily processes, and leverage exclusive data validation & data search.</p>
                   </div>
                 </div>

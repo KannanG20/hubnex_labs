@@ -14,18 +14,18 @@ import './style.css'
 
 const Contact = () => {
   return (
-    <div className='bg-black h-[1024px] w-full flex flex-col justify-between pt-10 text-white '>
+    <div className='bg-black h-[1024px] w-full flex flex-col justify-between pt-10 text-white overflow-hidden'>
        <div className=' w-full md:w-[90%] flex flex-col h-full m-auto justify-between items-center'>
           <div className=' flex w-full justify-between h-full items-center flex-col lg:flex-row'>
 
-            <div className=' flex flex-col gap-20 w-full md:w-[50%] items-center lg:items-start'>
-                <span className=' text-2xl md:text-[50px] xl:text-[70px] font-gilroy-semi-bold'>Connect with us</span>
-                <p className=' lg:text-[28px] text-center lg:text-start font-gilroy-medium'>Revolutionize Your Startup's IT Strategy with Our Consultancy Services</p>
+            <div className=' flex flex-col gap-5 md:gap-20 w-full md:w-[50%] items-center lg:items-start'>
+                <span className=' text-[32px] md:text-[50px] xl:text-[70px] font-gilroy-semi-bold'>Connect with us</span>
+                <p className=' md:text-[28px] text-[16px] text-center lg:text-start font-gilroy-medium'>Revolutionize Your Startup's IT Strategy with Our Consultancy Services</p>
             </div>
 
             <div className='  formDesign box h-auto py-5 rounded-md flex flex-col  items-center justify-center gap-10 w-[95%] md:w-[70%] lg:w-[592px]'>
-              <span className='  text-2xl m-5 lg:text-[40px] font-gilroy-bold'>Let's build it together</span>
-              <form className=' flex flex-col gap-5 w-full px-10 font-gilroy-medium text-[20px] z-50'>
+              <span className='  text-[24px] md:m-5 lg:text-[40px] text-center font-gilroy-bold'>Let's build it together</span>
+              <form className=' flex flex-col gap-5 w-full px-5 md:px-10 font-gilroy-medium text-[20px] z-50'>
                 <label htmlFor="username" className=' flex border-b-2 border-b-gray-600 py-2 gap-5 w-full'>
                   <PersonIcon/>
                   <input type="text" className=' w-full border-none outline-none bg-transparent' placeholder='Name *'/>
@@ -54,12 +54,12 @@ const Contact = () => {
             </div>
            </div>
           <div className=' w-full flex flex-col items-center py-10 gap-5 justify-center'>
-               <span className=' text-[18px] xl:text-[24px] font-gilroy-semi-bold'>Connect with us</span>
+               <span className=' text-[24px] font-gilroy-semi-bold'>Connect with us</span>
                <div className=' flex gap-5'>
-                <TwitterIcon fontSize='large'/>
-                <LinkedInIcon fontSize='large'/>
-                <InstagramIcon fontSize='large'/> 
-                <FacebookIcon fontSize='large'/>
+                <TwitterIcon fontSize='medium'/>
+                <LinkedInIcon fontSize='medium'/>
+                <InstagramIcon fontSize='medium'/> 
+                <FacebookIcon fontSize='medium'/>
 
                </div>
            </div>
@@ -67,7 +67,7 @@ const Contact = () => {
        <div className=' w-full border-t-2 h-14 border-t-white flex items-center justify-center'>
                <div className=' w-[90%]  flex justify-center xl:justify-between items-center h-full'>
 
-                    <div className=' flex font-gilroy-light text-[15px]'>
+                    <div className=' flex font-gilroy-light text-[8px] md:text-[15px]'>
                       <span>Copyright <CopyrightIcon/> 2023 Hubnex, All Rights Reserved</span>
                     </div>
 

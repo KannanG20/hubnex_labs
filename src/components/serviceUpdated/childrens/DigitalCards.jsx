@@ -1,14 +1,14 @@
 import React from 'react'
-import testImg1 from '../../assets/costom devp.png';
-import testImg2 from '../../assets/Communication.png';
-import testImg3 from '../../assets/gg.png';
-import testImg4 from '../../assets/Management.png';
-import testImg5 from '../../assets/Mobile Development.png';
-import testImg6 from '../../assets/Group.png';
-import testImg7 from '../../assets/API Programming.png';
-import testImg8 from '../../assets/Ux Design.png';
-import testImg9 from '../../assets/Address marker.png';
-import './Ourservice.css'
+import testImg1 from '@assets/costom devp.png';
+import testImg2 from '@assets/Communication.png';
+import testImg3 from '@assets/gg.png';
+import testImg4 from '@assets/Management.png';
+import testImg5 from '@assets/Mobile Development.png';
+import testImg6 from '@assets/Group.png';
+import testImg7 from '@assets/API Programming.png';
+import testImg8 from '@assets/Ux Design.png';
+import testImg9 from '@assets/Address marker.png';
+import '../Ourservice.css'
 
 
 
@@ -32,8 +32,8 @@ const Ourservice = () => {
                     <span className=' text-[70px] text-gray-400 font-gilroy-bold'>01</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5 '>
-                    <p className='   font-semibold text-[24px] text-white'>Search Engine Optimization</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white '>In the world of digital revolution, a fantastic user friendly website making good business sense will fetch you far more customers than a regular website. We provide you with cutting edge website and app development technology for giving your brand a strong digital presence</p>
+                    <p className='   interFont text-[24px] text-white'>Search Engine Optimization</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white '>In the world of digital revolution, a fantastic user friendly website making good business sense will fetch you far more customers than a regular website. We provide you with...</p>
                   </div>
                 </div>
 
@@ -44,8 +44,8 @@ const Ourservice = () => {
                   <span className=' text-[70px] text-gray-400 font-gilroy-bold'>02</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>PR & Brand Management</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '>PR & Brand Management is prominent for every business to attain perfect growth, whether you have a worldwide business with millions of customers or just a simple start-up that is making its first journey into the world of the internet, how others see and feel about your brand is extremely important.</p>
+                    <p className='  interFont text-[24px] text-white'>PR & Brand Management</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '>PR & Brand Management is prominent for every business to attain perfect growth, whether you have a worldwide business with millions of customers or just a simple... </p>
                   </div>
                 </div>
                 
@@ -57,8 +57,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <span className='  font-semibold text-[24px] text-white'>Social Media Optimisation</span>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '>Social media optimization uses social media as a catalyst to increase your brand presence. Through strategy and creative campaigns, we increase the awareness of the product or brand to generate viral publicity on various social media channels like Facebook, Twitter, Instagram, Youtube, LinkedIn etc</p>
+                    <span className='  interFont text-[24px] text-white'>Social Media Optimisation</span>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '>Social media optimization uses social media as a catalyst to increase your brand presence. Through strategy and creative campaigns, we increase the awareness of... </p>
                   </div>
                 </div>
 
@@ -69,8 +69,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <pre className='  font-semibold text-[24px] text-white'>Political Campaign Management</pre>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '>At HubNex we have an experienced team with a proven track record in managing successful political and election campaigns at state and national level. Our team undertakes extensive strategic political surveys, campaign planning & training, perception management, voters connect, media advertising, social media management and much more to help you in online and offline election campaigns</p>
+                    <p className='  interFont text-[24px] text-white'>Political   Campaign Management</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '>At HubNex we have an experienced team with a proven track record in managing successful political and election campaigns at state and national level. Our team... </p>
                   </div>
                 </div>
 
@@ -81,8 +81,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Content Management</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '>Content is King! We provide you with relatable high quality content, logo designs, promotional graphics, infographics and videos to give your brand an outstanding presence on various social media platforms. Good content undoubtedly brings more customers, and also gives you an extra edge over your competitors.</p>
+                    <p className='  interFont text-[24px] text-white'>Content Management</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '>Content is King! We provide you with relatable high quality content, logo designs, promotional graphics, infographics and videos to give your brand an outstanding... </p>
                   </div>
                 </div>
                 
@@ -94,8 +94,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Outdoor Media Marketing</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '>The outdoor media advertising comprises billboards, taxis, interior and exterior of buses, and business vehicles. The transit advertising, bus benches, billboards are the efficacious outdoor campaigns. We, at HubNex, provide a multitude of outdoor advertising solutions, all of them have their own unique importance and impactwalls, advertising posters, billboards, street furniture, rail media, bus, and much more that effectively meet</p>
+                    <p className='  interFont text-[24px] text-white'>Outdoor Media Marketing</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '>The outdoor media advertising comprises billboards, taxis, interior and exterior of buses, and business vehicles. The transit advertising, bus benches, billboards are t...</p>
                   </div>
                 </div>
 
@@ -106,8 +106,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Business Consulting</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '> We provide excellent strategic business solutions to various corporates. We develop distinctive and adaptive strategies that help companies succeed in today’s complex and uncertain world.Our solutions are the unique product of an intensely creative, highly contextual, and deeply collaborative process</p>
+                    <p className='  interFont text-[24px] text-white'>Business Consulting</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '> We provide excellent strategic business solutions to various corporates. We develop distinctive and adaptive strategies that help companies succeed in today’s complex and uncertain world.Our solutions are the...</p>
                   </div>
                 </div>
 
@@ -118,8 +118,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Video Production</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '>We live in a world driven by images and visual storytelling. HubNex has helped countless businesses tell their unique stories. And we have the delighted customers to prove it! Whether you need a commercial about your products or services, an internal sales or training video, testimonial videos, a video to help optimize your website, or videos to embed into your social media posts, we’ll deliver eye-catching productions that turn your brand into a star.</p>
+                    <p className='  interFont text-[24px] text-white'>Video Production</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '>We live in a world driven by images and visual storytelling. HubNex has helped countless businesses tell their unique stories. And we have the delighted customers to prove it! Whether you need...</p>
                   </div>
                 </div>
                 
@@ -131,8 +131,8 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  font-semibold text-[24px] text-white'>Print Media</p>
-                    <p className=' font-gilroy-regular text-[18px] text-white  '>Print Media Marketing is a physical form of advertising that uses physical printed media platforms such as newspapers, magazines, catalogs, pamphlets, etc. Despite the fact that print media has been overridden by digital media, the existence is not lost. In order to reach a huge audience, advertisers are using mobile advertising, banner ads, social media ads, etc.The collective efforts of sourcing, producing, and creative specialists are working smartly to deliver corporate communication and promotional fundamentals in the time-efficient, reliable, and professional approach. Print Media is a c ombination of spectacular solutions, innovative ideas and we offer professional print media advertising.</p>
+                    <p className='  interFont text-[24px] text-white'>Print Media</p>
+                    <p className=' font-gilroy-regular text-[18px] text-white  '>Print Media Marketing is a physical form of advertising that uses physical printed media platforms such as newspapers, magazines, catalogs, pamphlets, etc. Despite the fact that print media has been... </p>
                   </div>
                 </div>
               </div>

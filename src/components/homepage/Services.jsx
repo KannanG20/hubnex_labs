@@ -60,12 +60,12 @@ const Services = () => {
   return (
 
 
-<div className=' w-full h-full relative md:py-5 lg:py-0' >
-    <div className=' w-full lg:w-[90%] xl:w-[70%] h-full flex-none  md:flex m-auto justify-between items-center py-5 md:py-0'>
-        <div className=' flex flex-col md:gap-5 lg:w-full justify-around md:justify-center sm:gap-5 h-full font-semibold w-full'>
+<div className=' w-full h-full relative py-10 md:py-5 lg:py-0' >
+    <div className=' w-full lg:w-[90%] xl:w-[70%] h-full flex-none  md:flex m-auto justify-between items-center py-5 lg:py-0'>
+        <div className=' flex flex-col md:gap-5 justify-around lg:justify-center gap-5 sm:py-0 sm:h-full w-full'>
             <h2 className=' md:static top-8 left-14 md:mt-0 text-4xl md:text-[60px] lg:w-full font-gilroy-bold text-center leading-tight lg:text-start'>let us build it for you.</h2>
-            <div className=' flex md:h-full lg:hidden flex-col md:gap-10  justify-center items-center w-full'>
-              <div className=' flex w-[200px] md:w-[300px] h-[400px] md:h-auto relative overflow-hidden'>
+            <div className=' flex md:h-full lg:hidden flex-col md:gap-10 justify-center items-center w-full'>
+              <div className=' flex w-[200px]  h-[400px] lg:h-auto relative overflow-hidden'>
                 <Link to='service' className=' z-10 w-full h-full'>
                   <img src={iphone}/>
                 </Link>

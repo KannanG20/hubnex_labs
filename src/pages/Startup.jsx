@@ -15,15 +15,13 @@ const Startup = () => {
   }
 
   return (
-    <div className=' h-screen relative'>
+    <div className=' overflow-hidden'>  
         <Hero/>
         <Partner/>
         <Testimonial/>
         <Team/>
         {isMobile() ? <SwiperCards/> : <Field/>}
         <Contact/>
-        
-        
     </div>
   )
 }
