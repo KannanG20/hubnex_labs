@@ -10,7 +10,7 @@ const Hero = () => {
         <div className=' h-screen w-full flex items-center justify-center'>
         <div className=' w-[80%] flex items-center'>
             <div className=' text-white flex flex-col justify-center items-center lg:items-start gap-10 w-90 max-[820px]:text-center'>
-                <div className=' xl:text-[70px] text-5xl font-gilroy-bold lg:w-[700px]'>Retail and Customer Goods</div>
+                <div className='  text-[28px] md:text-[50px] lg:text-[70px] font-gilroy-bold leading-tight lg:w-[700px]'>Retail and Customer Goods</div>
                 <p className=' text-[24px] font-gilroy-semi-bold lg:w-[600px]'>Delivering with Care Sustainable Solutions for a Healthier Planet</p>
                 <button className=' h-[44px] w-[140px] border-violet-700 border-[2px] lg:py-[10px] px-5 border-t-0 border-l-0 relative bg-transparent rounded-full'>
                     <Link className=' w-full h-full rounded-full flex justify-center items-center  font-gilroy-semi-bold text-[20px] absolute bg-white text-black -left-[2px] bottom-[2px] border-white border-2'>Let's talk</Link>
