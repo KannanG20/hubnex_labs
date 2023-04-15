@@ -17,6 +17,7 @@ const Swiperpartners = () => {
   return (
     <div className='bg-black text-white h-[200px] '>
         <div className="text-white font-bold text-4xl p-5 text-center"><h1>Our Partners</h1></div>
+        <div className=' flex justify-center items-center w-full'>
      <Swiper
         slidesPerView={2}
         spaceBetween={30}
@@ -28,13 +29,13 @@ const Swiperpartners = () => {
         autoplay={true}
         className="mySwiper"
       >
-        <SwiperSlide ><img src={reddit} alt="reddit"></img></SwiperSlide>
-        <SwiperSlide ><img src={chorus} alt="chorus"></img></SwiperSlide>
-        <SwiperSlide className='mb-6' ><img src={tcs} alt="tcs"></img></SwiperSlide>
-        <SwiperSlide><img src={pantera} alt="pantera"></img></SwiperSlide>
+        <SwiperSlide className=' py-2 px-2' ><img src={reddit}  width={150} className='object-cover'  alt="reddit"></img></SwiperSlide>
+        <SwiperSlide className=' py-2 px-2' ><img src={chorus} width={150} className='object-cover'  alt="chorus"></img></SwiperSlide>
+        <SwiperSlide className=' py-2 px-2' ><img src={tcs} width={150} className='object-cover'  alt="tcs"></img></SwiperSlide>
+        <SwiperSlide className=' py-2 px-2'><img src={pantera} width={150} className='object-cover'  alt="pantera"></img></SwiperSlide>
        
       </Swiper>
-      
+      </div>
     </div>
   )
 }

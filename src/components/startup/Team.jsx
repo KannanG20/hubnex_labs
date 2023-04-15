@@ -4,7 +4,6 @@ import mission from '@assets/Our-Mission.png.png';
 import philosophy from '@assets/Our-Philosophy.png.png';
 import strategy from '@assets/Our-Strategy.png.png';
 import vision from '@assets/Our-Vision.png.png';
-import t2 from '@assets/team2.png'
 
 const Team = () => {
   return (

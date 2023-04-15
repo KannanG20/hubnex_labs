@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import '../../App.css'
 
 const Brand = () => {
     
@@ -6,9 +7,9 @@ const Brand = () => {
  
     <div className='w-full h-full flex justify-center flex-col items-center relative bg-moon bg-cover bg-no-repeat bg-center'>
         <div className=' h-full w-full text-white flex justify-center'>
-            <div className=' flex flex-col md:justify-start lg:gap-0 w-[300px] mt-24 md:mt-28 lg:mt-36 h-full md:w-full items-center'>
-                <h1 className=' text-[28px] md:text-[50px] lg:text-[70px] xl:text-[80px]  font-gilroy-bold text-center'>helping you build products</h1>
-                <span className=' text-black md:text-[50px] font-gilroy-bold text-[32px] lg:text-[70px] xl:text-[80px]'>that shine</span>
+            <div className=' flex flex-col md:justify-start sm:gap-0 w-[300px] mt-24 xs:mt-36 gap-5 sm:mt-52 md:mt-56 lg:mt-36 lg: h-full sm:w-full items-center'>
+                <h1 className=' text-[28px] sm:text-[50px] lg:text-[70px] xl:text-[80px]  font-gilroy-bold text-center'>helping you build products</h1>
+                <span className=' text-black sm:text-[50px] font-gilroy-bold text-[32px] lg:text-[70px] xl:text-[80px]'>that shine</span>
             </div>
         </div>
         <div className=' text-white'>

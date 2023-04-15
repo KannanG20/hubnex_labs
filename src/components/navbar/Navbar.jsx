@@ -41,9 +41,11 @@ const Navbar = () => {
 
   const handleIndustries = ()=>{
     setDropIndustries((prev)=> !prev);
+    setDropServices(false);
   }
   const handleServices = ()=>{
     setDropServices((prev)=> !prev);
+    setDropIndustries(false);
   }
 
 
@@ -98,7 +100,7 @@ const Navbar = () => {
           {!open ?
               <img onClick={handleOpen} src={menu}  className=" w-[30px] cursor-pointer right-8 top-6 absolute"/>
               :
-              <img onClick={handleOpen} src={close}  className=" w-[25px] z-[100] cursor-pointer right-8 top-6 absolute"/>
+              <img onClick={handleOpen} src={close}  className=" w-[25px] z-[100] cursor-pointer right-8 top-7 absolute"/>
           }
         </div>
         <MobileNavbar open={open}/>
