@@ -7,15 +7,15 @@ function AdminLogin() {
    
         <Link  className='  flex gap-2 items-center'>
         <img src={logo} alt='Logo' width={25} height={30}/>
-        <span className='text-white font-gilroy-bold text-[20px] md:text-[80px] lg:text-[36px]'>hubnex labs</span>
+        <span className='text-white font-gilroy-bold text-[20px] md:text-[80px] lg:text-[36px] '>hubnex labs</span>
     </Link>
-    <div className="min-h-screen bg-blue-300 flex items-center justify-center ">
+    <div className="h-screen 2xl:h-[208px] bg-footerImg bg-cover bg-center w-full relative   min-h-screen  flex items-center justify-center ">
       <div className="bg-white p-16 m-0 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold mb-6 text-center">
+        <h1 className="text-4xl font-bold mb-6 text-center font-gilroy-bold">
 Admin Login</h1>
         <form>
           <div className="mb-5">
-            <label className="block text-gray-700 font-bold mb-2" htmlFor="username">
+            <label className="block text-gray-700 font-bold mb-2 font-gilroy-bold" htmlFor="username">
               Username
             </label>
             <input
@@ -26,11 +26,11 @@ Admin Login</h1>
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2" htmlFor="password">
+            <label className="block text-gray-700 font-bold mb-2 font-gilroy-bold" htmlFor="password">
               Password
             </label>
             <input
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
               id="password"
               type="password"
               placeholder="Enter your password"
@@ -38,7 +38,7 @@ Admin Login</h1>
           </div>
           <div className="flex items-center justify-between">
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline font-gilroy-bold"
               type="button"
             >
               Login

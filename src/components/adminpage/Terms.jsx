@@ -1,14 +1,16 @@
 import React from 'react'
-
+import { Editor } from "react-draft-wysiwyg";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 const Terms = () => {
   return (
-    <div>
-      <h1 className='text-white text-3xl font-gilroy'>
-      Content Management System
-      </h1>
-      <div className=''>
-
-      </div>
+    <div> 
+      <Editor
+  editorState={editorState}
+  toolbarClassName="toolbarClassName"
+  wrapperClassName="wrapperClassName"
+  editorClassName="editorClassName"
+  onEditorStateChange={this.onEditorStateChange}
+/>;
     </div>
   )
 }
