@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../navbar/Navbar'
-import SideLine from './SideLine'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import styleArrow from '../../assets/styledArrow.png'
 import './style.css'
@@ -10,7 +9,6 @@ const Hero = () => {
   return (
     <div className=' h-screen w-full lg:h-auto bg-black'>
       <Navbar/>
-      <SideLine/>
     <div className=' lg:h-[700px] relative h-full w-full flex flex-col items-center lg:justify-center '>
       <div className=' w-52 h-40 rounded-full bg-slate-400 absolute top-8 left-6 ' id="circle"></div>
       

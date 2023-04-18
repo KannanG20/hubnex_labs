@@ -59,7 +59,7 @@ const Footer = () => {
           <div className=' text-4xl lg:text-[70px] font-gilroy-extrabold text-white'>
             <h1 className=' text-center lg:text-start'>let's talk</h1>
           </div>
-          <div className=' w-full md:w-[368px] lg:h-[330px] text-1xl lg:text-[48px] font-gilroy-light'>
+          <div className=' w-[90%] mx-auto md:mx-0 md:w-[368px] lg:h-[330px] text-1xl lg:text-[48px] font-gilroy-light'>
             <p className=' text-center leading-tight lg:text-start'>have some great idea or brand to develop? Let's build it together</p>
           </div>
           <div className=' text-xs font-gilroy-light md:text-[16px]'>
@@ -102,11 +102,11 @@ const Footer = () => {
         <div className='hidden xl:flex gap-2 text-[15px] font-gilroy-light '>
           <Link to='/about'>About Us</Link>
           <hr className=' border-r-[1px] h-5'/>
-          <Link to='service'>Data Protection</Link>
+          <Link to='/service'>Data Protection</Link>
           <hr className=' border-r-[1px] h-5'/>
-          <Link to='/admin'>Terms and Conditions</Link>
+          <Link to='/'>Terms and Conditions</Link>
           <hr className=' border-r-[1px] h-5'/>
-          <Link to='/about'>Privacy Policy</Link>
+          <Link to='/'>Privacy Policy</Link>
           <hr className=' border-r-[1px] h-5'/>
           <Link to='/contact'>Contact Us</Link>
           <hr className=' border-r-[1px] h-5'/>

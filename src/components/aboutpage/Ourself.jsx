@@ -5,8 +5,9 @@ const Ourself = () => {
     <div className=" h-auto md:py-0 py-24 lg:h-[982px] w-full bg-earth bg-contain bg-no-repeat bg-black bg-bottom">
         <div className=' h-full w-full flex justify-center '>
             <div className=' w-[80%] flex justify-between '>
-                <div className=' w-full flex flex-col gap-20 text-white   '>
-                   <div className=' w-90 flex flex-col gap-10 text-center md:mt-40 '>
+                <div className=' w-full flex flex-col gap-28 text-white '>
+
+                   <div className=' w-90 flex flex-col gap-16 text-center md:mt-40 '>
                     <span className=' text-[28px] md:text-[65px] font-gilroy-semi-bold '>Who We Are</span>
                     <p className='text-center font-gilroy-medium text-[15px] md:text-[24px]'>Our values shape the culture of our organization and define who we are. These are at the core of how we work and what we do. We are:</p>
                    </div>

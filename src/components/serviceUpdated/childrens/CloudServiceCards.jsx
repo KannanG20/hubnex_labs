@@ -29,7 +29,7 @@ const CloudServiceCard = () => {
                     <span className=' text-[70px] text-gray-400 font-gilroy-bold'>01</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5 '>
-                    <p className='   interFont text-[24px] text-white'>Cloud Discovery & Roadmap</p>
+                    <p className='   font-gilroy-semi-bold text-[24px] text-white'>Cloud Discovery & Roadmap</p>
                     <p className=' font-gilroy-regular text-[18px] text-white '>Streamline cloud adoption and transformation based on an in-depth analysis of the current environment, possible opportunities, risks, and limitations using tried and tested technologies.</p>
                   </div>
                 </div>
@@ -41,7 +41,7 @@ const CloudServiceCard = () => {
                   <span className=' text-[70px] text-gray-400 font-gilroy-bold'>02</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[24px] text-white'>Cloud Migration & Deployment</p>
+                    <p className='  font-gilroy-semi-bold text-[24px] text-white'>Cloud Migration & Deployment</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> We combine exhaustive practical experience with technological expertise to determine the best migration strategy based on business objectives and a future-proof roadmap.</p>
                   </div>
                 </div>
@@ -54,7 +54,7 @@ const CloudServiceCard = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <span className='  interFont text-[24px] text-white'>Cloud Applications & Platforms</span>
+                    <span className='  font-gilroy-semi-bold text-[24px] text-white'>Cloud Applications & Platforms</span>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> We help you leverage Software as a Service (SaaS) platforms like Office, SharePoint and CRM for process automation, business productivity and maximizing ROI.</p>
                   </div>
                 </div>
@@ -66,7 +66,7 @@ const CloudServiceCard = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[24px] text-white'>Cloud Integration & Orchestration</p>
+                    <p className='  font-gilroy-semi-bold text-[24px] text-white'>Cloud Integration & Orchestration</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> We help you manage the core infrastructure & workflows across cloud environments and unite several independent automation processes into a cohesive system for effective infrastructure management.</p>
                   </div>
                 </div>
@@ -78,7 +78,7 @@ const CloudServiceCard = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[24px] text-white'>Cloud Management & Maintenance</p>
+                    <p className='  font-gilroy-semi-bold text-[24px] text-white'>Cloud Management & Maintenance</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> OOur DevOps methodology increases speed and agility, helping our clients scale and flex rapidly to stay relevant in the evolving marketplace.</p>
                   </div>
                 </div>
@@ -90,7 +90,7 @@ const CloudServiceCard = () => {
                   <span className=' text-[70px] text-gray-400 font-gilroy-bold'>06</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[24px] text-white'>Cloud Governance & Security</p>
+                    <p className='  font-gilroy-semi-bold text-[24px] text-white'>Cloud Governance & Security</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> Our data management services comprise continuous monitoring, performance optimization, risk assessment, and data protection, and enabling secure & smooth data transfer. </p>
                   </div>
                 </div>

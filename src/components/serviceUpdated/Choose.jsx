@@ -6,9 +6,9 @@ const Choose = () => {
     <div className=" h-auto lg:py-0 py-24 xl:h-screen overflow-hidden w-full bg-black bg-cover">
         <div className=' h-full w-full flex justify-center items-center '>
             <div className='w-[80%] flex justify-center'>
-                <div className=' w-full flex flex-col justify-center gap-16 text-white '>
+                <div className=' w-full flex flex-col justify-center gap-28 text-white '>
 
-                   <div className=' w-full flex flex-col gap-14 text-center  '>
+                   <div className=' w-full flex flex-col gap-20 text-center  '>
                     <span className=' text-[28px] md:text-[64px] font-gilroy-bold tracking-wider'>why choose us?</span>
                     <p className='text-center font-gilroy-regular text-[15px] md:text-[20px]'>Hubnex Lab employs industry best practices to help businesses globally scale, transform, and gain competitive advantage through innovative software solutions.</p>
                    </div>

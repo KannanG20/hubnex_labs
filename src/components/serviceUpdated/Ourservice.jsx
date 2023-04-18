@@ -32,7 +32,7 @@ const Ourservice = () => {
                     <span className=' text-[50px] md:text-[70px] text-gray-400 font-gilroy-bold'>01</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5 '>
-                    <p className='   interFont text-[20px] md:text-[24px] text-white'>Custom Web Development</p>
+                    <p className='   font-gilroy-semi-bold text-[20px] md:text-[24px] text-white'>Custom Web Development</p>
                     <p className=' font-gilroy-regular md:text-[18px] text-[16px] text-white '> We build customized, intuitive web app  solutions that optimize operations,  accelerate workflows, boost revenue, and  deliver an exceptional product experience.</p>
                   </div>
                 </div>
@@ -44,7 +44,7 @@ const Ourservice = () => {
                   <span className=' text-[50px] md:text-[70px] text-gray-400 font-gilroy-bold'>02</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[20px] md:text-[24px] text-white'>Software Consulting</p>
+                    <p className='  font-gilroy-semi-bold text-[20px] md:text-[24px] text-white'>Software Consulting</p>
                     <p className=' font-gilroy-regular md:text-[18px] text-[16px] text-white  '> We analyze businesses needs and create a  roadmap for building a software solution  optimized to specific requirements and  delivering the best value.</p>
                   </div>
                 </div>
@@ -57,7 +57,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <span className='  interFont text-[20px] md:text-[24px] text-white'>Implementation & Deployment</span>
+                    <span className='  font-gilroy-semi-bold text-[20px] md:text-[24px] text-white'>Implementation & Deployment</span>
                     <p className=' font-gilroy-regular md:text-[18px] text-[16px] text-white  '> We device comprehensive and agile  deployment & implementation plans using proven methodologies to deliver enhanced and cost-effective solutions to end-users.</p>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[20px] md:text-[24px] text-white'>Maintenance & Management</p>
+                    <p className='  font-gilroy-semi-bold text-[20px] md:text-[24px] text-white'>Maintenance & Management</p>
                     <p className=' font-gilroy-regular md:text-[18px] text-[16px] text-white  '> Our app maintenance and management  services ensure that your software  infrastructure stays relevant, scalable,  sustainable, and high-performing. </p>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[20px] md:text-[24px] text-white'>Mobile Web Development</p>
+                    <p className='  font-gilroy-semi-bold text-[20px] md:text-[24px] text-white'>Mobile Web Development</p>
                     <p className=' font-gilroy-regular md:text-[18px] text-[16px] text-white  '> Our robust & customizable frameworks help develop smart ,mobile apps that analyze user data and incorporate AI ML to deliver personalized user experiences. </p>
                   </div>
                 </div>
@@ -94,7 +94,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[20px] md:text-[24px] text-white'>Custom Application Development</p>
+                    <p className='  font-gilroy-semi-bold text-[20px] md:text-[24px] text-white'>Custom Application Development</p>
                     <p className=' font-gilroy-regular md:text-[18px] text-[16px] text-white  '> Leverage our deep domain expertise to develop robust,scalable & interoperable  mobile, web, desktop & hybrid applications  that deliver optimal business outcomes. </p>
                   </div>
                 </div>
@@ -106,7 +106,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[20px] md:text-[24px] text-white'>API Development & Integration</p>
+                    <p className='  font-gilroy-semi-bold text-[20px] md:text-[24px] text-white'>API Development & Integration</p>
                     <p className=' font-gilroy-regular md:text-[18px] text-[16px] text-white  '> Develop reliable and easy to consume custom APIs that seamlessly integrate custom software with enterprise and third- party systems & services to maximize uptime  & scalability</p>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[20px] md:text-[24px] text-white'>Custom UX/UI Design</p>
+                    <p className='  font-gilroy-semi-bold text-[20px] md:text-[24px] text-white'>Custom UX/UI Design</p>
                     <p className=' font-gilroy-regular md:text-[18px] text-[16px] text-white  '>Leverage the latest UX/UI technologies, architectures, and trends to design responsive & scalable user-centric apps that transform user experiences across channels.</p>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[20px] md:text-[24px] text-white'>System Integration</p>
+                    <p className='  font-gilroy-semi-bold text-[20px] md:text-[24px] text-white'>System Integration</p>
                     <p className=' font-gilroy-regular md:text-[18px] text-[16px] text-white  '> Our Software integration engineers adopt next-gen technologies and process to  streamline and integrate everything from  design, development, and testing to execution.</p>
                   </div>
                 </div>

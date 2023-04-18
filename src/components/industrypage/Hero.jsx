@@ -12,9 +12,7 @@ const Hero = () => {
             <div className=' text-white flex flex-col justify-center items-center lg:items-start gap-10 sm:w-[676px] max-[820px]:text-center'>
                 <span className=' xl:text-[70px] md:text-[50px] text-[28px] font-gilroy-bold'>empowering healthcare with AI</span>
                 <p className=' text-[16px] md:text-[24px] font-gilroy-semi-bold '>We help you realize intelligent, connected, <br></br>and patient-centric healthcare.</p>
-                <button className=' h-[44px] w-[140px] border-violet-700 border-[2px] lg:py-[10px] px-5 border-t-0 border-l-0 relative bg-transparent rounded-full'>
-                    <Link className=' w-full h-full rounded-full flex justify-center items-center  font-gilroy-semi-bold text-[18px] md:text-[20px] absolute bg-white text-black -left-[2px] bottom-[2px] border-white border-2'>Let's talk</Link>
-                  </button>
+                <Link className=' h-full rounded-full flex justify-center items-center  font-gilroy-semi-bold text-[12px] md:text-[20px] bg-white text-black py-2 w-max md:py-[10px] px-5'>Let's talk</Link>
               </div>
           </div>
         </div>

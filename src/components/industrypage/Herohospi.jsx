@@ -12,9 +12,8 @@ const Hero = () => {
             <div className=' text-white flex flex-col justify-center items-center lg:items-start gap-10 w-90 max-[820px]:text-center'>
                 <div className='  text-[28px] md:text-[50px] lg:text-[70px] font-gilroy-bold leading-tight lg:w-[700px]'>Efficient Logistics for Your Supply Chain</div>
                 <p className=' text-[16px] md:text-[24px] font-gilroy-semi-bold lg:w-[600px]'>Travel, Transportation, Logistics and Hospitality</p>
-                <button className=' h-[44px] w-[140px] border-violet-700 border-[2px] lg:py-[10px] px-5 border-t-0 border-l-0 relative bg-transparent rounded-full'>
-                    <Link className=' w-full h-full rounded-full flex justify-center items-center  font-gilroy-semi-bold text-[20px] absolute bg-white text-black -left-[2px] bottom-[2px] border-white border-2'>Let's talk</Link>
-                  </button>
+                <Link className=' h-full rounded-full flex justify-center items-center  font-gilroy-semi-bold text-[12px] md:text-[20px] bg-white text-black py-2 w-max md:py-[10px] px-5'>Let's talk</Link>
+
               </div>
           </div>
         </div>

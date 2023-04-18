@@ -20,15 +20,18 @@ const Services = () => {
         },
         {
             'id': 2,
-            'url': service2
+            'url': service2,
+            'bg': 'bg-[#F54D57]'
         },
         {
             'id': 3,
-            'url': service3
+            'url': service3,
+            "bg": 'bg-[#F9DE54]'
         },
         {
             'id': 4,
-            'url': service4
+            'url': service4,
+            "bg": 'bg-[#A45DBD]'
         }
     ]
 
@@ -71,7 +74,7 @@ const Services = () => {
                 </Link>
                 <div style={{ transform: `translate3d(${-slide * 100}%, 0, 0)` }} className=' h-full w-full whitespace-nowrap absolute transition ease-in-out duration-1000'>
                   {images.map((image)=> (
-                        <img key={image.id} src={image.url} alt="services" className=' w-full h-full inline-block '/>
+                        <img key={image.id} src={image.url} alt="services" className={` ${image.bg} w-full h-full inline-block object-contain`}/>
                   ))}
                   </div>
               </div>
@@ -84,7 +87,7 @@ const Services = () => {
 
             <div className=' md:static md:flex-none flex flex-col justify-center gap-5 items-center lg:items-start bottom-5'>
               <p className=' text-lg md:text-[28px] text-center lg:text-start font-gilroy-semi-bold'>providing you industry level<br/> solutions to cater your needs and <br/> help you become the next big<br/> thing</p>
-              <Link to='/service' className='w-max bg-black text-xs md:text-[20px] text-white py-2 md:py-[10px] px-5 rounded-full'>Get started</Link>
+              <Link to='/service' className='w-max bg-black text-xs md:text-[20px] text-white py-2 md:py-[15px] px-5 rounded-full'>Get started</Link>
             </div>
         </div>
 
@@ -95,9 +98,9 @@ const Services = () => {
               <Link to='service' className=' z-10 w-full h-full'>
                 <img src={iphone}/>
               </Link>
-               <div style={{ transform: `translate3d(${-slide * 100}%, 0, 0)` }} className=' h-full w-full  whitespace-nowrap absolute transition ease-in-out duration-1000'>
+               <div style={{ transform: `translate3d(${-slide * 100}%, 0, 0)` }} className=' h-full w-full whitespace-nowrap absolute transition ease-in-out duration-1000'>
                 {images.map((image)=> (
-                       <img src={image.url} alt="services" className=' w-full h-full inline-block object-cover'/>
+                       <img src={image.url} alt="services" className={` ${image.bg} w-full h-full inline-block object-contain `}/>
                 ))}
                 </div>
             </div>

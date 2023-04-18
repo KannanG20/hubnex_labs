@@ -32,7 +32,7 @@ const Ourservice = () => {
                     <span className=' text-[70px] text-gray-400 font-gilroy-bold'>01</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5 '>
-                    <p className='   interFont text-[24px] text-white'>Search Engine Optimization</p>
+                    <p className='   font-gilroy-semi-bold text-[24px] text-white'>Search Engine Optimization</p>
                     <p className=' font-gilroy-regular text-[18px] text-white '>In the world of digital revolution, a fantastic user friendly website making good business sense will fetch you far more customers than a regular website. We provide you with...</p>
                   </div>
                 </div>
@@ -44,7 +44,7 @@ const Ourservice = () => {
                   <span className=' text-[70px] text-gray-400 font-gilroy-bold'>02</span>
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[24px] text-white'>PR & Brand Management</p>
+                    <p className='  font-gilroy-semi-bold text-[24px] text-white'>PR & Brand Management</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '>PR & Brand Management is prominent for every business to attain perfect growth, whether you have a worldwide business with millions of customers or just a simple... </p>
                   </div>
                 </div>
@@ -57,7 +57,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <span className='  interFont text-[24px] text-white'>Social Media Optimisation</span>
+                    <span className='  font-gilroy-semi-bold text-[24px] text-white'>Social Media Optimisation</span>
                     <p className=' font-gilroy-regular text-[18px] text-white  '>Social media optimization uses social media as a catalyst to increase your brand presence. Through strategy and creative campaigns, we increase the awareness of... </p>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[24px] text-white'>Political   Campaign Management</p>
+                    <p className='  font-gilroy-semi-bold text-[24px] text-white'>Political   Campaign Management</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '>At HubNex we have an experienced team with a proven track record in managing successful political and election campaigns at state and national level. Our team... </p>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[24px] text-white'>Content Management</p>
+                    <p className='  font-gilroy-semi-bold text-[24px] text-white'>Content Management</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '>Content is King! We provide you with relatable high quality content, logo designs, promotional graphics, infographics and videos to give your brand an outstanding... </p>
                   </div>
                 </div>
@@ -94,7 +94,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[24px] text-white'>Outdoor Media Marketing</p>
+                    <p className='  font-gilroy-semi-bold text-[24px] text-white'>Outdoor Media Marketing</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '>The outdoor media advertising comprises billboards, taxis, interior and exterior of buses, and business vehicles. The transit advertising, bus benches, billboards are t...</p>
                   </div>
                 </div>
@@ -106,7 +106,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[24px] text-white'>Business Consulting</p>
+                    <p className='  font-gilroy-semi-bold text-[24px] text-white'>Business Consulting</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '> We provide excellent strategic business solutions to various corporates. We develop distinctive and adaptive strategies that help companies succeed in today’s complex and uncertain world.Our solutions are the...</p>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[24px] text-white'>Video Production</p>
+                    <p className='  font-gilroy-semi-bold text-[24px] text-white'>Video Production</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '>We live in a world driven by images and visual storytelling. HubNex has helped countless businesses tell their unique stories. And we have the delighted customers to prove it! Whether you need...</p>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ const Ourservice = () => {
 
                   </div>
                   <div className=' w-full flex flex-col gap-5'>
-                    <p className='  interFont text-[24px] text-white'>Print Media</p>
+                    <p className='  font-gilroy-semi-bold text-[24px] text-white'>Print Media</p>
                     <p className=' font-gilroy-regular text-[18px] text-white  '>Print Media Marketing is a physical form of advertising that uses physical printed media platforms such as newspapers, magazines, catalogs, pamphlets, etc. Despite the fact that print media has been... </p>
                   </div>
                 </div>

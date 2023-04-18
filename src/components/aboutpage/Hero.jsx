@@ -15,9 +15,8 @@ const Hero = () => {
                   <p className=' leading-tight font-gilroy-medium'>Passionate about exceptional IT services, delivering innovative solutions to meet unique needs.</p>
                 </div>
               <div>
-              <button className=' h-[44px] w-[140px] border-2 border-violet-600 lg:py-[10px] px-5 border-t-0 border-l-0 relative bg-transparent rounded-full'>
-                    <Link className=' w-full h-full rounded-full flex justify-center items-center  font-gilroy-semi-bold text-[16px] md:text-[20px] absolute text-white -left-[3px] bottom-[4px] border-white border-2'>Read more</Link>
-                  </button>
+                <Link className='  h-full px-5 md:py-[10px] py-2 rounded-full flex justify-center items-center  font-gilroy-semi-bold text-[16px] md:text-[20px] text-black bg-white w-max'>Read more</Link>
+  
                 </div>
             </div>
         </div>
