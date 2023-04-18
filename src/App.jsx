@@ -28,7 +28,8 @@ const Startup = React.lazy(()=> import('./pages/Startup'))
 const Healthcare=React.lazy(()=>import('./components/industrypage/Healthcare'))
 
 // Admin Panel (Private Pages)!
-const Admin = React.lazy(()=> import('./pages/Admin'))    
+const Admin = React.lazy(()=> import('./pages/Admin'))   
+const AdminLogin = React.lazy(()=> import('./components/adminpage/AdminLogin'))  
 const Dashboard = React.lazy(()=> import('./components/adminpage/Dashboard'))     
 const Recruiter = React.lazy(()=> import('./components/adminpage/Recruiter')) 
 const Company = React.lazy(()=> import('./components/adminpage/Company')) 
@@ -184,6 +185,10 @@ function App() {
             {
               path: '/startup-program',
               element: <Suspense fallback={<Loader/>}><Startup/></Suspense>
+            },
+            {
+              path: '/admin-login',
+              element: <Suspense fallback={<Loader/>}><AdminLogin/></Suspense>
             },
             {
               path: '/admin',

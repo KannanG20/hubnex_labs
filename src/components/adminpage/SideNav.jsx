@@ -51,18 +51,8 @@ const SideNav = () => {
       <div className=' flex flex-col w-full h-full items-center py-5 gap-8 '>
         <div className=' w-[70%] m-auto h-full flex flex-col gap-8 text-base text-gray-300 font-semibold'>
           <hr className=' w-full border-[1px] border-white'/>
-          <div className=' flex gap-4 items-center'>
-            <DashboardIcon/>
-            <Link to='/admin'>Dashboard</Link>
-          </div>
-          <div className=' flex gap-4 items-center'>
-            <AccountCircleIcon/>
-            <Link to='/admin/recruiter'>Recruiter</Link>
-          </div>
-          <div className=' flex gap-4 items-center'>
-            <BusinessIcon/>
-            <Link to='/admin/company'>Company</Link>
-          </div>
+          
+          
 
           <div className=' flex flex-col gap-4 items-center w-full'>
             <div className=' flex gap-4 items-start w-full'>
@@ -94,21 +84,7 @@ const SideNav = () => {
               </div>
             </div>
           </div>
-
-          <div className=' flex gap-4 flex-col items-center'>
-            <div className=' flex gap-4 items-start w-full'>
-              <IosShareIcon/>
-              <div className=' flex flex-col w-full gap-5'>
-              <Link to='/admin/referral' className=' flex items-center'>Referral <span onClick={handleReferralDropdown}>{referralOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></Link>
-                {referralOpen &&
-                  <div className=' flex flex-col gap-2 '>
-                    <Link >Invest</Link>
-                    <Link>Contact Us</Link>
-                  </div>
-                  }
-                </div>
-            </div>
-          </div>
+     
 
           <div className=' flex gap-4 flex-col items-center'>
             <div className=' flex gap-4 items-start w-full'>
@@ -117,45 +93,22 @@ const SideNav = () => {
               <Link to='/admin/manage-roles' className=' flex items-center'>Manage Roles <span onClick={handleManageRoleDropdown}>{manageRoleOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></Link>
                 {manageRoleOpen &&
                   <div className=' flex flex-col gap-2 '>
-                    <Link>Invest</Link>
-                    <Link>Contact Us</Link>
+                    <Link>Manage Partner</Link>
+                    
                   </div>
                   }
               </div>
             </div>
           </div>
 
-          <div className=' flex gap-4 flex-col items-center'>
-            <div className=' flex gap-4 items-start w-full'>
-              <PaymentIcon/>
-              <div className=' flex flex-col w-full gap-5'>
-              <Link to='/admin/payments' className=' flex items-center'>Payments <span onClick={handlePaymentsDropdown}>{paymentsOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></Link>
-                {paymentsOpen &&
-                    <div className=' flex flex-col gap-2 '>
-                      <Link>Invest</Link>
-                      <Link>Contact Us</Link>
-                    </div>
-                    }
-                </div>
-            </div>
-          </div>
+          
 
           <div className=' flex gap-4 items-center'>
             <FileOpenIcon/>
-            <Link to='/admin/application'>Applications</Link>
+            <Link to='/admin/application'>Testimonial</Link>
           </div>
-          <div className=' flex gap-4 items-center'>
-          <DescriptionIcon/>
-          <Link to='/admin/invoices'>Invoices</Link>
-          </div>
-          <div className=' flex gap-4 items-center'>
-            <NotificationsActiveIcon/>
-            <Link to='/admin/push-notification'>Push Notification</Link>
-          </div>
-          <div className=' flex gap-4 items-center'>
-          <HelpIcon/>
-          <Link to='/admin/help'>Need Help</Link>
-          </div>
+          
+          
           <hr className=' w-full border-[1px] border-white'/>
         </div>
       </div>
