@@ -4,9 +4,10 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import testImg from '@assets/balloonMob.png'
-import { Link, Outlet } from 'react-router-dom';
+import { Navigate, Outlet, redirect, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import KeyboardArrowUp from '@mui/icons-material/KeyboardArrowUp';
+
 
 
 const Header = () => {
@@ -14,7 +15,14 @@ const Header = () => {
   const [notifs, setNotifs]= useState(false);
   const [profile, setProfile] = useState(false);
 
+  const navigate = useNavigate()
+  const handleLogout = ()=>{
+    localStorage.removeItem('token')
+    navigate('/')  
+  }
+
   return (
+    <> 
     <div className=' w-full flex flex-col gap-5 px-10'>
     <div className=' w-full h-20 flex flex-col py-5 gap-5'>
       <div className=' w-full flex justify-between'>
@@ -48,8 +56,8 @@ const Header = () => {
               }}>{profile ? <KeyboardArrowUp/> : <KeyboardArrowDownIcon/>}</span></span>
 
               {profile &&  <div className=' absolute -bottom-28 right-2 rounded-md rounded-tr-none py-5 px-5 flex flex-col gap-3 bg-gray-200 text-black'>
-                  <Link>Profile</Link>
-                  <Link>Logout</Link>
+                  <button>Profile</button>
+                  <button onClick={handleLogout}>Logout</button>
                 </div>
                 }
             </div>
@@ -60,6 +68,7 @@ const Header = () => {
     </div>
     <Outlet/>
     </div>
+    </>
   )
 }
 

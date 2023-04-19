@@ -21,6 +21,9 @@ const Footer = () => {
   const [phoneNo, setPhoneNo] = useState(null);
   const [message, setMessage] = useState("")
 
+  const [success, setSuccess] = useState(false)
+  
+
   const userData = {
     method : 'POST',
     headers : { 'Content-Type': 'application/json' },
@@ -32,23 +35,18 @@ const Footer = () => {
       message: message
     })
   };
-
-  const updateUser = {
-    method : 'PUT',
-    headers : { 'Content-Type': 'application/json' },
-    body : JSON.stringify({
-        status: true
-    })
-  };
-
   
   const handleSubmit = async (e)=>{
     e.preventDefault();
     try {
-      const data = await (await fetch("http://localhost:3000/api/user", userData)).json();
-      console.log(data);
+      const res = await fetch("https://hubnex.cyclic.app/api/v1/user", userData)
+      const data = await res.json()
+      if(!res.ok){
+        return console.log("Something went wrong");
+      }
+      setSuccess(true);
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   }
 
@@ -67,13 +65,13 @@ const Footer = () => {
           </div>
         </div>
           <form className='flex flex-col gap-4 m-auto text-[16px] w-[80%] md:w-auto md:m-0 mt-10  md:mt-0' onSubmit={handleSubmit}>
-            <label className=' text-gray-200' htmlFor='first_name'>FIRST NAME</label>
+            <label className=' text-gray-200' htmlFor='first_name'>FIRST NAME <span className=' text-red-500'>*</span></label>
             <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='first_name' required maxLength={25} onChange={(e)=>setFirstName(e.target.value)}/>
-            <label className=' text-gray-200' htmlFor='last_name'>LAST NAME</label>
+            <label className=' text-gray-200' htmlFor='last_name'>LAST NAME <span className=' text-red-500'>*</span></label>
             <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='last_name' required maxLength={25} onChange={(e)=>setLastName(e.target.value)}/>
-            <label className=' text-gray-200' htmlFor='email'>EMAIL</label>
+            <label className=' text-gray-200' htmlFor='email'>EMAIL <span className=' text-red-500'>*</span></label>
             <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='email' id='email' required onChange={(e)=>setEmail(e.target.value)}/>
-            <label className=' text-gray-200' htmlFor='mobile_no'>PHONE NUMBER</label>
+            <label className=' text-gray-200' htmlFor='mobile_no'>PHONE NUMBER <span className=' text-red-500'>*</span></label>
             <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='tel' id='mobile_no' required maxLength={12} onChange={(e)=>setPhoneNo(e.target.value)}/>
             <label className=' text-gray-200' htmlFor='message'>MESSAGE</label>
             <input className=' pt-5 outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='message' required onChange={(e)=>setMessage(e.target.value)}/>
@@ -83,6 +81,7 @@ const Footer = () => {
                     <img src={arrow} alt="arrow" width={15} height={15} className='object-contain'/>   
               </label>
             </button>
+            {success && <span className=' text-green-500 font-gilroy-regular'>Your Request has been Successfully Initiated</span>}
           </form>
       </div>
       <div className=' flex flex-col w-full h-40 justify-center xl:mt-8 items-center gap-8 text-white sm:h-80 text-lg'>

@@ -10,8 +10,9 @@ const ProtectedRoute = () => {
     useEffect(()=>{
         const token = localStorage.getItem('token');
         if(token == "PERMISSION ACCESSED"){
-            setIsLogged(true)
+          return setIsLogged(true)
         }
+        setIsLogged(false)
     }, [])
 
   return ( 

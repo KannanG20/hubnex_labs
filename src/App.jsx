@@ -1,30 +1,32 @@
 import React, { Suspense, useEffect, useState } from 'react'
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { CircularProgress } from '@mui/material';
-
 
 import Root from './routes/Root'
 import Loader from './components/loader/Loader'
 import './App.css'
-import ProtectedRoute from './components/adminpage/ProtectedRoute';
-// import TermsandConditions from './components/cms/TermsandConditions'
 
+// Admin Pages
+const ProtectedRoute = React.lazy(()=> import('./components/adminpage/ProtectedRoute'))
 const TermsandConditions = React.lazy(()=> import('./components/cms/TermsandConditions'))
 const DataProtection = React.lazy(()=> import('./components/cms/DataProtection'))
 const PrivacyPolicy = React.lazy(()=> import('./components/cms/PrivacyPolicy'))
 
+// Services Dropdown pages
 const IOT = React.lazy(()=> import('./pages/services/IOT'))
 const AIML = React.lazy(()=> import('./pages/services/AIML'))
 const CloudServices = React.lazy(()=> import('./pages/services/CloudServices'))
 const SoftwareTesting = React.lazy(()=> import('./pages/services/SoftwareTesting'))
 const DigitalMarketing = React.lazy(()=> import('./pages/services/DigitalMarketing'))
 
+// Industries Dropdown pages
 const Communication = React.lazy(()=> import( './pages/industries/Communication'))
 const Hospitality = React.lazy(()=> import('./pages/industries/Hospitality')) 
 const Logistics = React.lazy(()=> import('./pages/industries/Logistics')) 
 const PublicSector = React.lazy(()=> import('./pages/industries/PublicSector')) 
 const Retail = React.lazy(()=> import('./pages/industries/Retail')) 
 const Travel = React.lazy(()=> import('./pages/industries/Travel')) 
+
 // Hubnex pages (public)
 const Home = React.lazy(()=> import ('./pages/Home'))
 const About = React.lazy(()=> import ('./pages/About'))
@@ -33,9 +35,7 @@ const Industries = React.lazy(()=> import('./pages/Industries'))
 const Contact = React.lazy(()=> import('./pages/Contact'))
 const Startup = React.lazy(()=> import('./pages/Startup'))
 
-// Admin Panel (Private Pages)!
-const Admin = React.lazy(()=> import('./pages/Admin'))   
-const AdminLogin = React.lazy(()=> import('./components/adminpage/AdminLogin'))      
+// Admin Panel (Private Pages)!    
 const ManageRoles = React.lazy(()=> import('./components/adminpage/ManageRoles')) 
 const Applications = React.lazy(()=> import( './components/adminpage/Applications'))
 const Invest=React.lazy(()=>import('./components/adminpage/Invest'))

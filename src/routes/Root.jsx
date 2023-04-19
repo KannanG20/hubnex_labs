@@ -1,9 +1,17 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
 import ScrollTop from './ScrollTop.js'
 
 
 const Root = () => {
+
+  const location = useLocation()
+  useEffect(()=>{
+    if(location.pathname == '/'){
+      localStorage.removeItem('token')
+    }
+  }, [])
+
   return (
     <>
       <div className='font-gilroy-regular'>
@@ -14,4 +22,4 @@ const Root = () => {
   )
 }
 
-export default Root
+export default Root 
