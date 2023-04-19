@@ -31,14 +31,8 @@ const SideNav = () => {
   const handleFormDropdown = ()=>{
     setFormOpen((prev)=> !prev);
   }
-  const handleReferralDropdown = ()=>{
-    setReferralOpen((prev)=> !prev);
-  }
   const handleManageRoleDropdown = ()=>{
     setManageRoleOpen((prev)=> !prev);
-  }
-  const handlePaymentsDropdown = ()=>{
-    setPaymentsOpen((prev)=> !prev);
   }
 
   return (
@@ -58,12 +52,12 @@ const SideNav = () => {
             <div className=' flex gap-4 items-start w-full'>
             <LayersIcon/>
               <div className=' flex flex-col w-full gap-5'>
-                <Link to='/admin/cms' className=' flex items-center'>CMS <span onClick={handleCmsDropdown}>{cmsOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></Link>
+                <span onClick={handleCmsDropdown} className=' cursor-pointer flex items-center'>CMS <span >{cmsOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></span>
                 {cmsOpen &&
                 <div className=' flex flex-col gap-2 '>
-                  <Link to='/admin/cms/terms'>Terms and conditions</Link>
-                  <Link>Privacy Policy</Link>
-                  <Link>Data Protection</Link>
+                  <Link to='/admin/terms-and-conditions'>Terms and conditions</Link>
+                  <Link to='/admin/privacy-policy'>Privacy Policy</Link>
+                  <Link to='/admin/data-protection'>Data Protection</Link>
                 </div>
                 }
               </div>
@@ -74,11 +68,11 @@ const SideNav = () => {
             <div className=' flex gap-4 items-start w-full'>
               <BackupTableIcon/>
               <div className=' flex flex-col w-full gap-5'>
-              <Link to='/admin/forms' className=' flex items-center'>Forms <span onClick={handleFormDropdown}>{formOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></Link>
+              <span onClick={handleFormDropdown} className=' cursor-pointer flex items-center'>Forms <span >{formOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></span>
               {formOpen &&
                 <div className=' flex flex-col gap-2 '>
                   <Link to='/admin/forms/invest'>Invest</Link>
-                  <Link>Contact Us</Link>
+                  <Link to='/admin/forms/contact'>Contact Us</Link>
                 </div>
                 }
               </div>

@@ -1,10 +1,17 @@
 import React, { Suspense, useEffect, useState } from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
+import { CircularProgress } from '@mui/material';
+
 
 import Root from './routes/Root'
 import Loader from './components/loader/Loader'
 import './App.css'
+import ProtectedRoute from './components/adminpage/ProtectedRoute';
+// import TermsandConditions from './components/cms/TermsandConditions'
 
+const TermsandConditions = React.lazy(()=> import('./components/cms/TermsandConditions'))
+const DataProtection = React.lazy(()=> import('./components/cms/DataProtection'))
+const PrivacyPolicy = React.lazy(()=> import('./components/cms/PrivacyPolicy'))
 
 const IOT = React.lazy(()=> import('./pages/services/IOT'))
 const AIML = React.lazy(()=> import('./pages/services/AIML'))
@@ -25,31 +32,25 @@ const Services = React.lazy(()=> import('./pages/Services'))
 const Industries = React.lazy(()=> import('./pages/Industries')) 
 const Contact = React.lazy(()=> import('./pages/Contact'))
 const Startup = React.lazy(()=> import('./pages/Startup'))
-const Healthcare=React.lazy(()=>import('./components/industrypage/Healthcare'))
 
 // Admin Panel (Private Pages)!
 const Admin = React.lazy(()=> import('./pages/Admin'))   
-const AdminLogin = React.lazy(()=> import('./components/adminpage/AdminLogin'))  
-const Dashboard = React.lazy(()=> import('./components/adminpage/Dashboard'))     
-const Recruiter = React.lazy(()=> import('./components/adminpage/Recruiter')) 
-const Company = React.lazy(()=> import('./components/adminpage/Company')) 
-const CMS = React.lazy(()=> import('./components/adminpage/CMS')) 
-const Payments = React.lazy(()=> import('./components/adminpage/Payments')) 
-const Forms = React.lazy(()=> import('./components/adminpage/Forms')) 
-const Referral = React.lazy(()=> import( './components/adminpage/Referral'))
+const AdminLogin = React.lazy(()=> import('./components/adminpage/AdminLogin'))      
 const ManageRoles = React.lazy(()=> import('./components/adminpage/ManageRoles')) 
 const Applications = React.lazy(()=> import( './components/adminpage/Applications'))
-const Invoices = React.lazy(()=> import('./components/adminpage/Invoices')) 
-const PushNotify = React.lazy(()=> import('./components/adminpage/PushNotify')) 
-const Help = React.lazy(()=> import('./components/adminpage/Help')) 
 const Invest=React.lazy(()=>import('./components/adminpage/Invest'))
 const Terms =React.lazy(()=>import('./components/adminpage/Terms'))
+const Dataprotection =React.lazy(()=>import('./components/adminpage/Dataprotection'))
+const Privacy =React.lazy(()=>import('./components/adminpage/Privacy'))
+const AdminContact =React.lazy(()=>import('./components/adminpage/Contact'))
 
 
 function App() {
 
   const [ loading, setLoading] = useState(true);
+
   useEffect(()=>{
+ 
     const images = [
       './assets/aboutLander.png',
       './assets/abouts.png',
@@ -183,77 +184,52 @@ function App() {
               element: <Suspense fallback={<Loader/>}><Contact/></Suspense>
             },
             {
+              path: '/terms-and-conditions',
+              element: <Suspense fallback={<Loader/>}><TermsandConditions/></Suspense>
+            },
+            {
+              path: '/data-protection',
+              element: <Suspense fallback={<Loader/>}><DataProtection/></Suspense>
+            },
+            {
+              path: '/privacy-policy',
+              element: <Suspense fallback={<Loader/>}><PrivacyPolicy/></Suspense>
+            },
+            {
               path: '/startup-program',
               element: <Suspense fallback={<Loader/>}><Startup/></Suspense>
             },
             {
-              path: '/admin-login',
-              element: <Suspense fallback={<Loader/>}><AdminLogin/></Suspense>
-            },
-            {
               path: '/admin',
-              element:  <Suspense fallback={<Loader/>}><Admin/></Suspense>,
+              element:  <Suspense fallback={<Loader/>}><ProtectedRoute/></Suspense>,
               children: [
                 {
-                  path: '/admin',
-                  element: <Suspense fallback={<Loader/>}><Dashboard/></Suspense>
+                  path: '/admin/data-protection',
+                  element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><Dataprotection/></Suspense>
                 },
                 {
-                  path: '/admin/recruiter',
-                  element: <Suspense fallback={<Loader/>}><Recruiter/></Suspense>
+                  path: '/admin/privacy-policy',
+                  element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><Privacy/></Suspense>
                 },
                 {
-                  path: '/admin/company',
-                  element: <Suspense fallback={<Loader/>}><Company/></Suspense>
-                },
-                {
-                  path: '/admin/cms',
-                  element: <Suspense fallback={<Loader/>}><CMS/></Suspense>
-                },
-                {
-                  path: '/admin/forms',
-                  element: <Suspense fallback={<Loader/>}><Forms/></Suspense>,
-                  
-                  
+                  path: '/admin/terms-and-conditions',
+                  element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><Terms/></Suspense>
                 },
                 {
                   path:'/admin/forms/invest',
-                  element:<Suspense fallback={<Loader/>}><Invest/></Suspense>
-
+                  element:<Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><Invest/></Suspense>
                 },
                 {
-                  path:'/admin/cms/terms',
-                  element:<Suspense fallback={<Loader/>}><Terms/></Suspense>
-
-                },
-                
-                {
-                  path: '/admin/referral',
-                  element: <Suspense fallback={<Loader/>}><Referral/></Suspense>
+                  path:'/admin/forms/contact',
+                  element:<Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><AdminContact/></Suspense>
                 },
                 {
                   path: '/admin/manage-roles',
-                  element: <Suspense fallback={<Loader/>}><ManageRoles/></Suspense>
-                },
-                {
-                  path: '/admin/payments',
-                  element: <Suspense fallback={<Loader/>}><Payments/></Suspense>
+                  element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><ManageRoles/></Suspense>
                 },
                 {
                   path: '/admin/application',
-                  element: <Suspense fallback={<Loader/>}><Applications/></Suspense>
-                },
-                {
-                  path: '/admin/invoices',
-                  element: <Suspense fallback={<Loader/>}><Invoices/></Suspense>
-                },
-                {
-                  path: '/admin/push-notification',
-                  element: <Suspense fallback={<Loader/>}><PushNotify/></Suspense>
-                },
-                {
-                  path: '/admin/help',
-                  element: <Suspense fallback={<Loader/>}><Help/></Suspense>
+                  element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><Applications/></Suspense>
                 },
               ]
             },

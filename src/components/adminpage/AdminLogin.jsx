@@ -1,11 +1,38 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo.png'
+import Admin from '../../pages/Admin';
 function AdminLogin() {
+
+
+  const [credentials, setCredentials] = useState({ email: "", password: "" })
+  const [access, setAccess] = useState(false);
+
+  const navigate = useNavigate()
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(credentials)
+};
+
+  const handleSubmit = async ()=>{
+    try {
+      const res = await fetch('https://hubnex.cyclic.app/api/v1/auth', requestOptions)
+      const data = await res.json()
+      localStorage.setItem('token', data.result)
+      setAccess(true)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
   return (
+    <>
+    {access ? <Admin/> :
     <div className='w-full h-full  bg-black '>
    
-        <Link  className='  flex gap-2 items-center'>
+     <Link to='/' className='  flex gap-2 items-center'>
         <img src={logo} alt='Logo' width={25} height={30}/>
         <span className='text-white font-gilroy-bold text-[20px] md:text-[80px] lg:text-[36px] '>hubnex labs</span>
     </Link>
@@ -19,10 +46,11 @@ Admin Login</h1>
               Username
             </label>
             <input
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="  border-2 border-black appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
               type="text"
               placeholder="Enter your username"
+              onChange={(e)=> setCredentials((prev)=> ({...prev, email: e.target.value}))}
             />
           </div>
           <div className="mb-4">
@@ -30,23 +58,28 @@ Admin Login</h1>
               Password
             </label>
             <input
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
+              className="appearance-none border-2 border-black  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
               id="password"
               type="password"
               placeholder="Enter your password"
+              onChange={(e)=> setCredentials((prev)=> ({...prev, password: e.target.value}))}
             />
           </div>
           <div className="flex items-center justify-between">
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline font-gilroy-bold"
               type="button"
+              onClick={handleSubmit}
             >
               Login
             </button>
           </div>
         </form>
       </div>
-    </div></div>
+    </div>
+    </div>
+  }
+  </>
   )
 }
 

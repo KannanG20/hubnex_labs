@@ -102,15 +102,13 @@ const Footer = () => {
         <div className='hidden xl:flex gap-2 text-[15px] font-gilroy-light '>
           <Link to='/about'>About Us</Link>
           <hr className=' border-r-[1px] h-5'/>
-          <Link to='/service'>Data Protection</Link>
+          <Link to='/data-protection'>Data Protection</Link>
           <hr className=' border-r-[1px] h-5'/>
-          <Link to='/'>Terms and Conditions</Link>
+          <Link to='/terms-and-conditions'>Terms and Conditions</Link>
           <hr className=' border-r-[1px] h-5'/>
-          <Link to='/'>Privacy Policy</Link>
+          <Link to='/privacy-policy'>Privacy Policy</Link>
           <hr className=' border-r-[1px] h-5'/>
           <Link to='/contact'>Contact Us</Link>
-          <hr className=' border-r-[1px] h-5'/>
-          <Link to='/'>Invest in Us</Link>
         </div>
       </div>
     </div>

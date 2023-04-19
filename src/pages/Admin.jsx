@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SideNav from '../components/adminpage/SideNav'
 import Header from '../components/adminpage/Header'
-
-
+import { Navigate } from 'react-router-dom'
 
 
 const Admin = () => {
@@ -11,8 +10,6 @@ const Admin = () => {
     <div className=' flex w-full h-screen bg-black'>
         <SideNav/>
         <Header/>
-
-        
     </div>
   )
 }
