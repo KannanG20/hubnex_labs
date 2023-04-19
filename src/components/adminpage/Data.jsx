@@ -20,11 +20,11 @@ const modules={
 
   ],
 };
-function Terms() {
+function Data() {
   const[value,setValue]=useState("")
   return (
     <div className='container bg-white'>
-      <h1>Terms and Condition</h1>
+      <h1>Data Protection</h1>
       <div className='row'>
         <div className='editor '> 
         <ReactQuill 
@@ -44,4 +44,4 @@ function Terms() {
   )
 }
 
-export default Terms;
+export default Data;

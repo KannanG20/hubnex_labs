@@ -10,11 +10,11 @@ function AdminLogin() {
         <span className='text-white font-gilroy-bold text-[20px] md:text-[80px] lg:text-[36px] '>hubnex labs</span>
     </Link>
     <div className="h-screen 2xl:h-[208px] bg-footerImg bg-cover bg-center w-full relative   min-h-screen  flex items-center justify-center ">
-      <div className="bg-white p-16 m-0 rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold mb-6 text-center font-gilroy-bold">
+      <div className="bg-white p-14 m-0 rounded-lg shadow-lg">
+        <h1 className="text-4xl font-bold mb-8 text-center font-gilroy-bold">
 Admin Login</h1>
         <form>
-          <div className="mb-5">
+          <div className="mb-6">
             <label className="block text-gray-700 font-bold mb-2 font-gilroy-bold" htmlFor="username">
               Username
             </label>

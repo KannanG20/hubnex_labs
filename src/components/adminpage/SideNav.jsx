@@ -62,8 +62,8 @@ const SideNav = () => {
                 {cmsOpen &&
                 <div className=' flex flex-col gap-2 '>
                   <Link to='/admin/cms/terms'>Terms and conditions</Link>
-                  <Link>Privacy Policy</Link>
-                  <Link>Data Protection</Link>
+                  <Link to='/admin/cms/Privacy'>Privacy Policy</Link>
+                  <Link to='/admin/cms/Data'>Data Protection</Link>
                 </div>
                 }
               </div>

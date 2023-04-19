@@ -44,7 +44,8 @@ const PushNotify = React.lazy(()=> import('./components/adminpage/PushNotify'))
 const Help = React.lazy(()=> import('./components/adminpage/Help')) 
 const Invest=React.lazy(()=>import('./components/adminpage/Invest'))
 const Terms =React.lazy(()=>import('./components/adminpage/Terms'))
-
+const Privacy =React.lazy(()=>import('./components/adminpage/Privacy'))
+const Data =React.lazy(()=>import('./components/adminpage/Data'))
 
 function App() {
 
@@ -224,6 +225,16 @@ function App() {
                 {
                   path:'/admin/cms/terms',
                   element:<Suspense fallback={<Loader/>}><Terms/></Suspense>
+
+                },
+                {
+                  path:'/admin/cms/privacy',
+                  element:<Suspense fallback={<Loader/>}><Privacy/></Suspense>
+
+                },
+                {
+                  path:'/admin/cms/data',
+                  element:<Suspense fallback={<Loader/>}><Data/></Suspense>
 
                 },
                 
