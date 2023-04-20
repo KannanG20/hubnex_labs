@@ -24,6 +24,7 @@ function AdminLogin() {
         return setErr(true);
       }
       const data = await res.json()
+      console.log(data)
       localStorage.setItem('token', data.result)
       setAccess(true)
     } catch (error) {
