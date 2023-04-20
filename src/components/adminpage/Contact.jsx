@@ -35,25 +35,25 @@ const handleStatus = async (id, message, firstname, lastname) => {
 }
 
 
-useEffect(()=>{
-  const getUsers = async () => {
-    try {
-      const res = await fetch('https://hubnex-api.vercel.app/api/v1/users');
-      const data = await res.json();
-      if(!res.ok) {
-        setLoading(false);
-        return setErr(true)
-      }
-      setUsers(data.results)
-    } catch (error) {
-      setLoading(false)
-      console.log(error.message)
-    }
-  }
-  return () => {
-    getUsers();
-  }
-}, [status])
+// useEffect(()=>{
+//   const getUsers = async () => {
+//     try {
+//       const res = await fetch('https://hubnex-api.vercel.app/api/v1/users');
+//       const data = await res.json();
+//       if(!res.ok) {
+//         setLoading(false);
+//         return setErr(true)
+//       }
+//       setUsers(data.results)
+//     } catch (error) {
+//       setLoading(false)
+//       console.log(error.message)
+//     }
+//   }
+//   return () => {
+//     getUsers();
+//   }
+// }, [status])
 
   useEffect(()=>{
     const getUsers = async () => {
@@ -75,7 +75,7 @@ useEffect(()=>{
     return () => {
       getUsers();
     }
-  }, [])
+  }, [status])
 
 
   return (

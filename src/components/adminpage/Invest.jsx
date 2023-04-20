@@ -35,28 +35,28 @@ const handleStatus = async (id, message, company) => {
 }
 
 
-useEffect(()=>{
-  const getcompanies = async () => {
-    try {
-      const res = await fetch('https://hubnex-api.vercel.app/api/v1/companies');
-      const data = await res.json();
-      if(!res.ok) {
-        console.log(data)
-        setLoading(false)
-        return setErr(true)
-      }
-      setCompanies(data.results)
-      console.log(data);
-    } catch (error) {
-      setLoading(false)
-      console.log(error);
-    }
+// useEffect(()=>{
+//   const getcompanies = async () => {
+//     try {
+//       const res = await fetch('https://hubnex-api.vercel.app/api/v1/companies');
+//       const data = await res.json();
+//       if(!res.ok) {
+//         console.log(data)
+//         setLoading(false)
+//         return setErr(true)
+//       }
+//       setCompanies(data.results)
+//       console.log(data);
+//     } catch (error) {
+//       setLoading(false)
+//       console.log(error);
+//     }
 
-  }
-  return () => {
-    getcompanies();
-  }
-}, [status])
+//   }
+//   return () => {
+//     getcompanies();
+//   }
+// }, [status])
 
   useEffect(()=>{
     const getcompanies = async () => {
@@ -80,7 +80,7 @@ useEffect(()=>{
     return () => {
       getcompanies();
     }
-  }, [])
+  }, [status])
 
 
   return (
