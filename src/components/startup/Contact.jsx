@@ -66,23 +66,41 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className=' flex flex-col gap-5 w-full px-5 md:px-10 font-gilroy-medium text-[20px] z-50'>
                 <label htmlFor="name" className=' flex border-b-2 border-b-gray-600 py-2 gap-5 w-full'>
                   <PersonIcon/>
-                  <input type="text" id='name' onChange={(e)=> setName(e.target.value)} className=' w-full border-none outline-none bg-transparent' placeholder='Name *'/>
+                  <input type="text" id='name' onChange={(e)=> setName(e.target.value)} className=' w-full border-none outline-none bg-transparent' required placeholder='Name *'/>
                 </label>
                 <label htmlFor="companyname" className=' flex border-b-2 border-b-gray-600 py-2 gap-5 w-full'>
                   <BusinessIcon/>
-                  <input type="text" id='companyname' onChange={(e)=> setCompanyName(e.target.value)} className=' w-full border-none outline-none bg-transparent' placeholder='Company Name *'/>
+                  <input type="text" id='companyname' onChange={(e)=> setCompanyName(e.target.value)} className=' w-full border-none outline-none bg-transparent' required placeholder='Company Name *'/>
                 </label>
                 <label htmlFor="email" className=' flex border-b-2 border-b-gray-600 py-2 gap-5 w-full'>
                   <MailOutlineIcon/>
-                  <input type="text" id='email' onChange={(e)=> setEmail(e.target.value)} className=' w-full border-none outline-none bg-transparent' placeholder='Email *'/>
+                  <input type="email" id='email' onChange={(e)=> setEmail(e.target.value)} className=' w-full border-none outline-none bg-transparent' placeholder='Email *'/>
                 </label>
                 <label htmlFor="phone" className=' flex border-b-2 border-b-gray-600 py-2 gap-5 w-full'>
                   <PhoneInTalkIcon/>
-                  <input type="text" id='phone' onChange={(e)=> setPhoneNo(e.target.value)} className=' w-full border-none outline-none bg-transparent' placeholder='Phone *'/>
+
+                <input className='w-full border-none outline-none bg-transparent'
+                  type='tel'
+                  id='phone'
+                  placeholder='Phone *'
+                  required
+                  maxLength={12}
+                  pattern="^[0-9]{10,12}$"
+                  onChange={(e) => {
+                    const phoneNo = e.target.value;
+                    const phoneNoRegex = /^[0-9]{10,12}$/; // Regular expression to check if phone number is valid
+                    if (phoneNoRegex.test(phoneNo)) {
+                      setPhoneNo(phoneNo);
+                    } else {
+                      // Display an error message or prevent the form submission
+                    }
+                  }}
+                />
+              
                 </label>
                 <label htmlFor="message" className=' flex border-b-2 border-b-gray-600 h-24 gap-5 w-full'>
                   <SmsIcon/>
-                  <textarea rows='4' id='message' onChange={(e)=> setMessage(e.target.value)} cols='50' placeholder='Your Message *' className=' h-full w-full bg-transparent outline-none'/>
+                  <textarea rows='4' id='message' onChange={(e)=> setMessage(e.target.value)} cols='50' placeholder='Your Message ' className=' h-full w-full bg-transparent outline-none'/>
                 </label>
                 
                 <button className=' h-[41px] w-[121px] py-1 px-5 border-violet-700 border-[2px] border-t-0 border-l-0 relative bg-transparent rounded-full'>

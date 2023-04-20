@@ -72,9 +72,26 @@ const Footer = () => {
             <label className=' text-gray-200' htmlFor='email'>EMAIL <span className=' text-red-500'>*</span></label>
             <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='email' id='email' required onChange={(e)=>setEmail(e.target.value)}/>
             <label className=' text-gray-200' htmlFor='mobile_no'>PHONE NUMBER <span className=' text-red-500'>*</span></label>
-            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='tel' id='mobile_no' required maxLength={12} onChange={(e)=>setPhoneNo(e.target.value)}/>
+            <input className='outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96'
+  type='tel'
+  id='mobile_no'
+  required
+  maxLength={12}
+  pattern="^[0-9]{10,12}$"
+  onChange={(e) => {
+    const phoneNo = e.target.value;
+    const phoneNoRegex = /^[0-9]{10,12}$/; // Regular expression to check if phone number is valid
+    if (phoneNoRegex.test(phoneNo)) {
+      setPhoneNo(phoneNo);
+    } else {
+      // Display an error message or prevent the form submission
+
+    }
+  }}
+/>
+
             <label className=' text-gray-200' htmlFor='message'>MESSAGE</label>
-            <input className=' pt-5 outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='message' required onChange={(e)=>setMessage(e.target.value)}/>
+            <input className=' pt-5 outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='message'  onChange={(e)=>setMessage(e.target.value)}/>
             <button className=' h-[41px] mt-10 w-[121px] py-1 px-5 border-violet-700 border-[2px] border-t-0 border-l-0 relative bg-transparent rounded-full'>
               <label htmlFor='submit' className='flex cursor-pointer gap-3 w-full h-full rounded-full font-gilroy-light items-center justify-center text-[18px] absolute -left-[2px] bottom-[2px] border-white border-2'>
                     <input type='submit' placeholder='SUBMIT' className=' cursor-pointer'/>
