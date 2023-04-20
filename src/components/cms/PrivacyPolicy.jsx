@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
       setLoading(true)
         const getTerms = async ()=>{
           try {
-            const res = await fetch('https://hubnex.cyclic.app/api/v1/privacy-policy')
+            const res = await fetch('https://hubnex-api.vercel.app/api/v1/privacy-policy')
             const data = await res.json();
             if(!res.ok){
               return setLoading(false);

@@ -8,6 +8,8 @@ function AdminLogin() {
   const [credentials, setCredentials] = useState({ email: "", password: "" })
   const [access, setAccess] = useState(false);
 
+  const [err, setErr] = useState(false);
+
   const navigate = useNavigate()
   const requestOptions = {
     method: 'POST',
@@ -17,7 +19,10 @@ function AdminLogin() {
 
   const handleSubmit = async ()=>{
     try {
-      const res = await fetch('https://hubnex.cyclic.app/api/v1/auth', requestOptions)
+      const res = await fetch('https://hubnex-api.vercel.app/api/v1/auth', requestOptions)
+      if(!res.ok){
+        return setErr(true);
+      }
       const data = await res.json()
       localStorage.setItem('token', data.result)
       setAccess(true)
@@ -74,6 +79,7 @@ Admin Login</h1>
               Login
             </button>
           </div>
+          {err && <span className=' text-red-500'>Invalid Credentials</span>}
         </form>
       </div>
     </div>

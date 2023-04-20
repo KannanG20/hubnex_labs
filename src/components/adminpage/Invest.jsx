@@ -21,7 +21,7 @@ const Invest = () => {
 
 const handleStatus = async (id, message, company) => {
   try {
-    const res = await fetch(`https://hubnex.cyclic.app/api/v1/company/${id}`, requestOptions)
+    const res = await fetch(`https://hubnex-api.vercel.app/api/v1/company/${id}`, requestOptions)
     if(!res.ok){
       return setShowMessage("Something went wrong")
     }
@@ -38,7 +38,7 @@ const handleStatus = async (id, message, company) => {
 useEffect(()=>{
   const getcompanies = async () => {
     try {
-      const res = await fetch('https://hubnex.cyclic.app/api/v1/companies');
+      const res = await fetch('https://hubnex-api.vercel.app/api/v1/companies');
       const data = await res.json();
       if(!res.ok) {
         setLoading(false)
@@ -59,7 +59,7 @@ useEffect(()=>{
   useEffect(()=>{
     const getcompanies = async () => {
       try {
-        const res = await fetch('https://hubnex.cyclic.app/api/v1/companies');
+        const res = await fetch('https://hubnex-api.vercel.app/api/v1/companies');
         const data = await res.json();
         if(!res.ok) {
           setLoading(false)

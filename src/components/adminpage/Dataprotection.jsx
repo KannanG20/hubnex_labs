@@ -47,9 +47,9 @@ const formats = [
 
   const handleUpdateDataProtection = async () =>{
     try {
-      const dataApi = await fetch('https://hubnex.cyclic.app/api/v1/data-protection')
+      const dataApi = await fetch('https://hubnex-api.vercel.app/api/v1/data-protection')
       const tc = await dataApi.json();
-      const putRes = await fetch(`https://hubnex.cyclic.app/api/v1/data-protection/${tc._id}`, requestOptions)
+      const putRes = await fetch(`https://hubnex-api.vercel.app/api/v1/data-protection/${tc._id}`, requestOptions)
       const putData = await putRes.json();
       setEditorState(putData.content);
     } catch (error) {
@@ -60,7 +60,7 @@ const formats = [
   useEffect(()=>{
     const termsData = async ()=>{
       try {
-        const dataApi = await fetch('https://hubnex.cyclic.app/api/v1/data-protection')
+        const dataApi = await fetch('https://hubnex-api.vercel.app/api/v1/data-protection')
         const tc = await dataApi.json();
         setEditorState(tc.content);
       } catch (error) {

@@ -21,7 +21,7 @@ const Contact = () => {
 
 const handleStatus = async (id, message, firstname, lastname) => {
   try {
-    const res = await fetch(`https://hubnex.cyclic.app/api/v1/user/${id}`, requestOptions)
+    const res = await fetch(`https://hubnex-api.vercel.app/api/v1/user/${id}`, requestOptions)
     if(!res.ok){
       return setShowMessage("Something went wrong")
     }
@@ -38,7 +38,7 @@ const handleStatus = async (id, message, firstname, lastname) => {
 useEffect(()=>{
   const getUsers = async () => {
     try {
-      const res = await fetch('https://hubnex.cyclic.app/api/v1/users');
+      const res = await fetch('https://hubnex-api.vercel.app/api/v1/users');
       const data = await res.json();
       if(!res.ok) {
         setLoading(false);
@@ -58,7 +58,7 @@ useEffect(()=>{
   useEffect(()=>{
     const getUsers = async () => {
       try {
-        const res = await fetch('https://hubnex.cyclic.app/api/v1/users');
+        const res = await fetch('https://hubnex-api.vercel.app/api/v1/users');
         const data = await res.json();
         if(!res.ok){
           setLoading(false);

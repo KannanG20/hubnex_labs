@@ -47,9 +47,9 @@ const Terms = () => {
 
   const handleUpdateTerms = async () =>{
     try {
-      const termsApi = await fetch('https://hubnex.cyclic.app/api/v1/terms-and-conditions')
+      const termsApi = await fetch('https://hubnex-api.vercel.app/api/v1/terms-and-conditions')
       const tc = await termsApi.json();
-      const putRes = await fetch(`https://hubnex.cyclic.app/api/v1/terms-and-conditions/${tc._id}`, requestOptions)
+      const putRes = await fetch(`https://hubnex-api.vercel.app/api/v1/terms-and-conditions/${tc._id}`, requestOptions)
       const putData = await putRes.json();
       setEditorState(putData.content);
     } catch (error) {
@@ -60,7 +60,7 @@ const Terms = () => {
   useEffect(()=>{
     const termsData = async ()=>{
       try {
-        const termsApi = await fetch('https://hubnex.cyclic.app/api/v1/terms-and-conditions')
+        const termsApi = await fetch('https://hubnex-api.vercel.app/api/v1/terms-and-conditions')
         const tc = await termsApi.json();
         setEditorState(tc.content);
       } catch (error) {

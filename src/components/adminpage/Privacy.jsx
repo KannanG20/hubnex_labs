@@ -46,9 +46,9 @@ const formats = [
 
   const handleUpdatePrivacy = async () =>{
     try {
-      const dataApi = await fetch('https://hubnex.cyclic.app/api/v1/privacy-policy')
+      const dataApi = await fetch('https://hubnex-api.vercel.app/api/v1/privacy-policy')
       const tc = await dataApi.json();
-      const putRes = await fetch(`https://hubnex.cyclic.app/api/v1/privacy-policy/${tc._id}`, requestOptions)
+      const putRes = await fetch(`https://hubnex-api.vercel.app/api/v1/privacy-policy/${tc._id}`, requestOptions)
       const putData = await putRes.json();
       setEditorState(putData.content);
       currentDate;
@@ -60,7 +60,7 @@ const formats = [
   useEffect(()=>{
     const termsData = async ()=>{
       try {
-        const dataApi = await fetch('https://hubnex.cyclic.app/api/v1/privacy-policy')
+        const dataApi = await fetch('https://hubnex-api.vercel.app/api/v1/privacy-policy')
         const tc = await dataApi.json();
         setEditorState(tc.content);
       } catch (error) {

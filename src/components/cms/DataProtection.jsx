@@ -20,7 +20,7 @@ const DataProtection = () => {
       setLoading(true);
         const getTerms = async ()=>{
           try {
-            const res = await fetch('https://hubnex.cyclic.app/api/v1/data-protection')
+            const res = await fetch('https://hubnex-api.vercel.app/api/v1/data-protection')
             const data = await res.json();
             console.log(data);
             setContent(data.content);
