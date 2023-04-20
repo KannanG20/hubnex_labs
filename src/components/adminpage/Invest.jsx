@@ -41,13 +41,15 @@ useEffect(()=>{
       const res = await fetch('https://hubnex-api.vercel.app/api/v1/companies');
       const data = await res.json();
       if(!res.ok) {
+        console.log(data)
         setLoading(false)
         return setErr(true)
       }
       setCompanies(data.results)
+      console.log(data);
     } catch (error) {
       setLoading(false)
-      console.log(error.message);
+      console.log(error);
     }
 
   }
@@ -62,14 +64,16 @@ useEffect(()=>{
         const res = await fetch('https://hubnex-api.vercel.app/api/v1/companies');
         const data = await res.json();
         if(!res.ok) {
+          console.log(data)
           setLoading(false)
           return setErr(true)
         }
         setLoading(false)
-        setCompanies(data.results) 
+        setCompanies(data.results)
+        console.log(data); 
       } catch (error) {
         setLoading(false)
-        console.log(error.message);
+        console.log(error);
       }
 
     }
