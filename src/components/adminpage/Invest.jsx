@@ -16,12 +16,12 @@ const Invest = () => {
   const requestOptions = {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(),
 };
 
 const handleStatus = async (id, message, company) => {
   try {
     const res = await fetch(`https://hubnex.cyclic.app/api/v1/company/${id}`, requestOptions)
-    const data = await res.json();
     if(!res.ok){
       return setShowMessage("Something went wrong")
     }
@@ -40,9 +40,13 @@ useEffect(()=>{
     try {
       const res = await fetch('https://hubnex.cyclic.app/api/v1/companies');
       const data = await res.json();
-      if(!res.ok) return setErr(true)
+      if(!res.ok) {
+        setLoading(false)
+        return setErr(true)
+      }
       setCompanies(data.results)
     } catch (error) {
+      setLoading(false)
       console.log(error.message);
     }
 
@@ -54,11 +58,20 @@ useEffect(()=>{
 
   useEffect(()=>{
     const getcompanies = async () => {
-      const res = await fetch('https://hubnex.cyclic.app/api/v1/companies');
-      const data = await res.json();
-      if(!res.ok) return setErr(true)
-      setCompanies(data.results)
-      setLoading(false)
+      try {
+        const res = await fetch('https://hubnex.cyclic.app/api/v1/companies');
+        const data = await res.json();
+        if(!res.ok) {
+          setLoading(false)
+          return setErr(true)
+        }
+        setLoading(false)
+        setCompanies(data.results) 
+      } catch (error) {
+        setLoading(false)
+        console.log(error.message);
+      }
+
     }
     return () => {
       getcompanies();

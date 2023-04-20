@@ -16,11 +16,20 @@ const PrivacyPolicy = () => {
     useEffect(()=>{
       setLoading(true)
         const getTerms = async ()=>{
+          try {
             const res = await fetch('https://hubnex.cyclic.app/api/v1/privacy-policy')
             const data = await res.json();
+            if(!res.ok){
+              return setLoading(false);
+            }
             console.log(data);
             setContent(data.content);
             setLoading(false);
+          } catch (error) {
+            setLoading(false);
+            console.log(error.message);
+          }
+
         }
         return () =>{
             getTerms();

@@ -27,6 +27,7 @@ const DataProtection = () => {
             // setCurrentTime(moment().format('DD-MM-YYYY'))
             setLoading(false);
           } catch (error) {
+            setLoading(false)
             console.log(error.message)
           }
         }

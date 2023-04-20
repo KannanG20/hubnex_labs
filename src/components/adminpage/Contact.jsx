@@ -16,24 +16,39 @@ const Contact = () => {
   const requestOptions = {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(),
 };
 
 const handleStatus = async (id, message, firstname, lastname) => {
-  const res = await fetch(`https://hubnex.cyclic.app/api/v1/user/${id}`, requestOptions)
-  const data = await res.json();
-  const user = firstname + " " + lastname
-  setStatus((prev)=> !prev)
-  setShowMessage(message);
-  setUserOf(user);
+  try {
+    const res = await fetch(`https://hubnex.cyclic.app/api/v1/user/${id}`, requestOptions)
+    if(!res.ok){
+      return setShowMessage("Something went wrong")
+    }
+    const user = firstname + " " + lastname
+    setStatus((prev)=> !prev)
+    setShowMessage(message);
+    setUserOf(user);
+  } catch (error) {
+    console.log(error.message)
+  }
 }
 
 
 useEffect(()=>{
   const getUsers = async () => {
-    const res = await fetch('https://hubnex.cyclic.app/api/v1/users');
-    const data = await res.json();
-    if(!res.ok) return setErr(true)
-    setUsers(data.results)
+    try {
+      const res = await fetch('https://hubnex.cyclic.app/api/v1/users');
+      const data = await res.json();
+      if(!res.ok) {
+        setLoading(false);
+        return setErr(true)
+      }
+      setUsers(data.results)
+    } catch (error) {
+      setLoading(false)
+      console.log(error.message)
+    }
   }
   return () => {
     getUsers();
@@ -42,11 +57,20 @@ useEffect(()=>{
 
   useEffect(()=>{
     const getUsers = async () => {
-      const res = await fetch('https://hubnex.cyclic.app/api/v1/users');
-      const data = await res.json();
-      if(!res.ok) return setErr(true)
-      setUsers(data.results)
-      setLoading(false)
+      try {
+        const res = await fetch('https://hubnex.cyclic.app/api/v1/users');
+        const data = await res.json();
+        if(!res.ok){
+          setLoading(false);
+          return setErr(true)
+        } 
+        setUsers(data.results)
+        setLoading(false)
+      } catch (error) {
+        setLoading(false)
+        console.log(error);
+      }
+
     }
     return () => {
       getUsers();
