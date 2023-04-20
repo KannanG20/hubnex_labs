@@ -80,7 +80,7 @@ const handleStatus = async (id, message, firstname, lastname) => {
 
   return (
     <div className=' h-full flex flex-col items-center gap-5 overflow-y-auto'>
-    { loading ? <div className=' h-full w-full justify-center flex items-center'><CircularProgress/></div> :
+    {/* { loading ? <div className=' h-full w-full justify-center flex items-center'><CircularProgress/></div> : */}
       <>
       {err && <div className=' flex justify-center items-center h-full w-full'><span className='text-red-500'>Something went wrong</span></div>}
       {status && 
@@ -112,7 +112,7 @@ const handleStatus = async (id, message, firstname, lastname) => {
         ))}
       </div>
       </>
-}
+{/* } */}
     </div>
   )
 }
