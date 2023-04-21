@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Privacy = () => {
 
   const [editorState, setEditorState] = useState("");
@@ -38,6 +41,13 @@ const formats = [
   "font"
 ];
 
+const errorNotifs = ()=> {
+  toast.error("Something is wrong! try again")
+}
+const successNotifs = () =>{
+  toast.success("successfully Updated ")
+}
+
   const requestOptions = {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
@@ -51,11 +61,10 @@ const formats = [
       const putRes = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/privacy-policy/${tc._id}`, requestOptions)
       const putData = await putRes.json();
       if(!putRes.ok){
-        return alert("something is wrong")
+        return errorNotifs()
       }
       setEditorState(putData.content);
-      alert("successfully updated!")
-      currentDate;
+      successNotifs()
     } catch (error) {
       console.log(error.message)
     }
@@ -67,7 +76,7 @@ const formats = [
         const dataApi = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/privacy-policy`)
         const tc = await dataApi.json();
         if(!dataApi.ok){
-          return console.log("something went wrong");
+          return errorNotifs()
         }
         setEditorState(tc.content);
       } catch (error) {

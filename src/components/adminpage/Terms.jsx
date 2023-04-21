@@ -1,7 +1,11 @@
 import { content } from '@syncfusion/ej2-react-grids';
 import React, { useEffect, useState } from 'react'
 import ReactQuill from 'react-quill';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import 'react-quill/dist/quill.snow.css';
+
+
 const Terms = () => {
 
   const [editorState, setEditorState] = useState("");
@@ -39,6 +43,13 @@ const Terms = () => {
     "font"
   ];
 
+  const errorNotifs = ()=> {
+    toast.error("Something is wrong! try again")
+  }
+  const successNotifs = () =>{
+    toast.success("successfully Updated ")
+  }
+
   const requestOptions = {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
@@ -52,10 +63,10 @@ const Terms = () => {
       const putRes = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/terms-and-conditions/${tc._id}`, requestOptions)
       const putData = await putRes.json();
       if(!putRes.ok){
-        return alert("something is wrong")
+        return errorNotifs()
       }
       setEditorState(putData.content);
-      alert("successfully updated!")
+      successNotifs()
     } catch (error) {
       console.log(error.message)
     }
@@ -66,6 +77,9 @@ const Terms = () => {
       try {
         const termsApi = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/terms-and-conditions`)
         const tc = await termsApi.json();
+        if(!termsApi.ok){
+          errorNotifs();
+        }
         setEditorState(tc.content);
       } catch (error) {
         console.log(error.message)
