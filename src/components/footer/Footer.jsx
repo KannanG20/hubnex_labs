@@ -6,6 +6,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import CopyrightIcon from '@mui/icons-material/Copyright';
+import { CircularProgress } from '@mui/material';
 
 const Footer = () => {
 
@@ -22,6 +23,7 @@ const Footer = () => {
   const [message, setMessage] = useState("")
 
   const [success, setSuccess] = useState(false)
+  const [loading, setLoading] = useState(false)
   
 
   const userData = {
@@ -37,15 +39,17 @@ const Footer = () => {
   };
   
   const handleSubmit = async (e)=>{
-
+    setLoading(true)
     e.preventDefault();
     try {
       const res = await fetch("https://hubnex.cyclic.app/api/v1/user", userData)
       const data = await res.json()
       if(!res.ok){
+        setLoading(false)
         return console.log("Something went wrong");
       }
       setSuccess(true);
+      setLoading(false)
     } catch (error) {
       console.log(error.message);
     }
@@ -99,8 +103,12 @@ const Footer = () => {
                     <img src={arrow} alt="arrow" width={15} height={15} className='object-contain'/>   
               </label>
             </button>
-            {success && <span className=' text-green-500 font-gilroy-regular'>Your Request has been Successfully Initiated</span>}
-          </form>
+            {loading ? <CircularProgress/> : 
+
+              success && 
+                <span className=' text-green-500 font-gilroy-regular'>Your Request has been Successfully Initiated</span>
+            }
+            </form>
       </div>
       <div className=' flex flex-col w-full h-40 justify-center xl:mt-8 items-center gap-8 text-white sm:h-80 text-lg'>
         <span className=' font-gilroy-semi-bold text-[28px] md:text-[24px]'>Connect with us</span>

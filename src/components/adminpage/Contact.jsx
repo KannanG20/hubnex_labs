@@ -60,7 +60,6 @@ const handleStatus = async (id, message, firstname, lastname) => {
       try {
         const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/users`);
         const data = await res.json();
-        console.log(data);
         if(!res.ok){
           setLoading(false);
           return setErr(true)

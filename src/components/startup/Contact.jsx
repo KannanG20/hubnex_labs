@@ -11,6 +11,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import './style.css'
+import { CircularProgress, formLabelClasses, TextareaAutosize } from '@mui/material';
 
 const Contact = () => {
 
@@ -22,6 +23,7 @@ const Contact = () => {
   const [message, setMessage] = useState("")
 
   const [success, setSuccess] = useState(false)
+  const [loading, setLoading] = useState(false);
   
 
   const companyData = {
@@ -37,15 +39,17 @@ const Contact = () => {
   };
   
   const handleSubmit = async (e)=>{
+    setLoading(true)
     e.preventDefault();
     try {
       const res = await fetch("https://hubnex.cyclic.app/api/v1/company", companyData)
       const data = await res.json()
       if(!res.ok){
+        setLoading(formLabelClasses)
         return console.log(data);
       }
-      console.log(data);
       setSuccess(true);
+      setLoading(false)
     } catch (error) {
       console.log(error.message);
     }
@@ -106,8 +110,12 @@ const Contact = () => {
                 <button className=' h-[41px] w-[121px] py-1 px-5 border-violet-700 border-[2px] border-t-0 border-l-0 relative bg-transparent rounded-full'>
                   <input type='submit' placeholder='Submit' className=' w-full h-full rounded-full font-gilroy-light text-[18px] absolute -left-1 bottom-1 border-white border-2'/>
                   </button>
-                  {success && <span className=' text-green-500 font-gilroy-regular'>Your Request has been Successfully Initiated</span>}
-              </form>
+                  {loading ? <CircularProgress/> : 
+
+                    success && 
+                      <span className=' text-green-500 font-gilroy-regular'>Your Request has been Successfully Initiated</span>
+                    }              
+                </form>
             </div>
            </div>
           <div className=' w-full flex flex-col items-center py-10 gap-5 justify-center'>
