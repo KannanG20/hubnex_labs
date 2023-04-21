@@ -56,7 +56,6 @@ useEffect(()=>{
       try {
         const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/companies`);
         const data = await res.json();
-        console.log(data);
         if(!res.ok) {
           setLoading(false)
           return setErr(true)
