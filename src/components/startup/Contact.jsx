@@ -10,6 +10,8 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './style.css'
 import { CircularProgress, formLabelClasses, TextareaAutosize } from '@mui/material';
 
@@ -38,11 +40,65 @@ const Contact = () => {
     })
   };
   
+  const errorName = ()=> {
+    return toast.error("Please provide your name");
+  }
+
+  const errorCompanyName = ()=> {
+    return toast.error("Please Provide Company Name");
+  }
+
+  const validEmail = () =>{
+    return toast.error("Provide a valid Email address");
+  }
+
+  const validPhone = () =>{
+    return toast.error("Provide a valid Phone Number");
+  }
+
+  const errorEmail = ()=> {
+    return toast.error("Please Provide Email address");
+  }
+
+  const errorPhone = ()=> {
+    return toast.error("Please Provide Phone Number");
+  }
+
+  function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+
+  function isValidPhone(phone){
+    return /(7|8|9)\d{9}/.test(phone)
+  }
+
+
   const handleSubmit = async (e)=>{
-    setLoading(true)
+    setEmail("")
+    setName("")
+    setCompanyName("")
+    setPhoneNo("")
+    setMessage("")
     e.preventDefault();
     try {
-      const res = await fetch("https://hubnex.cyclic.app/api/v1/company", companyData)
+      if(!e.target[0].value){
+        return errorName()
+      }
+      if(!e.target[1].value){
+       return errorCompanyName()
+      }
+      if(!e.target[2].value){
+      return errorEmail()
+      }else if(!isValidEmail(e.target[2].value)){
+        return validEmail()
+      }
+      if(!e.target[3].value){
+        return errorPhone()
+      }else if(!isValidPhone(e.target[3].value)){
+        return validPhone()
+      }
+      setLoading(true)
+      const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/company`, companyData)
       const data = await res.json()
       if(!res.ok){
         setLoading(formLabelClasses)
@@ -56,7 +112,9 @@ const Contact = () => {
   }
 
   return (
+    
     <div className='bg-black h-[1024px] w-full flex flex-col justify-between pt-10 text-white overflow-hidden'>
+      <ToastContainer/>
        <div className=' w-full md:w-[90%] flex flex-col h-full m-auto justify-between items-center'>
           <div className=' flex w-full justify-between h-full items-center flex-col lg:flex-row'>
 
@@ -70,11 +128,11 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className=' flex flex-col gap-5 w-full px-5 md:px-10 font-gilroy-medium text-[20px] z-50'>
                 <label htmlFor="name" className=' flex border-b-2 border-b-gray-600 py-2 gap-5 w-full'>
                   <PersonIcon/>
-                  <input type="text" id='name' onChange={(e)=> setName(e.target.value)} className=' w-full border-none outline-none bg-transparent' required placeholder='Name *'/>
+                  <input type="text" id='name' onChange={(e)=> setName(e.target.value)} className=' w-full border-none outline-none bg-transparent' placeholder='Name *'/>
                 </label>
                 <label htmlFor="companyname" className=' flex border-b-2 border-b-gray-600 py-2 gap-5 w-full'>
                   <BusinessIcon/>
-                  <input type="text" id='companyname' onChange={(e)=> setCompanyName(e.target.value)} className=' w-full border-none outline-none bg-transparent' required placeholder='Company Name *'/>
+                  <input type="text" id='companyname' onChange={(e)=> setCompanyName(e.target.value)} className=' w-full border-none outline-none bg-transparent' placeholder='Company Name *'/>
                 </label>
                 <label htmlFor="email" className=' flex border-b-2 border-b-gray-600 py-2 gap-5 w-full'>
                   <MailOutlineIcon/>
@@ -87,7 +145,7 @@ const Contact = () => {
                   type='tel'
                   id='phone'
                   placeholder='Phone *'
-                  required
+                
                   maxLength={12}
                   pattern="^[0-9]{10,12}$"
                   onChange={(e) => {

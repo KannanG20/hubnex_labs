@@ -17,7 +17,7 @@ import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 
-const SideNav = () => {
+const SideNav = ({ navbar }) => {
 
   const [cmsOpen, setCmsOpen] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
@@ -36,7 +36,7 @@ const SideNav = () => {
   }
 
   return (
-    <div className=' w-[30%] hidden bg-slate-900 scrollbar scrollbar-thumb-gray-600 scrollbar-track-gray-900 h-full lg:flex flex-col py-5 items-center sticky left-0 top-0 overflow-y-auto'>
+    <div className=' hidden w-[30%] bg-slate-900 scrollbar scrollbar-thumb-gray-600 scrollbar-track-gray-900 h-full lg:flex flex-col py-5 items-center sticky left-0 top-0 overflow-y-auto'>
       <div className=' w-full flex gap-2 items-center justify-center'>
         <img src={logo} alt="logo" />
         <Link to='/admin' className=' text-3xl text-white font-bold'>hubnex</Link>

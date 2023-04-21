@@ -7,13 +7,28 @@ import testImg from '@assets/balloonMob.png'
 import { Outlet, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import KeyboardArrowUp from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import LayersIcon from '@mui/icons-material/Layers';
+import BackupTableIcon from '@mui/icons-material/BackupTable';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import FileOpenIcon from '@mui/icons-material/FileOpen';
+import logo from '@assets/logo.png'
+import { Link } from 'react-router-dom';
+import SideNav from './SideNav'
+import SideNavMobile from './SideNavMobile';
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 
 const Header = () => {
 
+
+
   const [notifs, setNotifs]= useState(false);
   const [profile, setProfile] = useState(false);
+  const [navbar, setNavbar] = useState(false)
+
 
   const navigate = useNavigate()
   const handleLogout = ()=>{
@@ -21,12 +36,17 @@ const Header = () => {
     navigate('/')  
   }
 
+
   return (
     <> 
-    <div className=' w-full flex flex-col gap-5 px-10'>
+    <div className=' w-full flex flex-col gap-5 px-2 sm:px-10'>
     <div className=' w-full h-20 flex flex-col py-5 gap-5'>
       <div className=' w-full flex justify-between'>
-        <div className=' w-full h-full justify-start flex gap-2 items-center'>
+        
+      <div onClick={()=> setNavbar((prev)=> !prev)} className=' flex items-center justify-center sm:hidden'>
+        <MenuIcon className=' text-white' fontSize='large'/>
+      </div>
+        <div className=' hidden sm:flex w-full h-full justify-start gap-2 items-center'>
           <label className=' w-[50%] h-10 px-2 bg-gray-100 flex items-center gap-3 rounded-md'>
             <SearchIcon/>
             <input className=' w-full outline-none border-none bg-transparent h-full'/>
@@ -55,7 +75,7 @@ const Header = () => {
                 setProfile((prev)=>!prev)
               }}>{profile ? <KeyboardArrowUp/> : <KeyboardArrowDownIcon/>}</span></span>
 
-              {profile &&  <div className=' absolute -bottom-28 right-2 rounded-md rounded-tr-none py-5 px-5 flex flex-col gap-3 bg-gray-200 text-black'>
+              {profile &&  <div className=' absolute z-10 -bottom-28 right-2 rounded-md rounded-tr-none py-5 px-5 flex flex-col gap-3 bg-gray-200 text-black'>
                   <button>Profile</button>
                   <button onClick={handleLogout}>Logout</button>
                 </div>
@@ -68,6 +88,7 @@ const Header = () => {
     </div>
     <Outlet/>
     </div>
+    <SideNavMobile navbar={navbar} setNavbar={setNavbar}/>
     </>
   )
 }

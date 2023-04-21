@@ -91,15 +91,15 @@ const successNotifs = () =>{
   return (
     <>
     <ToastContainer/>
-      <div className=' flex justify-between w-full items-center'>
-        <span className=' font-gilroy-bold text-[40px] text-white'>Content Management System</span>
+      <div className=' flex flex-col sm:flex-row gap-5 sm:gap-0 justify-between w-full items-center'>
+        <span className=' font-gilroy-bold text-[20px] sm:text-[40px] text-white'>Content Management System</span>
         <div className=' flex gap-5'>
         <button onClick={handleUpdateDataProtection} className=' bg-blue-600 w-max py-[10px] px-5 text-white rounded-full'>Update Changes</button>
         <Link to='/data-protection' className=' rounded-full bg-sky-400 flex justify-center items-center py-2 px-4 text-white'>Goto page</Link>
         </div>
       </div>
       <div className=' w-full h-full flex border-2 border-gray-300 gap-5 flex-col shadow-md shadow-white rounded-md bg-white sticky overflow-y-auto'>
-        <span className=' px-5  py-5 flex-2 font-gilroy-bold text-[25px] flex items-center border-b-2 border-b-gray-300'>Data Protection</span> 
+        <span className=' px-5  py-5 flex-2 font-gilroy-bold text-[25px] justify-center sm:justify-start flex items-center border-b-2 border-b-gray-300'>Data Protection</span> 
         <div className=' flex-1 px-5 flex flex-col gap-5 '>
           <span className=' text-lg font-semibold'>Page Description</span>
           <ReactQuill className=' bg-white text-black' theme="snow" formats={formats} modules={modules} value={editorState} onChange={(content)=> setEditorState(content)} />

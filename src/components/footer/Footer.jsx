@@ -22,6 +22,14 @@ const Footer = () => {
   const [phoneNo, setPhoneNo] = useState(null);
   const [message, setMessage] = useState("")
 
+  const [errFirstname, setErrFirstname] = useState(false)
+  const [errLastname, setErrLastname] = useState(false)
+  const [errEmail, setErrEmail] = useState(false)
+  const [errPhone, setErrPhone] = useState(false)
+
+  const [validEmail, setValidEmail] = useState(false)
+  const [validPhone, setValidPhone] = useState(false)
+
   const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
   
@@ -37,12 +45,42 @@ const Footer = () => {
       message: message
     })
   };
+  function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+
+  function isValidPhone(phone){
+    return /(7|8|9)\d{9}/.test(phone)
+  }
   
   const handleSubmit = async (e)=>{
-    setLoading(true)
+    setErrEmail(false)
+    setErrFirstname(false)
+    setErrLastname(false)
+    setErrPhone(false)
+    setValidEmail(false)
+    setValidPhone(false)
     e.preventDefault();
+    
     try {
-      const res = await fetch("https://hubnex.cyclic.app/api/v1/user", userData)
+      if(!e.target[0].value){
+        return setErrFirstname(true)
+      }
+      if(!e.target[1].value){
+        return setErrLastname(true)
+      }
+      if(!e.target[2].value){
+        return setErrEmail(true)
+      }else if(!isValidEmail(e.target[2].value)){
+        return setValidEmail(true)
+      }
+      if(!e.target[3].value){
+        return setErrPhone(true)
+      }else if(!isValidPhone(e.target[3].value)){
+        return setValidPhone(true)
+      }
+      setLoading(true)
+      const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/user`, userData)
       const data = await res.json()
       if(!res.ok){
         setLoading(false)
@@ -70,31 +108,14 @@ const Footer = () => {
           </div>
         </div>
           <form className='flex flex-col gap-4 m-auto text-[16px] w-[80%] md:w-auto md:m-0 mt-10  md:mt-0' onSubmit={handleSubmit}>
-            <label className=' text-gray-200' htmlFor='first_name'>FIRST NAME <span className=' text-red-500'>*</span></label>
-            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='first_name' required maxLength={25} onChange={(e)=>setFirstName(e.target.value)}/>
-            <label className=' text-gray-200' htmlFor='last_name'>LAST NAME <span className=' text-red-500'>*</span></label>
-            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='last_name' required maxLength={25} onChange={(e)=>setLastName(e.target.value)}/>
-            <label className=' text-gray-200' htmlFor='email'>EMAIL <span className=' text-red-500'>*</span></label>
-            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='email' id='email' required onChange={(e)=>setEmail(e.target.value)}/>
-            <label className=' text-gray-200' htmlFor='mobile_no'>PHONE NUMBER <span className=' text-red-500'>*</span></label>
-            <input className='outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96'
-  type='tel'
-  id='mobile_no'
-  required
-  maxLength={12}
-  pattern="^[0-9]{10,12}$"
-  onChange={(e) => {
-    const phoneNo = e.target.value;
-    const phoneNoRegex = /^[0-9]{10,12}$/; // Regular expression to check if phone number is valid
-    if (phoneNoRegex.test(phoneNo)) {
-      setPhoneNo(phoneNo);
-    } else {
-      // Display an error message or prevent the form submission
-
-    }
-  }}
-/>
-
+            <label className=' text-gray-200 ' htmlFor='first_name'>FIRST NAME {errFirstname ? <span className=' text-red-500 pl-3'>Firstname is mandatory</span> : <span className=' text-red-500'>*</span>}</label>
+            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='first_name'  maxLength={25} onChange={(e)=>setFirstName(e.target.value)}/>
+            <label className=' text-gray-200 ' htmlFor='last_name'>LAST NAME {errLastname ? <span className=' text-red-500 pl-3'>Lastname is mandatory</span> : <span className=' text-red-500'>*</span>}</label>
+            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='last_name'  maxLength={25} onChange={(e)=>setLastName(e.target.value)}/>
+            <label className=' text-gray-200 ' htmlFor='email'>EMAIL {errEmail ? <span className=' text-red-500 pl-3'>Email is mandatory</span> : <span className=' text-red-500'>*</span>}{validEmail &&  <span className=' text-red-500 pl-3'> Please provide valid email address </span>}</label>
+            <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text'  id='email'  onChange={(e)=>setEmail(e.target.value)}/>
+            <label className=' text-gray-200 ' htmlFor='mobile_no'>PHONE NUMBER {errPhone ? <span className=' text-red-500 pl-3'>Phone No is mandatory</span> : <span className=' text-red-500'>*</span>}{validPhone &&  <span className='pl-3 text-red-500'> Please provide valid Phone Number </span>}</label>
+            <input className='outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='tel' id='mobile_no' maxLength={12} onChange={(e) => setPhoneNo(e.target.value)}/>
             <label className=' text-gray-200' htmlFor='message'>MESSAGE</label>
             <input className=' pt-5 outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='message'  onChange={(e)=>setMessage(e.target.value)}/>
             <button className=' h-[41px] mt-10 w-[121px] py-1 px-5 border-violet-700 border-[2px] border-t-0 border-l-0 relative bg-transparent rounded-full'>
