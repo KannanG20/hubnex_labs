@@ -46,11 +46,15 @@ const formats = [
 
   const handleUpdatePrivacy = async () =>{
     try {
-      const dataApi = await fetch('https://hubnex-api.vercel.app/api/v1/privacy-policy')
+      const dataApi = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/privacy-policy`)
       const tc = await dataApi.json();
-      const putRes = await fetch(`https://hubnex-api.vercel.app/api/v1/privacy-policy/${tc._id}`, requestOptions)
+      const putRes = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/privacy-policy/${tc._id}`, requestOptions)
       const putData = await putRes.json();
+      if(!putRes.ok){
+        return alert("something is wrong")
+      }
       setEditorState(putData.content);
+      alert("successfully updated!")
       currentDate;
     } catch (error) {
       console.log(error.message)
@@ -58,18 +62,19 @@ const formats = [
   }
 
   useEffect(()=>{
-    const termsData = async ()=>{
+    const privacyData = async ()=>{
       try {
-        const dataApi = await fetch('https://hubnex-api.vercel.app/api/v1/privacy-policy')
+        const dataApi = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/privacy-policy`)
         const tc = await dataApi.json();
+        if(!dataApi.ok){
+          return console.log("something went wrong");
+        }
         setEditorState(tc.content);
       } catch (error) {
         console.log(error.message)
       }
     }
-    return () =>{
-      termsData()
-    }
+    privacyData();
   }, [])
   return (
     <>

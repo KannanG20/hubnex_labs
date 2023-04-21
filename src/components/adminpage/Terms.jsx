@@ -47,11 +47,15 @@ const Terms = () => {
 
   const handleUpdateTerms = async () =>{
     try {
-      const termsApi = await fetch('https://hubnex-api.vercel.app/api/v1/terms-and-conditions')
+      const termsApi = await fetch(`https://${import.meta.env.VITE_API_URL}api/v1/terms-and-conditions`)
       const tc = await termsApi.json();
-      const putRes = await fetch(`https://hubnex-api.vercel.app/api/v1/terms-and-conditions/${tc._id}`, requestOptions)
+      const putRes = await fetch(`https://${import.meta.env.VITE_API_URL}api/v1/terms-and-conditions/${tc._id}`, requestOptions)
       const putData = await putRes.json();
+      if(!putRes.ok){
+        return alert("something is wrong")
+      }
       setEditorState(putData.content);
+      alert("successfully updated!")
     } catch (error) {
       console.log(error.message)
     }
@@ -60,16 +64,14 @@ const Terms = () => {
   useEffect(()=>{
     const termsData = async ()=>{
       try {
-        const termsApi = await fetch('https://hubnex-api.vercel.app/api/v1/terms-and-conditions')
+        const termsApi = await fetch(`https://${import.meta.env.VITE_API_URL}api/v1/terms-and-conditions`)
         const tc = await termsApi.json();
         setEditorState(tc.content);
       } catch (error) {
         console.log(error.message)
       }
     }
-    return () =>{
-      termsData()
-    }
+    termsData()
   }, [])
 
 

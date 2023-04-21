@@ -47,29 +47,34 @@ const formats = [
 
   const handleUpdateDataProtection = async () =>{
     try {
-      const dataApi = await fetch('https://hubnex-api.vercel.app/api/v1/data-protection')
+      const dataApi = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/data-protection`)
       const tc = await dataApi.json();
-      const putRes = await fetch(`https://hubnex-api.vercel.app/api/v1/data-protection/${tc._id}`, requestOptions)
+      const putRes = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/data-protection/${tc._id}`, requestOptions)
       const putData = await putRes.json();
+      if(!putRes.ok){
+        return alert("Something is wrong, Update once again")
+      }
       setEditorState(putData.content);
+      alert("Successfully Updated!")
     } catch (error) {
       console.log(error.message)
     }
   }
 
   useEffect(()=>{
-    const termsData = async ()=>{
+    const dataProtectionData = async ()=>{
       try {
-        const dataApi = await fetch('https://hubnex-api.vercel.app/api/v1/data-protection')
+        const dataApi = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/data-protection`)
         const tc = await dataApi.json();
+        if(!dataApi.ok){
+          return console.log("Something went wrong");
+        }
         setEditorState(tc.content);
       } catch (error) {
         console.log(error.message)
       }
     }
-    return () =>{
-      termsData()
-    }
+    dataProtectionData();
   }, [])
 
   return (

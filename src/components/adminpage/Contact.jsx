@@ -58,7 +58,7 @@ const handleStatus = async (id, message, firstname, lastname) => {
   useEffect(()=>{
     const getUsers = async () => {
       try {
-        const res = await fetch('https://hubnex-api.vercel.app/api/v1/users');
+        const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/users`);
         const data = await res.json();
         console.log(data);
         if(!res.ok){
@@ -73,9 +73,8 @@ const handleStatus = async (id, message, firstname, lastname) => {
       }
 
     }
-    return () => {
       getUsers();
-    }
+    
   }, [status])
 
 
@@ -101,7 +100,7 @@ const handleStatus = async (id, message, firstname, lastname) => {
       </div>
       <div className=' flex flex-col w-full items-center text-white font-gilroy-semi-bold border-b-[1px] border-b-white'>
         {users?.map((user)=> (
-          <div className=' flex justify-between items-center w-full py-5 border-b-[1px] borber-b-white text-gray-300'>
+          <div key={user._id} className=' flex justify-between items-center w-full py-5 border-b-[1px] borber-b-white text-gray-300'>
             <span className='flex justify-center flex-1'>{user.firstname} {user.lastname}</span>
             <span className='flex justify-center flex-1'>{user.email}</span>
             <span className='flex justify-center flex-1'>{user.phoneNo}</span>

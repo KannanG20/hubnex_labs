@@ -12,28 +12,27 @@ import { CircularProgress } from '@mui/material';
 const TermsandConditions = () => {
 
     const [content, setContent] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
+    const [err, setErr] = useState(false);
 
     useEffect(()=>{
       setLoading(true);
         const getTerms = async ()=>{
           try {
-            const res = await fetch('https://hubnex-api.vercel.app/api/v1/terms-and-conditions')
+            const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/terms-and-conditions`)
             const data = await res.json();
             if(!res.ok){
+              setErr(true)
               return setLoading(false)
             }
-            console.log(data);
             setContent(data.content);
             setLoading(false);
           } catch (error) {
             setLoading(false)
-            console.log(error.message)
+            setErr(true)
           }
         }
-        return () =>{
-            getTerms();
-        }
+        getTerms();
     }, [])
 
 
@@ -46,10 +45,15 @@ const TermsandConditions = () => {
         <div className=' bg-gradient-to-tr from-[#363434] to-gray-400 w-full flex justify-center'>
             <span className=' text-white py-5 w-[90%] font-gilroy-bold text-[40px] '>Terms and Conditions</span>
         </div>
+        {err ? <span className=' w-full h-[calc(100vh-210px)] text-red-500 flex justify-center items-center'>Something is wrong!</span> 
+        :
+        <> 
         {loading ?  <div className=' h-[calc(100vh-210px)] w-full flex justify-center items-center'><CircularProgress/></div>
         :
         <div className=' py-10 w-[90%] mx-auto' dangerouslySetInnerHTML = {{__html : content}}></div>
       }
+      </>
+}
     </div>
     <div className=' h-auto bg-black'>
     <div className=' flex flex-col w-full h-44 justify-center items-center gap-8 text-white text-lg'>

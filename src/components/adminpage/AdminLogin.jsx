@@ -10,7 +10,6 @@ function AdminLogin() {
 
   const [err, setErr] = useState(false);
 
-  const navigate = useNavigate()
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -19,7 +18,7 @@ function AdminLogin() {
 
   const handleSubmit = async ()=>{
     try {
-      const res = await fetch('https://hubnex-api.vercel.app/api/v1/auth', requestOptions)
+      const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/auth`, requestOptions)
       if(!res.ok){
         return setErr(true);
       }

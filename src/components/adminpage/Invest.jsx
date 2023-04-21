@@ -9,7 +9,7 @@ const Invest = () => {
   const [showMessage, setShowMessage] = useState("");
   const [companyOf, setCompanyOf] = useState("")
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const [err, setErr] = useState(false);
 
@@ -59,10 +59,12 @@ const handleStatus = async (id, message, company) => {
 // }, [status])
 
   useEffect(()=>{
+    setLoading(true);
     const getcompanies = async () => {
       try {
-        const res = await fetch('https://hubnex-api.vercel.app/api/v1/companies');
+        const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/companies`);
         const data = await res.json();
+        console.log(data);
         if(!res.ok) {
           console.log(data)
           setLoading(false)
@@ -77,9 +79,7 @@ const handleStatus = async (id, message, company) => {
       }
 
     }
-    return () => {
-      getcompanies();
-    }
+    getcompanies();
   }, [status])
 
 
@@ -105,7 +105,7 @@ const handleStatus = async (id, message, company) => {
       </div>
       <div className=' flex flex-col w-full items-center text-white font-gilroy-semi-bold border-b-[1px] border-b-white'>
         {companies?.map((company)=> (
-          <div className=' flex justify-between items-center w-full py-5 border-b-[1px] borber-b-white text-gray-300'>
+          <div key={company._id} className=' flex justify-between items-center w-full py-5 border-b-[1px] borber-b-white text-gray-300'>
             <span className='flex justify-center flex-1'>{company.companyName}</span>
             <span className='flex justify-center flex-1'>{company.email}</span>
             <span className='flex justify-center flex-1'>{company.phoneNo}</span>

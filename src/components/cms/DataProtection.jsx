@@ -14,26 +14,30 @@ const DataProtection = () => {
     const [content, setContent] = useState(null)
     // const [currentTime, setCurrentTime] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [err, setErr] = useState(false);
 
 
     useEffect(()=>{
       setLoading(true);
-        const getTerms = async ()=>{
+      setErr(false);
+        const getDataProtection = async ()=>{
           try {
-            const res = await fetch('https://hubnex-api.vercel.app/api/v1/data-protection')
+            const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/data-protection`)
             const data = await res.json();
-            console.log(data);
+            if(!res.ok){
+              setErr(true)
+              return setLoading(false);
+            }
             setContent(data.content);
             // setCurrentTime(moment().format('DD-MM-YYYY'))
             setLoading(false);
           } catch (error) {
+            setErr(true)
             setLoading(false)
             console.log(error.message)
           }
         }
-        return () =>{
-            getTerms();
-        }
+        getDataProtection();
     }, [])
 
 
@@ -47,9 +51,14 @@ const DataProtection = () => {
             <span className=' text-white py-5 w-[90%] font-gilroy-bold text-[40px] '>Data Protection</span>
         </div>
         {/* <span className=' w-[80%] mx-auto '>Last Update : {currentTime}</span> */}
+        {err ? <span className=' w-full h-[calc(100vh-210px)] text-red-500 flex justify-center items-center'>Something is wrong!</span> 
+        :
+        <> 
         {loading ?  <div className=' h-[calc(100vh-210px)] w-full flex justify-center items-center'><CircularProgress/></div>
         :
         <div className=' py-10 w-[90%] mx-auto' dangerouslySetInnerHTML = {{__html : content}}></div>
+        }
+        </>
       }
     </div>
     <div className=' h-auto bg-black'>
