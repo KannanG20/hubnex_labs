@@ -3,17 +3,6 @@ import React, { useEffect } from 'react'
  
 const Hero = () => {
 
-  useEffect(()=>{
-    const getUser = async ()=>{
-      const res = await fetch('https://hubnex.cyclic.app/api/v1/users');
-      const data = await res.json()
-      console.log(data);
-    }
-    return () =>{
-      getUser();
-    }
-  }, [])
-
   return (
   
     <div className=' h-full w-full'>
