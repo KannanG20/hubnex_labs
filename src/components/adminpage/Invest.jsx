@@ -66,13 +66,11 @@ const handleStatus = async (id, message, company) => {
         const data = await res.json();
         console.log(data);
         if(!res.ok) {
-          console.log(data)
           setLoading(false)
           return setErr(true)
         }
         setLoading(false)
         setCompanies(data.results)
-        console.log(data); 
       } catch (error) {
         setLoading(false)
         console.log(error);
