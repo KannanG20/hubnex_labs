@@ -37,6 +37,7 @@ const Footer = () => {
   };
   
   const handleSubmit = async (e)=>{
+
     e.preventDefault();
     try {
       const res = await fetch("https://hubnex.cyclic.app/api/v1/user", userData)

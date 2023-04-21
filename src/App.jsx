@@ -204,6 +204,10 @@ function App() {
               element:  <Suspense fallback={<Loader/>}><ProtectedRoute/></Suspense>,
               children: [
                 {
+                  path: '/admin',
+                  element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><Dataprotection/></Suspense>
+                },
+                {
                   path: '/admin/data-protection',
                   element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><Dataprotection/></Suspense>
                 },
