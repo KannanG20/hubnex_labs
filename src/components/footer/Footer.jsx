@@ -21,7 +21,7 @@ const Footer = () => {
   const [email, setEmail] = useState("")
   const [phoneNo, setPhoneNo] = useState(null);
   const [message, setMessage] = useState("")
-
+  const [err, setErr]= useState(false)
   const [errFirstname, setErrFirstname] = useState(false)
   const [errLastname, setErrLastname] = useState(false)
   const [errEmail, setErrEmail] = useState(false)
@@ -32,6 +32,8 @@ const Footer = () => {
 
   const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
+
+  const [errCredentials, setErrCredentials] = useState(false)
   
 
   const userData = {
@@ -60,6 +62,7 @@ const Footer = () => {
     setErrPhone(false)
     setValidEmail(false)
     setValidPhone(false)
+    setErr(false)
     e.preventDefault();
     
     try {
@@ -84,7 +87,11 @@ const Footer = () => {
       const data = await res.json()
       if(!res.ok){
         setLoading(false)
-        return console.log("Something went wrong");
+        if(data.error=="user already exists"){
+          return setErrCredentials(true);
+          
+        }
+        return setErr(true)
       }
       setSuccess(true);
       setLoading(false)
@@ -110,10 +117,13 @@ const Footer = () => {
           <form className='flex flex-col gap-4 m-auto text-[16px] w-[80%] md:w-auto md:m-0 mt-10  md:mt-0' onSubmit={handleSubmit}>
             <label className=' text-gray-200 ' htmlFor='first_name'>FIRST NAME {errFirstname ? <span className=' text-red-500 pl-3'>Firstname is mandatory</span> : <span className=' text-red-500'>*</span>}</label>
             <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='first_name'  maxLength={25} onChange={(e)=>setFirstName(e.target.value)}/>
+
             <label className=' text-gray-200 ' htmlFor='last_name'>LAST NAME {errLastname ? <span className=' text-red-500 pl-3'>Lastname is mandatory</span> : <span className=' text-red-500'>*</span>}</label>
             <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text' id='last_name'  maxLength={25} onChange={(e)=>setLastName(e.target.value)}/>
+
             <label className=' text-gray-200 ' htmlFor='email'>EMAIL {errEmail ? <span className=' text-red-500 pl-3'>Email is mandatory</span> : <span className=' text-red-500'>*</span>}{validEmail &&  <span className=' text-red-500 pl-3'> Please provide valid email address </span>}</label>
             <input className='  outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='text'  id='email'  onChange={(e)=>setEmail(e.target.value)}/>
+            
             <label className=' text-gray-200 ' htmlFor='mobile_no'>PHONE NUMBER {errPhone ? <span className=' text-red-500 pl-3'>Phone No is mandatory</span> : <span className=' text-red-500'>*</span>}{validPhone &&  <span className='pl-3 text-red-500'> Please provide valid Phone Number </span>}</label>
             <input className='outline-none bg-transparent border-b-[1px] border-b-gray-300 w-full md:w-96' type='tel' id='mobile_no' maxLength={12} onChange={(e) => setPhoneNo(e.target.value)}/>
             <label className=' text-gray-200' htmlFor='message'>MESSAGE</label>
@@ -125,9 +135,20 @@ const Footer = () => {
               </label>
             </button>
             {loading ? <CircularProgress/> : 
-
+            <>
+            {
               success && 
                 <span className=' text-green-500 font-gilroy-regular'>Your Request has been Successfully Initiated</span>
+            }
+            {   
+                errCredentials &&
+                <span className='text-red-500 '> Credentials already exists</span> 
+            }
+            {
+              err &&
+              <span className='text-red-500 '>Something Went Wrong</span> 
+            }
+                </>
             }
             </form>
       </div>

@@ -57,6 +57,26 @@ const Aboutus = () => {
                     </div>
                   </div>
                   </SwiperSlide>    
+                  <SwiperSlide className=' py-12'>  
+                  <div className=' flex flex-col gap-5 md:gap-8 justify-center items-center w-full'>          
+                    <div className=' xl:text-[22px] font-gilroy-semi-bold'>
+                      <p className=' text-center'>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. </p></div>
+                    <div className=' items-center flex flex-col justify-between'>
+                      <h1 className='font-gilroy-bold text-[28px]'>Rahul Sarkar</h1>
+                      <h2>UI/UX Designer</h2>
+                    </div>
+                  </div>
+                  </SwiperSlide> 
+                  <SwiperSlide className=' py-12'>  
+                  <div className=' flex flex-col gap-5 md:gap-8 justify-center items-center w-full'>          
+                    <div className=' xl:text-[22px] font-gilroy-semi-bold'>
+                      <p className=' text-center'>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. </p></div>
+                    <div className=' items-center flex flex-col justify-between'>
+                      <h1 className='font-gilroy-bold text-[28px]'>Rahul Sarkar</h1>
+                      <h2>UI/UX Designer</h2>
+                    </div>
+                  </div>
+                  </SwiperSlide> 
             </Swiper>
             </div>
     </div>
