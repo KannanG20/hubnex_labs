@@ -6,11 +6,6 @@ import Root from './routes/Root'
 import Loader from './components/loader/Loader'
 import './App.css'
 
-// Admin Pages
-const ProtectedRoute = React.lazy(()=> import('./components/adminpage/ProtectedRoute'))
-const TermsandConditions = React.lazy(()=> import('./components/cms/TermsandConditions'))
-const DataProtection = React.lazy(()=> import('./components/cms/DataProtection'))
-const PrivacyPolicy = React.lazy(()=> import('./components/cms/PrivacyPolicy'))
 
 // Services Dropdown pages
 const IOT = React.lazy(()=> import('./pages/services/IOT'))
@@ -43,6 +38,11 @@ const Terms =React.lazy(()=>import('./components/adminpage/Terms'))
 const Dataprotection =React.lazy(()=>import('./components/adminpage/Dataprotection'))
 const Privacy =React.lazy(()=>import('./components/adminpage/Privacy'))
 const AdminContact =React.lazy(()=>import('./components/adminpage/Contact'))
+const ProtectedRoute = React.lazy(()=> import('./components/adminpage/ProtectedRoute'))
+const TermsandConditions = React.lazy(()=> import('./components/cms/TermsandConditions'))
+const DataProtection = React.lazy(()=> import('./components/cms/DataProtection'))
+const PrivacyPolicy = React.lazy(()=> import('./components/cms/PrivacyPolicy'))
+const ManagePartners = React.lazy(()=> import('./components/adminpage/ManagePartners'))
 
 
 function App() {
@@ -230,6 +230,10 @@ function App() {
                 {
                   path: '/admin/manage-roles',
                   element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><ManageRoles/></Suspense>
+                },
+                {
+                  path: '/admin/manage-partners',
+                  element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><ManagePartners/></Suspense>
                 },
                 {
                   path: '/admin/application',

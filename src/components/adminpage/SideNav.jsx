@@ -84,16 +84,22 @@ const SideNav = ({ navbar }) => {
             <div className=' flex gap-4 items-start w-full'>
               <ManageAccountsIcon/>
               <div className=' flex flex-col w-full gap-5'>
-              <Link to='/admin/manage-roles' className=' flex items-center'>Manage Roles <span onClick={handleManageRoleDropdown}>{manageRoleOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></Link>
-                {manageRoleOpen &&
-                  <div className=' flex flex-col gap-2 '>
-                    <Link>Manage Partner</Link>
-                    
-                  </div>
-                  }
+              <Link to='/admin/manage-roles' className=' flex items-center'>Manage Roles</Link>
               </div>
             </div>
           </div>
+
+          
+          <div className=' flex gap-4 flex-col items-center'>
+            <div className=' flex gap-4 items-start w-full'>
+              <ManageAccountsIcon/>
+              <div className=' flex flex-col w-full gap-5'>
+              <Link to='/admin/manage-partners' className=' flex items-center'>Manage Partners</Link>
+              </div>
+            </div>
+          </div>
+
+
 
           
 

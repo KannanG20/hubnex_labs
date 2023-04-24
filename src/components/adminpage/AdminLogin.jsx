@@ -1,3 +1,4 @@
+import { CircularProgress } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo.png'
@@ -8,7 +9,8 @@ function AdminLogin() {
   const [credentials, setCredentials] = useState({ email: "", password: "" })
   const [access, setAccess] = useState(false);
 
-  const [err, setErr] = useState(false);
+  const [err, setErr] = useState({errCred : false, errBackend : false});
+  const [loading, setLoading] = useState(false);
 
   const requestOptions = {
     method: 'POST',
@@ -17,17 +19,20 @@ function AdminLogin() {
 };
 
   const handleSubmit = async ()=>{
+    setErr((prev)=> ({...prev, errCred: false, errBackend:false}))
     try {
+      setLoading(true);
       const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/auth`, requestOptions)
       if(!res.ok){
-        return setErr(true);
+        return setErr((prev)=> ({...prev, errCred : true}));
       }
       const data = await res.json()
-      console.log(data)
       localStorage.setItem('token', data.result)
+      setLoading(false);
       setAccess(true)
     } catch (error) {
-      console.log(error)
+      setLoading(false);
+      setErr((prev)=> ({...prev, errBackend : true}))
     }
   }
 
@@ -45,7 +50,7 @@ function AdminLogin() {
       <div className="bg-white p-14 m-0 rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-8 text-center font-gilroy-bold">
 Admin Login</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <label className="block text-gray-700 font-bold mb-2 font-gilroy-bold" htmlFor="username">
               Username
@@ -79,7 +84,10 @@ Admin Login</h1>
               Login
             </button>
           </div>
-          {err && <span className=' text-red-500'>Invalid Credentials</span>}
+          {loading && <div className=' w-full flex justify-center items-center'><CircularProgress size={20}/></div>}
+          {err.errCred && <span className=' text-red-500'>Invalid Credentials</span>}
+          {err.errBackend && <span className=' text-red-500'>Something went wrong, Please try again</span>}
+        
         </form>
       </div>
     </div>

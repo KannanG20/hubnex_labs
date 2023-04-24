@@ -18,9 +18,6 @@ const SideNavMobile = ({ navbar, setNavbar }) => {
     const [formOpen, setFormOpen] = useState(false);
     const [manageRoleOpen, setManageRoleOpen] = useState(false);
 
-    const location = useLocation();
-
-    console.log(location.hash)
 
     const handleCmsDropdown = ()=>{
         setCmsOpen((prev)=> !prev);
