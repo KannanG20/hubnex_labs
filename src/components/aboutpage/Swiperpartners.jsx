@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import "swiper/css/free-mode";
@@ -14,6 +14,22 @@ import pantera from '../../assets/pantera.png'
 import { Autoplay, FreeMode, Pagination } from "swiper";
 
 const Swiperpartners = () => {
+
+  const [data, setData] = useState([])
+
+  useEffect(()=>{
+    const getPartners = async ()=>{
+      try {
+        const res = await fetch(`http://${import.meta.env.VITE_API_URL}/api/v1/partners`)
+        const data = await res.json()
+        setData(data.results)
+      } catch (error) {
+        errorNotifs("Unable to fetch data")
+      }
+    }
+    getPartners();
+  },[])
+
   return (
     <div className='bg-black text-white h-[200px] '>
         <div className="text-white font-bold text-4xl p-5 text-center"><h1>Our Partners</h1></div>
@@ -29,11 +45,9 @@ const Swiperpartners = () => {
         autoplay={true}
         className="mySwiper"
       >
-        <SwiperSlide className=' py-2 px-2' ><img src={reddit}  width={150} className='object-cover'  alt="reddit"></img></SwiperSlide>
-        <SwiperSlide className=' py-2 px-2' ><img src={chorus} width={150} className='object-cover'  alt="chorus"></img></SwiperSlide>
-        <SwiperSlide className=' py-2 px-2' ><img src={tcs} width={150} className='object-cover'  alt="tcs"></img></SwiperSlide>
-        <SwiperSlide className=' py-2 px-2'><img src={pantera} width={150} className='object-cover'  alt="pantera"></img></SwiperSlide>
-       
+        {data.map((data)=> (
+        <SwiperSlide key={data._id} className=' py-2 px-2' ><img src={`http://localhost:3000/${data.image}`}  width={150} className='object-cover'  alt="reddit"></img></SwiperSlide>
+        ))}       
       </Swiper>
       </div>
     </div>
