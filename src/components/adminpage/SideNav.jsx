@@ -99,13 +99,11 @@ const SideNav = ({ navbar }) => {
             </div>
           </div>
 
-
-
           
 
           <div className=' flex gap-4 items-center'>
             <FileOpenIcon/>
-            <Link to='/admin/application'>Testimonial</Link>
+            <Link to='/admin/testimonials'>Testimonial</Link>
           </div>
           
           

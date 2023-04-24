@@ -1,5 +1,6 @@
 import { CircularProgress } from '@mui/material';
 import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -10,6 +11,7 @@ const Applications = () => {
   const [role, setRole] = useState("");
   const [loading, setLoading] = useState(false)
 
+  const navigate = useNavigate()
   const successNotifs = ()=>{
     return toast.success("Successfully Added to Testimonials")
   }
@@ -38,10 +40,8 @@ const Applications = () => {
        return errorNotifs(data.error)
       }
       setLoading(false)
-      setDesc("")
-      setAuthor("")
-      setRole("")
       successNotifs();
+      navigate('/admin/testimonials')
     } catch (error) {
       setLoading(false)
       errorNotifs("Something went wrong, try again");
@@ -71,6 +71,7 @@ const Applications = () => {
         </div>
         <div className=' flex gap-5 items-center'>
         <input type='submit' className=' py-2 px-5 bg-blue-500 rounded-full w-max' placeholder='Submit'/>
+        <Link to='/admin/testimonials' className=' py-2 px-5 rounded-full bg-red-500 text-white'>Discard</Link>
         {loading && <CircularProgress size={30}/>}
         </div>
       </form>

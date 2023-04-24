@@ -5,6 +5,8 @@ import { CircularProgress } from '@mui/material';
 import Root from './routes/Root'
 import Loader from './components/loader/Loader'
 import './App.css'
+import Testimonials from './components/adminpage/Testimonials';
+import UpdateTestimonial from './components/adminpage/UpdateTestimonial';
 
 
 // Services Dropdown pages
@@ -236,7 +238,15 @@ function App() {
                   element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><ManagePartners/></Suspense>
                 },
                 {
-                  path: '/admin/application',
+                  path: '/admin/testimonials',
+                  element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><Testimonials/></Suspense>
+                },
+                {
+                  path: '/admin/updatetestimonial/:id',
+                  element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><UpdateTestimonial/></Suspense>
+                },
+                {
+                  path: '/admin/addtestimonial',
                   element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><Applications/></Suspense>
                 },
               ]
