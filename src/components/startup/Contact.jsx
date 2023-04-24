@@ -68,6 +68,10 @@ const Contact = () => {
     return /\S+@\S+\.\S+/.test(email);
   }
 
+  const errorCredentials = ()=>{
+    return toast.error("Credentials already exists")
+    }
+
   function isValidPhone(phone){
     return /(7|8|9)\d{9}/.test(phone)
   }
@@ -101,8 +105,8 @@ const Contact = () => {
       const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/company`, companyData)
       const data = await res.json()
       if(!res.ok){
-        setLoading(formLabelClasses)
-        return console.log(data);
+        setLoading(false)
+        return errorCredentials()
       }
       setSuccess(true);
       setLoading(false)
