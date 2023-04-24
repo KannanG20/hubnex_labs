@@ -15,9 +15,10 @@ import HelpIcon from '@mui/icons-material/Help';
 import { Link } from 'react-router-dom';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 
-const SideNav = () => {
+const SideNav = ({ menuOpen }) => {
 
   const [cmsOpen, setCmsOpen] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
@@ -25,18 +26,18 @@ const SideNav = () => {
   const [manageRoleOpen, setManageRoleOpen] = useState(false);
   const [paymentsOpen, setPaymentsOpen] = useState(false);
 
-  const handleCmsDropdown = ()=>{
-    setCmsOpen((prev)=> !prev);
+  const handleCmsDropdown = () => {
+    setCmsOpen((prev) => !prev);
   }
-  const handleFormDropdown = ()=>{
-    setFormOpen((prev)=> !prev);
+  const handleFormDropdown = () => {
+    setFormOpen((prev) => !prev);
   }
-  const handleManageRoleDropdown = ()=>{
-    setManageRoleOpen((prev)=> !prev);
+  const handleManageRoleDropdown = () => {
+    setManageRoleOpen((prev) => !prev);
   }
 
   return (
-    <div className=' w-[30%] hidden bg-slate-900 scrollbar scrollbar-thumb-gray-600 scrollbar-track-gray-900 h-full lg:flex flex-col py-5 items-center sticky left-0 top-0 overflow-y-auto'>
+    <div className={`w-[30%] bg-slate-900 h-full lg:flex flex-col py-5 items-center sticky left-0 top-0 overflow-y-auto ${menuOpen ? "flex z-[100] fixed" : 'hidden'}`}>
       <div className=' w-full flex gap-2 items-center justify-center'>
         <img src={logo} alt="logo" />
         <Link to='/admin' className=' text-3xl text-white font-bold'>hubnex</Link>
@@ -44,21 +45,21 @@ const SideNav = () => {
 
       <div className=' flex flex-col w-full h-full items-center py-5 gap-8 '>
         <div className=' w-[70%] m-auto h-full flex flex-col gap-8 text-base text-gray-300 font-semibold'>
-          <hr className=' w-full border-[1px] border-white'/>
-          
-          
+          <hr className=' w-full border-[1px] border-white' />
+
+
 
           <div className=' flex flex-col gap-4 items-center w-full'>
             <div className=' flex gap-4 items-start w-full'>
-            <LayersIcon/>
+              <LayersIcon />
               <div className=' flex flex-col w-full gap-5'>
-                <span onClick={handleCmsDropdown} className=' cursor-pointer flex items-center'>CMS <span >{cmsOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></span>
+                <span onClick={handleCmsDropdown} className=' cursor-pointer flex items-center'>CMS <span >{cmsOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDown />}</span></span>
                 {cmsOpen &&
-                <div className=' flex flex-col gap-2 '>
-                  <Link to='/admin/terms-and-conditions'>Terms and conditions</Link>
-                  <Link to='/admin/privacy-policy'>Privacy Policy</Link>
-                  <Link to='/admin/data-protection'>Data Protection</Link>
-                </div>
+                  <div className=' flex flex-col gap-2 '>
+                    <Link to='/admin/terms-and-conditions'>Terms and conditions</Link>
+                    <Link to='/admin/privacy-policy'>Privacy Policy</Link>
+                    <Link to='/admin/data-protection'>Data Protection</Link>
+                  </div>
                 }
               </div>
             </div>
@@ -66,44 +67,44 @@ const SideNav = () => {
           </div>
           <div className=' flex gap-4 flex-col items-center w-full'>
             <div className=' flex gap-4 items-start w-full'>
-              <BackupTableIcon/>
+              <BackupTableIcon />
               <div className=' flex flex-col w-full gap-5'>
-              <span onClick={handleFormDropdown} className=' cursor-pointer flex items-center'>Forms <span >{formOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></span>
-              {formOpen &&
-                <div className=' flex flex-col gap-2 '>
-                  <Link to='/admin/forms/invest'>Invest</Link>
-                  <Link to='/admin/forms/contact'>Contact Us</Link>
-                </div>
+                <span onClick={handleFormDropdown} className=' cursor-pointer flex items-center'>Forms <span >{formOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDown />}</span></span>
+                {formOpen &&
+                  <div className=' flex flex-col gap-2 '>
+                    <Link to='/admin/forms/invest'>Invest</Link>
+                    <Link to='/admin/forms/contact'>Contact Us</Link>
+                  </div>
                 }
               </div>
             </div>
           </div>
-     
+
 
           <div className=' flex gap-4 flex-col items-center'>
             <div className=' flex gap-4 items-start w-full'>
-              <ManageAccountsIcon/>
+              <ManageAccountsIcon />
               <div className=' flex flex-col w-full gap-5'>
-              <Link to='/admin/manage-roles' className=' flex items-center'>Manage Roles <span onClick={handleManageRoleDropdown}>{manageRoleOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></Link>
+                <Link to='/admin/manage-roles' className=' flex items-center'>Manage Roles <span onClick={handleManageRoleDropdown}>{manageRoleOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDown />}</span></Link>
                 {manageRoleOpen &&
                   <div className=' flex flex-col gap-2 '>
                     <Link>Manage Partner</Link>
-                    
+
                   </div>
-                  }
+                }
               </div>
             </div>
           </div>
 
-          
+
 
           <div className=' flex gap-4 items-center'>
-            <FileOpenIcon/>
+            <FileOpenIcon />
             <Link to='/admin/application'>Testimonial</Link>
           </div>
-          
-          
-          <hr className=' w-full border-[1px] border-white'/>
+
+
+          <hr className=' w-full border-[1px] border-white' />
         </div>
       </div>
 
@@ -111,4 +112,4 @@ const SideNav = () => {
   )
 }
 
-export default SideNav
+export default SideNav;
