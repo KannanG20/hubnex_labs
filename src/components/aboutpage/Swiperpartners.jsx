@@ -46,7 +46,7 @@ const Swiperpartners = () => {
         className="mySwiper"
       >
         {data.map((data)=> (
-        <SwiperSlide key={data._id} className=' py-2 px-2' ><img src={`http://localhost:3000/${data.image}`}  width={150} className='object-cover'  alt="reddit"></img></SwiperSlide>
+        <SwiperSlide key={data._id} className=' py-2 px-2' ><img src={`https://${import.meta.env.VITE_API_URL}/${data.image}`}  width={150} className='object-cover'  alt="reddit"></img></SwiperSlide>
         ))}       
       </Swiper>
       </div>

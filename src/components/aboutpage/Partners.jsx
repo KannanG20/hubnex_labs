@@ -27,7 +27,7 @@ const Partners = () => {
         <span className=' text-[60px] text-white font-gilroy-semi-bold'>Our Partners</span>
         <div className=' flex flex-wrap justify-around md:justify-evenly items-center w-full px-5 md:px-0'>
           {data.map((data)=> (
-             <img key={data._id} src={`http://${import.meta.env.VITE_API_URL}/${data.image}`} className= ' w-[158px] h-[70] object-cover'/>
+             <img key={data._id} src={`https://${import.meta.env.VITE_API_URL}/${data.image}`} className= ' w-[158px] h-[70] object-cover'/>
           ))}
             {/* <img src={pantera} className= ' w-[158px] h-[70] '/>
             <img src={reddit} className= ' w-[158px] h-[70] '/>
