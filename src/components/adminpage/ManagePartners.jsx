@@ -48,7 +48,7 @@ const ManagePartners = () => {
       method: 'DELETE',
     };
     try {
-      const res = await fetch(`http://${import.meta.env.VITE_API_URL}/api/v1/partner/${id}`, requestOptions)
+      const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/partner/${id}`, requestOptions)
       const data = await res.json();
     } catch (error) {
       console.log(error);
@@ -65,7 +65,7 @@ const ManagePartners = () => {
   useEffect(() => {
     const getPartners = async () => {
       try {
-        const res = await fetch(`http://${import.meta.env.VITE_API_URL}/api/v1/partners`)
+        const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/partners`)
         const data = await res.json()
         setData(data.results)
       } catch (error) {
@@ -111,7 +111,7 @@ const ManagePartners = () => {
       <div className='flex flex-wrap gap-5 w-full h-auto py-5'>
         {data?.map((data) => (
           <div className=' flex flex-col h-40 w-52 border-2 border-white'>
-            <img src={`http://${import.meta.env.VITE_API_URL}/${data.image}`} className='w-full h-[85%] object-cover' />
+            <img src={`https://${import.meta.env.VITE_API_URL}/${data.image}`} className='w-full h-[85%] object-cover' />
             <button onClick={() => handleDelete(data._id)} className=' w-full bg-white flex items-center justify-center text-red-500'>delete</button>
           </div>
         ))}
