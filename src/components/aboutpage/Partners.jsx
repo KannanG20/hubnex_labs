@@ -12,11 +12,11 @@ const Partners = () => {
   useEffect(()=>{
     const getPartners = async ()=>{
       try {
-        const res = await fetch(`http://${import.meta.env.VITE_API_URL}/api/v1/partners`)
+        const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/partners`)
         const data = await res.json()
         setData(data.results)
       } catch (error) {
-        errorNotifs("Unable to fetch data")
+        console.log("Unable to fetch data")
       }
     }
     getPartners();
