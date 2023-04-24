@@ -24,7 +24,7 @@ const Swiperpartners = () => {
         const data = await res.json()
         setData(data.results)
       } catch (error) {
-        console.log("Unable to fetch data")
+        console.log(error)
       }
     }
     getPartners();

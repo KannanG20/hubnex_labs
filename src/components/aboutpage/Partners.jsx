@@ -16,7 +16,7 @@ const Partners = () => {
         const data = await res.json()
         setData(data.results)
       } catch (error) {
-        console.log("Unable to fetch data")
+        console.log(error)
       }
     }
     getPartners();
@@ -29,11 +29,6 @@ const Partners = () => {
           {data.map((data)=> (
              <img key={data._id} src={`https://${import.meta.env.VITE_API_URL}/${data.image}`} className= ' w-[158px] h-[70] object-cover'/>
           ))}
-            {/* <img src={pantera} className= ' w-[158px] h-[70] '/>
-            <img src={reddit} className= ' w-[158px] h-[70] '/>
-            <img src={tcs} className= ' w-[158px] h-[70] '/>
-            <img src={chorus} className= ' w-[158px] h-[70] '/>
-            <img src={pantera} className= ' w-[158px] h-[70] '/> */}
         </div>
     </div>
   )
