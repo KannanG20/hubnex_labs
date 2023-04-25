@@ -10,6 +10,16 @@ const ManagePartners = () => {
   const [file, setFile] = useState(null)
   const [invalidImg, setInvalidImg] = useState(false)
 
+  const [addedPartner, setAddedPartner] = useState(false)
+  const [deletedPartner, setDeletedPartner] = useState(false)
+
+  const errorNotifs = (err) => {
+    return toast.error(err)
+  }
+  const successNotifs = () => {
+    return toast.success("Successfully added a partner")
+  }
+
   const handleSubmit = async () => {
     try {
       setFile(null)
@@ -25,8 +35,10 @@ const ManagePartners = () => {
         body: formData
       };
       const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/partner`, requestOptions)
-      const data = await res.json()
-      console.log(data);
+      if(!res.ok){
+        return errorNotifs("Something went wrong, try again")
+      }
+      setAddedPartner((prev)=> !prev)
       successNotifs()
     } catch (error) {
       console.log(error)
@@ -51,17 +63,17 @@ const ManagePartners = () => {
     try {
       const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/partner/${id}`, requestOptions)
       const data = await res.json();
+      if(!res.ok){
+        return errorNotifs("Something ent wrong, try again")
+      }
+      setDeletedPartner((prev)=>!prev)
     } catch (error) {
       console.log(error);
+      errorNotifs("Something went wrong, try again")
     }
   }
 
-  const errorNotifs = (err) => {
-    return toast.error(err)
-  }
-  const successNotifs = () => {
-    return toast.success("Successfully added a partner")
-  }
+
 
   useEffect(() => {
     const getPartners = async () => {
@@ -74,7 +86,7 @@ const ManagePartners = () => {
       }
     }
     getPartners();
-  }, [handleSubmit, handleDelete])
+  }, [addedPartner, deletedPartner])
 
   return (
     <div className='text-white'>
