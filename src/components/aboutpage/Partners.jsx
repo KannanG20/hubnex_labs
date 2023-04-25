@@ -14,7 +14,7 @@ const Partners = () => {
       try {
         const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/partners`)
         const data = await res.json()
-        setData(data.results)
+        setData(data.data)
       } catch (error) {
         console.log(error)
       }
