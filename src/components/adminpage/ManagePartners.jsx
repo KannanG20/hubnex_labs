@@ -81,6 +81,7 @@ const ManagePartners = () => {
         const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/partners`)
         const data = await res.json()
         setData(data.data)
+        console.log(data.data)
       } catch (error) {
         errorNotifs("Unable to fetch data")
       }
