@@ -29,6 +29,7 @@ const ManagePartners = () => {
       console.log(data);
       successNotifs()
     } catch (error) {
+      console.log(error)
       errorNotifs("something went wrong, try again")
     }
 

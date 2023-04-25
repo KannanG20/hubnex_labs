@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './startup/style.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -8,6 +8,26 @@ import "swiper/css/autoplay";
 import { Autoplay, FreeMode, Pagination } from "swiper";
 
 const Aboutus = () => {
+
+  const [data, setData] = useState([])
+  const [err, setErr] = useState(false)
+
+  useEffect(()=>{
+    const getTestimonials = async ()=>{
+      try {
+        const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/testimonials`)
+        const data = await res.json()
+        if (!res.ok){
+          return setErr(true)
+        }
+        setData(data.results)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getTestimonials();
+  },[])
+
   return (
     <>
     <div className='w-full flex gap-5 md:gap-24 justify-center items-center h-[617px] flex-col xl:w-full ' id="display">
@@ -27,56 +47,19 @@ const Aboutus = () => {
                 autoplay={true}
                 className="mySwiper"
               >
+                {data?.map((data)=> (
                 <SwiperSlide className=' py-12'>  
-                  <div className=' flex flex-col gap-5 md:gap-8 justify-center items-center w-full'>          
-                    <div className=' w-full xl:text-[22px] font-gilroy-semi-bold'>
-                      <p className='text-center'>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. </p></div>
-                    <div className=' w-fulls items-center flex flex-col justify-between'>
-                      <h1 className='font-gilroy-bold text-[28px]'>Rahul Sarkar</h1>
-                      <h2>UI/UX Designer</h2>
-                    </div>
+                <div className=' flex flex-col gap-5 md:gap-8 justify-center items-center w-full'>          
+                  <div className=' w-full xl:text-[22px] font-gilroy-semi-bold'>
+                    <p className='text-center'>{data.description}</p></div>
+                  <div className=' w-fulls items-center flex flex-col justify-between'>
+                    <h1 className='font-gilroy-bold text-[28px]'>{data.author}</h1>
+                    <h2>{data.role}</h2>
                   </div>
-                  </SwiperSlide>
-                  <SwiperSlide className=' py-12'>  
-                  <div className=' flex flex-col gap-5 md:gap-8 justify-center items-center w-full'>          
-                    <div className=' xl:text-[22px] font-gilroy-semi-bold'>
-                      <p className=' text-center'>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. </p></div>
-                    <div className=' items-center flex flex-col justify-between'>
-                      <h1 className='font-gilroy-bold text-[28px]'>Rahul Sarkar</h1>
-                      <h2>UI/UX Designer</h2>
-                    </div>
-                  </div>
-                  </SwiperSlide>
-                  <SwiperSlide className=' py-12'>  
-                  <div className=' flex flex-col gap-5 md:gap-8 justify-center items-center w-full'>          
-                    <div className=' xl:text-[22px] font-gilroy-semi-bold'>
-                      <p className=' text-center'>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. </p></div>
-                    <div className=' items-center flex flex-col justify-between'>
-                      <h1 className='font-gilroy-bold text-[28px]'>Rahul Sarkar</h1>
-                      <h2>UI/UX Designer</h2>
-                    </div>
-                  </div>
-                  </SwiperSlide>    
-                  <SwiperSlide className=' py-12'>  
-                  <div className=' flex flex-col gap-5 md:gap-8 justify-center items-center w-full'>          
-                    <div className=' xl:text-[22px] font-gilroy-semi-bold'>
-                      <p className=' text-center'>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. </p></div>
-                    <div className=' items-center flex flex-col justify-between'>
-                      <h1 className='font-gilroy-bold text-[28px]'>Rahul Sarkar</h1>
-                      <h2>UI/UX Designer</h2>
-                    </div>
-                  </div>
-                  </SwiperSlide> 
-                  <SwiperSlide className=' py-12'>  
-                  <div className=' flex flex-col gap-5 md:gap-8 justify-center items-center w-full'>          
-                    <div className=' xl:text-[22px] font-gilroy-semi-bold'>
-                      <p className=' text-center'>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum. </p></div>
-                    <div className=' items-center flex flex-col justify-between'>
-                      <h1 className='font-gilroy-bold text-[28px]'>Rahul Sarkar</h1>
-                      <h2>UI/UX Designer</h2>
-                    </div>
-                  </div>
-                  </SwiperSlide> 
+                </div>
+                </SwiperSlide>
+                ))}
+                  
             </Swiper>
             </div>
     </div>
