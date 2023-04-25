@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import "swiper/css/free-mode";
@@ -14,26 +14,9 @@ import pantera from '../../assets/pantera.png'
 import { Autoplay, FreeMode, Pagination } from "swiper";
 
 const Swiperpartners = () => {
-
-  const [data, setData] = useState([])
-
-  useEffect(()=>{
-    const getPartners = async ()=>{
-      try {
-        const res = await fetch(`https://${import.meta.env.VITE_API_URL}/api/v1/partners`)
-        const data = await res.json()
-        setData(data.data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getPartners();
-  },[])
-
   return (
     <div className='bg-black text-white h-[200px] '>
         <div className="text-white font-bold text-4xl p-5 text-center"><h1>Our Partners</h1></div>
-        <div className=' flex justify-center items-center w-full'>
      <Swiper
         slidesPerView={2}
         spaceBetween={30}
@@ -45,11 +28,13 @@ const Swiperpartners = () => {
         autoplay={true}
         className="mySwiper"
       >
-        {data.map((data)=> (
-        <SwiperSlide key={data._id} className=' py-2 px-2' ><img src={`https://${import.meta.env.VITE_API_URL}/${data.image}`}  width={150} className='object-cover'  alt="reddit"></img></SwiperSlide>
-        ))}       
+        <SwiperSlide ><img src={reddit} alt="reddit"></img></SwiperSlide>
+        <SwiperSlide ><img src={chorus} alt="chorus"></img></SwiperSlide>
+        <SwiperSlide className='mb-6' ><img src={tcs} alt="tcs"></img></SwiperSlide>
+        <SwiperSlide><img src={pantera} alt="pantera"></img></SwiperSlide>
+       
       </Swiper>
-      </div>
+      
     </div>
   )
 }
