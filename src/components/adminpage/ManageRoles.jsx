@@ -19,7 +19,6 @@ import { Link, useNavigate } from "react-router-dom";
 const ManageRoles = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
-  console.log(data);
 
   useEffect(() => {
     axios.get(`https://${import.meta.env.VITE_API_URL}/api/v1/user-roles`)
