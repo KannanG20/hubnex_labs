@@ -12,7 +12,9 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddUser = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +25,12 @@ const AddUser = () => {
     confirm_password: "",
     user_access: [],
   });
+
+  const navigate = useNavigate()
+  const errorNotifs = (err)=> {
+    toast.error(err)
+  }
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -47,15 +55,16 @@ const AddUser = () => {
     axios
       .post(`https://${import.meta.env.VITE_API_URL}/api/v1/user-role`, formData)
       .then((response) => {
-        console.log("Form data saved:", response.data);
+        navigate('/admin/manage-roles')
       })
       .catch((error) => {
-        console.log("Error saving form data:", error);
+        errorNotifs("Something went wrong, try again")
       });
   };
 
   return (
     <div className=' text-white h-auto overflow-y-auto'>
+      <ToastContainer/>
       <h1 className="text-3xl font-bold mt-4 mb-8">Add User</h1>
       <Box>
         <Paper elevation={3}>
