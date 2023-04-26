@@ -33,6 +33,7 @@ const Startup = React.lazy(() => import('./pages/Startup'))
 // Admin Panel (Private Pages)!    
 const ManageRoles = React.lazy(() => import('./components/adminpage/ManageRoles'))
 const AddUser = React.lazy(() => import('./components/adminpage/AddUser'))
+const EditUser = React.lazy(() => import('./components/adminpage/EditUser'))
 const Applications = React.lazy(() => import('./components/adminpage/Applications'))
 const Invest = React.lazy(() => import('./components/adminpage/Invest'))
 const Terms = React.lazy(() => import('./components/adminpage/Terms'))
@@ -235,6 +236,10 @@ function App() {
               {
                 path: '/admin/manage-roles/add-user',
                 element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress /></div>}><AddUser /></Suspense>
+              },
+              {
+                path: '/admin/manage-roles/edit-user/:id',
+                element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress /></div>}><EditUser /></Suspense>
               },
               {
                 path: '/admin/manage-partners',

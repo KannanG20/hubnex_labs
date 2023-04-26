@@ -14,10 +14,11 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ManageRoles = () => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
   console.log(data);
 
   useEffect(() => {
@@ -41,15 +42,8 @@ const ManageRoles = () => {
       });
   };
 
-  const handleEdit = (id, name) => {
-    const updatedData = data.map((row) =>
-      row._id === id ? { ...row, name } : row
-    );
-    setData(updatedData);
-    axios.put(`https://hubnex.cyclic.app/api/v1/user-role/${id}`, updatedData.find((row) => row._id === id))
-      .catch((error) => {
-        console.log(error);
-      });
+  const handleEdit = (id) => {
+    navigate(`/admin/manage-roles/edit-user/${id}`)
   };
 
   const handleDelete = (id) => {
@@ -80,7 +74,7 @@ const ManageRoles = () => {
           </TableHead>
           <TableBody>
             {data.map((row) => (
-              <TableRow key={row.id}>
+              <TableRow key={row._id}>
                 <TableCell sx={{ color: "#ffffff" }}>{row._id}</TableCell>
                 <TableCell sx={{ color: "#ffffff" }}>{row.fullname}</TableCell>
                 <TableCell>

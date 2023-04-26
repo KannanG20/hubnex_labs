@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   TextField,
   Switch,
@@ -12,9 +12,10 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const AddUser = () => {
+const EditUser = () => {
+  const { id } = useParams();
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
@@ -42,10 +43,22 @@ const AddUser = () => {
     }));
   };
 
+  useEffect(() => {
+    axios
+      .get(`https://hubnex.cyclic.app/api/v1/user-role/${id}`)
+      .then((response) => {
+        const { fullname, email, mobile, password, user_access } = response.data;
+        setFormData({ fullname, email, mobile, password, user_access });
+      })
+      .catch((error) => {
+        console.log("Error retrieving user data:", error);
+      });
+  }, [id]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://hubnex.cyclic.app/api/v1/user-role", formData)
+      .put(`https://hubnex.cyclic.app/api/v1/user-role/${id}`, formData)
       .then((response) => {
         console.log("Form data saved:", response.data);
       })
@@ -56,7 +69,7 @@ const AddUser = () => {
 
   return (
     <div className='bg-slate-900 text-white'>
-      <h1 className="text-3xl font-bold mt-4 mb-8">Add User</h1>
+      <h1 className="text-3xl font-bold mt-4 mb-8">Edit User</h1>
       <Box>
         <Paper elevation={3}>
           <Box sx={{ p: 5 }}>
@@ -168,4 +181,4 @@ const AddUser = () => {
   )
 }
 
-export default AddUser;
+export default EditUser;
