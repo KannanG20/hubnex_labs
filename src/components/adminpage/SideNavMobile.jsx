@@ -16,7 +16,6 @@ const SideNavMobile = ({ navbar, setNavbar }) => {
 
     const [cmsOpen, setCmsOpen] = useState(false);
     const [formOpen, setFormOpen] = useState(false);
-    const [manageRoleOpen, setManageRoleOpen] = useState(false);
 
 
     const handleCmsDropdown = ()=>{
@@ -25,9 +24,7 @@ const SideNavMobile = ({ navbar, setNavbar }) => {
       const handleFormDropdown = ()=>{
         setFormOpen((prev)=> !prev);
       }
-      const handleManageRoleDropdown = ()=>{
-        setManageRoleOpen((prev)=> !prev);
-      }
+
 
   return (
     <div className={` ${navbar ? ' translate-x-full ' : 'translate-x-0'} duration-200 ease-in transition-all absolute right-full w-full bg-slate-900 h-full flex flex-col py-5 items-center overflow-y-auto `}>
@@ -78,13 +75,7 @@ const SideNavMobile = ({ navbar, setNavbar }) => {
             <div className=' flex gap-4 items-start w-full'>
               <ManageAccountsIcon/>
               <div className=' flex flex-col w-full gap-5'>
-              <Link to='/admin/manage-roles' onClick={()=> setNavbar(false)} className=' flex items-center'>Manage Roles <span onClick={handleManageRoleDropdown}>{manageRoleOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></Link>
-                {manageRoleOpen &&
-                  <div className=' flex flex-col gap-2 '>
-                    <Link onClick={()=> setNavbar(false)}>Manage Partner</Link>
-                    
-                  </div>
-                  }
+              <Link to='/admin/manage-roles' onClick={()=> setNavbar(false)} className=' flex items-center'>Manage Roles</Link>
               </div>
             </div>
           </div>

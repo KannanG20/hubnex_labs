@@ -88,17 +88,6 @@ const SideNav = ({ navbar }) => {
               </div>
             </div>
           </div>
-
-          
-          <div className=' flex gap-4 flex-col items-center'>
-            <div className=' flex gap-4 items-start w-full'>
-              <ManageAccountsIcon/>
-              <div className=' flex flex-col w-full gap-5'>
-              <Link to='/admin/manage-partners' className=' flex items-center'>Manage Partners</Link>
-              </div>
-            </div>
-          </div>
-
           
 
           <div className=' flex gap-4 items-center'>

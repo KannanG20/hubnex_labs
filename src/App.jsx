@@ -7,6 +7,7 @@ import Loader from './components/loader/Loader'
 import './App.css'
 import Testimonials from './components/adminpage/Testimonials';
 import UpdateTestimonial from './components/adminpage/UpdateTestimonial';
+import PageNotFound from './components/PageNotFound';
 
 
 // Services Dropdown pages
@@ -44,7 +45,6 @@ const ProtectedRoute = React.lazy(()=> import('./components/adminpage/ProtectedR
 const TermsandConditions = React.lazy(()=> import('./components/cms/TermsandConditions'))
 const DataProtection = React.lazy(()=> import('./components/cms/DataProtection'))
 const PrivacyPolicy = React.lazy(()=> import('./components/cms/PrivacyPolicy'))
-const ManagePartners = React.lazy(()=> import('./components/adminpage/ManagePartners'))
 
 
 function App() {
@@ -119,6 +119,10 @@ function App() {
           path: '/',
           element: <Root/>,
           children: [
+            {
+              path: '*',
+              element: <PageNotFound/>
+            },
             {
               path: '/',
               element:
@@ -232,10 +236,6 @@ function App() {
                 {
                   path: '/admin/manage-roles',
                   element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><ManageRoles/></Suspense>
-                },
-                {
-                  path: '/admin/manage-partners',
-                  element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><ManagePartners/></Suspense>
                 },
                 {
                   path: '/admin/testimonials',
