@@ -22,7 +22,7 @@ const ManageRoles = () => {
   console.log(data);
 
   useEffect(() => {
-    axios.get("https://hubnex.cyclic.app/api/v1/user-roles")
+    axios.get(`https://${import.meta.env.VITE_API_URL}/api/v1/user-roles`)
       .then((response) => {
         setData(response.data.results);
       })
@@ -36,7 +36,7 @@ const ManageRoles = () => {
       row._id === id ? { ...row, status: !row.status } : row
     );
     setData(updatedData);
-    axios.put(`https://hubnex.cyclic.app/api/v1/user-role/${id}`, updatedData.find((row) => row._id === id))
+    axios.put(`https://${import.meta.env.VITE_API_URL}/v1/user-role/${id}`, updatedData.find((row) => row._id === id))
       .catch((error) => {
         console.log(error);
       });
@@ -49,14 +49,14 @@ const ManageRoles = () => {
   const handleDelete = (id) => {
     const updatedData = data.filter((row) => row._id !== id);
     setData(updatedData);
-    axios.delete(`https://hubnex.cyclic.app/api/v1/user-role/${id}`)
+    axios.delete(`https://${import.meta.env.VITE_API_URL}/api/v1/user-role/${id}`)
       .catch((error) => {
         console.log(error);
       });
   };
 
   return (
-    <div className='text-white'>
+    <div className='text-white h-auto'>
       <div className="flex items-center justify-between my-3 mb-5">
         <h1 className="text-3xl font-bold">ManageRoles</h1>
         <Link to="/admin/manage-roles/add-user" className="bg-white text-black px-3 py-2 rounded-lg text-lg">Add Users <AddRoundedIcon /></Link>

@@ -45,7 +45,7 @@ const AddUser = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://hubnex.cyclic.app/api/v1/user-role", formData)
+      .post(`https://${import.meta.env.VITE_API_URL}/api/v1/user-role`, formData)
       .then((response) => {
         console.log("Form data saved:", response.data);
       })
@@ -55,7 +55,7 @@ const AddUser = () => {
   };
 
   return (
-    <div className='bg-slate-900 text-white'>
+    <div className=' text-white h-auto overflow-y-auto'>
       <h1 className="text-3xl font-bold mt-4 mb-8">Add User</h1>
       <Box>
         <Paper elevation={3}>

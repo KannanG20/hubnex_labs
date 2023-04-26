@@ -45,7 +45,7 @@ const EditUser = () => {
 
   useEffect(() => {
     axios
-      .get(`https://hubnex.cyclic.app/api/v1/user-role/${id}`)
+      .get(`https://${import.meta.env.VITE_API_URL}/api/v1/user-role/${id}`)
       .then((response) => {
         const { fullname, email, mobile, password, user_access } = response.data;
         setFormData({ fullname, email, mobile, password, user_access });
@@ -58,7 +58,7 @@ const EditUser = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`https://hubnex.cyclic.app/api/v1/user-role/${id}`, formData)
+      .put(`https://${import.meta.env.VITE_API_URL}/api/v1/user-role/${id}`, formData)
       .then((response) => {
         console.log("Form data saved:", response.data);
       })
@@ -68,7 +68,7 @@ const EditUser = () => {
   };
 
   return (
-    <div className='bg-slate-900 text-white'>
+    <div className='text-white h-auto overflow-y-auto'>
       <h1 className="text-3xl font-bold mt-4 mb-8">Edit User</h1>
       <Box>
         <Paper elevation={3}>

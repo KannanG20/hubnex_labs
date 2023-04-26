@@ -6,7 +6,6 @@ import Root from './routes/Root'
 import Loader from './components/loader/Loader'
 import './App.css'
 import PageNotFound from './components/PageNotFound';
-import { getApp } from './utils/Helper'
 
 
 // Services Dropdown pages
@@ -212,11 +211,11 @@ function App() {
               element: <Suspense fallback={<Loader/>}><Startup/></Suspense>
             },
             {
-              path: '/',
+              path: '/admin',
               element:  <Suspense fallback={<Loader/>}><ProtectedRoute/></Suspense>,
               children: [
                 {
-                  path: '/',
+                  path: '/admin',
                   element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><Dataprotection/></Suspense>
                 },
                 {
