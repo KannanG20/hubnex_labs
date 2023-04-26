@@ -1,11 +1,12 @@
 import React, { Suspense, useEffect, useState } from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, BrowserRouter } from 'react-router-dom'
 import { CircularProgress } from '@mui/material';
 
 import Root from './routes/Root'
 import Loader from './components/loader/Loader'
 import './App.css'
 import PageNotFound from './components/PageNotFound';
+import { getApp } from './utils/Helper'
 
 
 // Services Dropdown pages
@@ -45,6 +46,10 @@ const DataProtection = React.lazy(()=> import('./components/cms/DataProtection')
 const PrivacyPolicy = React.lazy(()=> import('./components/cms/PrivacyPolicy'))
 const Testimonials = React.lazy(()=> import('./components/adminpage/Testimonials')) 
 const UpdateTestimonial = React.lazy(()=> import('./components/adminpage/UpdateTestimonial')) 
+const AddUser = React.lazy(()=> import("./components/adminpage/AddUser"))
+const EditUser = React.lazy(()=> import("./components/adminpage/EditUser"))
+
+
 
 
 function App() {
@@ -112,6 +117,7 @@ function App() {
       await Promise.all(promises);
       setLoading(false);
   }
+
 
   const router = createBrowserRouter(
       [
@@ -206,11 +212,11 @@ function App() {
               element: <Suspense fallback={<Loader/>}><Startup/></Suspense>
             },
             {
-              path: '/admin',
+              path: '/',
               element:  <Suspense fallback={<Loader/>}><ProtectedRoute/></Suspense>,
               children: [
                 {
-                  path: '/admin',
+                  path: '/',
                   element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><Dataprotection/></Suspense>
                 },
                 {
@@ -249,6 +255,14 @@ function App() {
                   path: '/admin/addtestimonial',
                   element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><Applications/></Suspense>
                 },
+                {
+                  path: '/admin/manage-roles/add-user',
+                  element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><AddUser/></Suspense>
+                },
+                {
+                  path: '/admin/manage-roles/edit-user/:id',
+                  element: <Suspense fallback={<div className=' h-full w-full justify-center items-center flex bg-transparent'><CircularProgress/></div>}><EditUser/></Suspense>
+                }
               ]
             },
           ],
@@ -259,11 +273,12 @@ function App() {
   return (
     <div>
       {loading ? 
-        <Loader/> 
-      :
-       <RouterProvider router={router}/>
-      }
+        <Loader/>
+        :
+        <RouterProvider router={router}/>  
+    }
     </div>
+        
   )
 }
 

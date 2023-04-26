@@ -41,7 +41,7 @@ const UpdateTestimonial = () => {
           }
           setLoading(false)
           successNotifs();
-          navigate('/admin/testimonials')
+          navigate('/testimonials')
         } catch (error) {
           setLoading(false)
           errorNotifs("Something went wrong, try again");
@@ -87,7 +87,7 @@ const UpdateTestimonial = () => {
         </div>
         <div className=' flex gap-5 items-center'>
         <input type='submit' className=' py-2 px-5 bg-blue-500 rounded-full w-max' placeholder='Submit'/>
-        <Link to='/admin/testimonials' className=' py-2 px-5 rounded-full bg-red-500 text-white'>Discard</Link>
+        <Link to='/testimonials' className=' py-2 px-5 rounded-full bg-red-500 text-white'>Discard</Link>
         {loading && <CircularProgress size={30}/>}
         </div>
       </form>

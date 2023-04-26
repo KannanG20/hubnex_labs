@@ -93,7 +93,7 @@ const successNotifs = () =>{
         <span className=' font-gilroy-bold text-[20px] sm:text-[40px] text-white'>Content Management System</span>
         <div className=' flex gap-5'>
         <button onClick={handleUpdatePrivacy} className=' bg-blue-600 w-max py-[10px] px-5 text-white rounded-full'>Update Changes</button>
-        <Link to='/privacy-policy' target='_blank' className='  rounded-full bg-sky-400 flex justify-center items-center py-2 px-4 text-white'>Goto page</Link>
+        <Link to='https://hubnex.netlify.app/privacy-policy' target='_blank' className='  rounded-full bg-sky-400 flex justify-center items-center py-2 px-4 text-white'>Goto page</Link>
         </div>
       </div>
       <div className=' w-full h-full flex border-2 border-gray-300 gap-5 flex-col shadow-md shadow-white rounded-md bg-white sticky overflow-y-auto'>

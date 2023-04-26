@@ -39,7 +39,7 @@ const SideNav = ({ navbar }) => {
     <div className=' hidden w-[30%] bg-slate-900 scrollbar scrollbar-thumb-gray-600 scrollbar-track-gray-900 h-full lg:flex flex-col py-5 items-center sticky left-0 top-0 overflow-y-auto'>
       <div className=' w-full flex gap-2 items-center justify-center'>
         <img src={logo} alt="logo" />
-        <Link to='/admin' className=' text-3xl text-white font-bold'>hubnex</Link>
+        <Link to='/' className=' text-3xl text-white font-bold'>hubnex</Link>
       </div>
 
       <div className=' flex flex-col w-full h-full items-center py-5 gap-8 '>
@@ -55,9 +55,9 @@ const SideNav = ({ navbar }) => {
                 <span onClick={handleCmsDropdown} className=' cursor-pointer flex items-center'>CMS <span >{cmsOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></span>
                 {cmsOpen &&
                 <div className=' flex flex-col gap-2 '>
-                  <Link to='/admin/terms-and-conditions'>Terms and conditions</Link>
-                  <Link to='/admin/privacy-policy'>Privacy Policy</Link>
-                  <Link to='/admin/data-protection'>Data Protection</Link>
+                  <Link to='/terms-and-conditions'>Terms and conditions</Link>
+                  <Link to='/privacy-policy'>Privacy Policy</Link>
+                  <Link to='/data-protection'>Data Protection</Link>
                 </div>
                 }
               </div>
@@ -71,8 +71,8 @@ const SideNav = ({ navbar }) => {
               <span onClick={handleFormDropdown} className=' cursor-pointer flex items-center'>Forms <span >{formOpen ? <KeyboardArrowUpIcon/> : <KeyboardArrowDown />}</span></span>
               {formOpen &&
                 <div className=' flex flex-col gap-2 '>
-                  <Link to='/admin/forms/invest'>Invest</Link>
-                  <Link to='/admin/forms/contact'>Contact Us</Link>
+                  <Link to='/forms/invest'>Invest</Link>
+                  <Link to='/forms/contact'>Contact Us</Link>
                 </div>
                 }
               </div>
@@ -84,7 +84,7 @@ const SideNav = ({ navbar }) => {
             <div className=' flex gap-4 items-start w-full'>
               <ManageAccountsIcon/>
               <div className=' flex flex-col w-full gap-5'>
-              <Link to='/admin/manage-roles' className=' flex items-center'>Manage Roles</Link>
+              <Link to='/manage-roles' className=' flex items-center'>Manage Roles</Link>
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@ const SideNav = ({ navbar }) => {
 
           <div className=' flex gap-4 items-center'>
             <FileOpenIcon/>
-            <Link to='/admin/testimonials'>Testimonial</Link>
+            <Link to='/testimonials'>Testimonial</Link>
           </div>
           
           

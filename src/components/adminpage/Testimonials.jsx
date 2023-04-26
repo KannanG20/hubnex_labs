@@ -49,7 +49,7 @@ const Testimonials = () => {
         <ToastContainer/>
         <div className=' flex justify-between w-full items-center py-5 border-b-[1px] border-b-white'>
             <span>Testimonials</span>
-            <Link to='/admin/addtestimonial' className=' py-2 px-5 bg-blue-500 rounded-full'>Add Testimonial</Link>
+            <Link to='/addtestimonial' className=' py-2 px-5 bg-blue-500 rounded-full'>Add Testimonial</Link>
         </div>
         <div className=' flex flex-wrap w-full gap-5 h-auto py-5'>
         {data?.map((author)=>(
@@ -58,7 +58,7 @@ const Testimonials = () => {
                     <span>{author.author}</span>
                 </div>
                 <div className=' w-full flex justify-between items-center'>
-                    <Link to={`/admin/updatetestimonial/${author._id}`} className=' flex justify-center items-center py-1 px-3 bg-blue-500 w-full'>Update</Link>
+                    <Link to={`/updatetestimonial/${author._id}`} className=' flex justify-center items-center py-1 px-3 bg-blue-500 w-full'>Update</Link>
                     <button onClick={()=> handleDelete(author.author, author._id)} className=' py-1 px-3 bg-red-500 w-full'>Delete</button>
                 </div>
             </div>
