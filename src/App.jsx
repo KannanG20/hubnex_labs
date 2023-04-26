@@ -5,8 +5,6 @@ import { CircularProgress } from '@mui/material';
 import Root from './routes/Root'
 import Loader from './components/loader/Loader'
 import './App.css'
-import Testimonials from './components/adminpage/Testimonials';
-import UpdateTestimonial from './components/adminpage/UpdateTestimonial';
 import PageNotFound from './components/PageNotFound';
 
 
@@ -45,6 +43,8 @@ const ProtectedRoute = React.lazy(()=> import('./components/adminpage/ProtectedR
 const TermsandConditions = React.lazy(()=> import('./components/cms/TermsandConditions'))
 const DataProtection = React.lazy(()=> import('./components/cms/DataProtection'))
 const PrivacyPolicy = React.lazy(()=> import('./components/cms/PrivacyPolicy'))
+const Testimonials = React.lazy(()=> import('./components/adminpage/Testimonials')) 
+const UpdateTestimonial = React.lazy(()=> import('./components/adminpage/UpdateTestimonial')) 
 
 
 function App() {
